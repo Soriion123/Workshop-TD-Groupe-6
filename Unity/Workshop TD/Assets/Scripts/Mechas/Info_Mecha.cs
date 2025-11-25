@@ -3,8 +3,8 @@ using UnityEngine;
 public class Info_Mecha : MonoBehaviour
 {
 
-    public bool mechas_selec;
-    public int id;
+    [SerializeField] public bool mechas_selec;
+    [SerializeField] public int id;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
