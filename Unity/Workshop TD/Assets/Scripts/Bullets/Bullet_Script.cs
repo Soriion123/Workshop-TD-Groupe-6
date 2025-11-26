@@ -24,20 +24,20 @@ public class Bullet : MonoBehaviour
         Vector3 dir = target.position - transform.position;
         float distanceThisFrame = speed * Time.deltaTime;
 
-        // Collision avec la cible
-        /*if (dir.magnitude <= distanceThisFrame)
+        //Collision avec la cible
+        if (dir.magnitude <= distanceThisFrame)
         {
             HitTarget();
             return;
-        }*/
+        }
 
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
     }
 
-    /*void HitTarget()
+    void HitTarget()
     {
-        // Récupération du script EnnemySmall
-        EnnemySmall enemy = target.GetComponent<EnnemySmall>();
+         //Récupération du script EnnemySmall
+        Flying_Basics enemy = target.GetComponent<Flying_Basics>();
 
         if (enemy != null)
         {
@@ -45,5 +45,5 @@ public class Bullet : MonoBehaviour
         }
 
         Destroy(gameObject); // La bullet disparaît après l'impact
-    }*/
+    }
 }

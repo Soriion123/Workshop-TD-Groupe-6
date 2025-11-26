@@ -2369,6 +2369,65 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847589151}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &877497969
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 877497971}
+  - component: {fileID: 877497970}
+  m_Layer: 0
+  m_Name: r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &877497970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877497969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acec3dcbe30483843832433d19b8e4dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdown: 1
+  SpawnPoint: {fileID: 877497969}
+  target: {fileID: 514457349}
+  spawnAreaSize: {x: 10, y: 10}
+  waves:
+  - ennemySmalls:
+    - {fileID: 6350685989830833738, guid: 3b1ece98939619344ae8a5c5c1eeace4, type: 3}
+    - {fileID: 6350685989830833738, guid: 3b1ece98939619344ae8a5c5c1eeace4, type: 3}
+    - {fileID: 6350685989830833738, guid: 3b1ece98939619344ae8a5c5c1eeace4, type: 3}
+    - {fileID: 6350685989830833738, guid: 3b1ece98939619344ae8a5c5c1eeace4, type: 3}
+    - {fileID: 6350685989830833738, guid: 3b1ece98939619344ae8a5c5c1eeace4, type: 3}
+    timeToNextEnnemy: 0.5
+    timeToNextWave: 0
+    ennemiesLeft: 0
+  currentWaveIndex: 0
+--- !u!4 &877497971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877497969}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.3042722, y: 0.31801048, z: 0.64879566, w: 0.62076724}
+  m_LocalPosition: {x: 16.21, y: 5.2, z: -25.81}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: -1.999, y: 52.197, z: 91.55}
 --- !u!1 &884352812
 GameObject:
   m_ObjectHideFlags: 0
@@ -5307,6 +5366,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2833228442536870011, guid: bc684c360f802264ba41623415d14a96, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5062116806956296331, guid: bc684c360f802264ba41623415d14a96, type: 3}
       propertyPath: m_Name
       value: Mechas_Test
@@ -5335,3 +5398,4 @@ SceneRoots:
   - {fileID: 1706577815}
   - {fileID: 1876831504}
   - {fileID: 209565382}
+  - {fileID: 877497971}

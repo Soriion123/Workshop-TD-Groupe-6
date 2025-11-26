@@ -60,11 +60,14 @@ public class Trigger_attaque_Meka : MonoBehaviour
         {
             return;
         }
-
-        Vector3 dir = target.position - transform.position;
+            
+        Vector3 dir = target.position - PartToRotate.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(PartToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        PartToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        PartToRotate.rotation = Quaternion.Lerp(
+            PartToRotate.rotation,
+            lookRotation,
+            Time.deltaTime * turnSpeed);
+
 
         if (fireCountDown <= 0)
         {
@@ -91,15 +94,5 @@ public class Trigger_attaque_Meka : MonoBehaviour
     {
         Gizmos.DrawWireSphere(transform.position, range);
     }
-
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Enemy")
-        {
-            print("Enemy In Range");
-            Canon.transform.LookAt(other.transform.position);
-            //Instantiate(Projot_Prefab, Shoot_Point.gameObject.transform.position, Quaternion.identity);
-        }
-    }*/
 
 }
