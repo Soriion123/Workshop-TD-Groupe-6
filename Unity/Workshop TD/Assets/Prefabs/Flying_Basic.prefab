@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 409857860575830680}
   - component: {fileID: 3477886802403997036}
   - component: {fileID: 6350685989830833738}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Flying_Basic
   m_TagString: Enemy
   m_Icon: {fileID: 0}

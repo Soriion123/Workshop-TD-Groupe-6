@@ -267,9 +267,9 @@ GameObject:
   - component: {fileID: 8401938539117493221}
   - component: {fileID: 8049072747307714783}
   - component: {fileID: 3159601720176944011}
-  - component: {fileID: -3657592956422609129}
+  - component: {fileID: 8169103767885280167}
   m_Layer: 0
-  m_Name: Mechas_Test
+  m_Name: Mechas_All
   m_TagString: Mechas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -323,7 +323,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5f7696efd6dfe474080b6001bebf4384, type: 2}
+  - {fileID: 2100000, guid: 07b27c1cfddadf848b994dbf360d80d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -445,7 +445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mechas_selec: 0
   id: 0
---- !u!114 &-3657592956422609129
+--- !u!114 &8169103767885280167
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -454,7 +454,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5062116806956296331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8f6958ad740ec44ea9a857105229338, type: 3}
+  m_Script: {fileID: 11500000, guid: 8193b552f74b42a4aa758a6ba5d72fe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 931018905385309481, guid: a3ce9ef2a4590b747be9968e5b08ea6f, type: 3}
@@ -464,6 +464,9 @@ MonoBehaviour:
   PartToRotate: {fileID: 1460314313370277593}
   turnSpeed: 6
   ennemyTag: Enemy
+  Layer:
+    serializedVersion: 2
+    m_Bits: 640
   fireRate: 1
 --- !u!1 &9029669945985212607
 GameObject:
@@ -593,4 +596,7 @@ MonoBehaviour:
   PartToRotate: {fileID: 0}
   turnSpeed: 6
   ennemyTag: Enemy
+  Layer:
+    serializedVersion: 2
+    m_Bits: 0
   fireRate: 1

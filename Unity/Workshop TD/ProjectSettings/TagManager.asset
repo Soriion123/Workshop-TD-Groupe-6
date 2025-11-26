@@ -7,6 +7,7 @@ TagManager:
   - Mechas
   - Sol
   - Enemy
+  - Flying
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - Mechas
   - Ground
   - Triggers
-  - 
+  - Flying
   - 
   - 
   - 

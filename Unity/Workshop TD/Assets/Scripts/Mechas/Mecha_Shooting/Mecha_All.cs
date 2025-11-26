@@ -1,6 +1,6 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Trigger_attaque_Meka : MonoBehaviour
+public class Mechas_All : MonoBehaviour
 {
 
     //[SerializeField] private GameObject Projot_Prefab;
@@ -13,12 +13,14 @@ public class Trigger_attaque_Meka : MonoBehaviour
     public Transform PartToRotate;
     public float turnSpeed = 6f;
 
-    public string ennemyTag = "Enemy";
+    [SerializeField] private string ennemyTag = "Enemy"; // <-- CHOIX DU TAG
+    [SerializeField] private LayerMask Layer;  // <-- CHOIX DU LAYER
+
 
     public float fireRate = 1f;
     private float fireCountDown;
 
-    
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,17 +30,23 @@ public class Trigger_attaque_Meka : MonoBehaviour
 
     void UpdateTarget()
     {
-        GameObject[] Enemy = GameObject.FindGameObjectsWithTag(ennemyTag);
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag(ennemyTag);
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnnemy = null;
 
-        foreach (GameObject ennemy in Enemy)
+        foreach (GameObject enemy in enemies)
         {
-            float distanceToEnnemy = Vector3.Distance(transform.position, ennemy.transform.position);
-            if (distanceToEnnemy < shortestDistance)
+            // Vérifie si l'ennemi est sur le layer voulu
+            if ((Layer.value & (1 << enemy.layer)) == 0)
             {
-                shortestDistance = distanceToEnnemy;
-                nearestEnnemy = ennemy;
+                continue; // pas le bon layer → on saute cet ennemi
+            }
+
+            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distanceToEnemy < shortestDistance)
+            {
+                shortestDistance = distanceToEnemy;
+                nearestEnnemy = enemy;
             }
         }
 
@@ -53,6 +61,7 @@ public class Trigger_attaque_Meka : MonoBehaviour
     }
 
 
+
     // Update is called once per frame
     void Update()
     {
@@ -60,7 +69,7 @@ public class Trigger_attaque_Meka : MonoBehaviour
         {
             return;
         }
-            
+
         Vector3 dir = target.position - PartToRotate.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         PartToRotate.rotation = Quaternion.Lerp(

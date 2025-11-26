@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3477886802403997036}
   - component: {fileID: 5162869939190221397}
   - component: {fileID: 2731973633872649743}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -148,3 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 5162869939190221397}
   target: {fileID: 0}
+  Life_Manageur: {fileID: 0}
