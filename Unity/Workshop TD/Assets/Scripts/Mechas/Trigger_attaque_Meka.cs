@@ -26,7 +26,7 @@ public class Trigger_attaque_Meka : MonoBehaviour
         if (other.tag == "Enemy")
         {
             print("Enemy In Range");
-            //Canon.transform.LookAt(other.transform.position);
+            Canon.transform.LookAt(other.transform.position);
             //Instantiate(Projot_Prefab, Shoot_Point.gameObject.transform.position, Quaternion.identity);
         }
     }
