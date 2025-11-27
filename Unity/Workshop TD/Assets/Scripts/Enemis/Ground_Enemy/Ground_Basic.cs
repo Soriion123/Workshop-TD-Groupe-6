@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class Ground_Basic : MonoBehaviour
@@ -11,6 +11,7 @@ public class Ground_Basic : MonoBehaviour
     [Header("Stats")]
     [SerializeField] private float speed = 5f;
     [SerializeField] private float maxHealth = 10f;
+    [SerializeField] private int goldReward = 1;   // 💰 or gagné à la mort
 
     private float currentHealth;
 
@@ -23,7 +24,7 @@ public class Ground_Basic : MonoBehaviour
     {
         currentHealth = maxHealth;
 
-        // si jamais le spawner n�a pas fourni de target
+        // si jamais le spawner n’a pas fourni de target
         if (target == null)
         {
             GameObject t = GameObject.Find("Enemy Target / Nexus");
@@ -41,7 +42,7 @@ public class Ground_Basic : MonoBehaviour
     }
 
     
-        public void TakeDamage(float amount)
+    public void TakeDamage(float amount)
     {
         currentHealth -= amount;
         if (currentHealth <= 0) Die();
@@ -51,5 +52,6 @@ public class Ground_Basic : MonoBehaviour
     private void Die()
     {
         Destroy(gameObject);
+        GameManager.instance.AddGold(goldReward);
     }
 }

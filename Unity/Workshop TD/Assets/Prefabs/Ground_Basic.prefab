@@ -149,3 +149,4 @@ MonoBehaviour:
   target: {fileID: 5897640639478872787, guid: d3012d787ed3ab040bfa8ca691ed2d88, type: 3}
   speed: 5
   maxHealth: 10
+  goldReward: 1

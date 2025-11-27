@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Flying_Basics: MonoBehaviour
 {
@@ -9,6 +9,7 @@ public class Flying_Basics: MonoBehaviour
     [SerializeField] private float maxHealth = 10f;
     [SerializeField] private float obstacleDetectionDistance = 2f;
     [SerializeField] private float avoidanceStrength = 2f;
+    [SerializeField] private int goldReward = 1;   // 💰 or gagné à la mort
 
     [Header("Target")]
     public Transform target;
@@ -27,7 +28,7 @@ public class Flying_Basics: MonoBehaviour
         // Direction vers la cible
         Vector3 direction = (target.position - transform.position).normalized;
 
-        // D�tection des obstacles avec raycast
+        // Détection des obstacles avec raycast
         if (Physics.Raycast(transform.position, direction, out RaycastHit hit, obstacleDetectionDistance))
         {
             // Calcul d'une direction de contournement
@@ -35,10 +36,10 @@ public class Flying_Basics: MonoBehaviour
             direction = Vector3.Lerp(direction, avoidDirection, 0.7f).normalized;
         }
 
-        // D�placement
+        // Déplacement
         transform.position += direction * speed * Time.deltaTime;
 
-        // V�rification si la cible est atteinte
+        // Vérification si la cible est atteinte
         if (Vector3.Distance(transform.position, target.position) < 0.5f)
         {
             ReachTarget();
@@ -59,5 +60,6 @@ public class Flying_Basics: MonoBehaviour
     private void Die()
     {
         Destroy(gameObject);
+        GameManager.instance.AddGold(goldReward);
     }
 }
