@@ -67,6 +67,7 @@ public class Cliqueur : MonoBehaviour
                     GameObject Mechas_Instantiate = Instantiate(prefab_mechas[ID_mechas_Spawn], cursor.transform.position, Quaternion.identity);
 
                     New_Target.Add(Mechas_Instantiate.gameObject.GetComponent<Mechas_Move_Test>().target = new GameObject("Target"));
+
                     New_Target[New_Target.Count - 1].transform.position = cursor.transform.position;
 
                     Mechas_Instantiate.gameObject.GetComponent<Info_Mecha>().id = cmp_mechas_spawn;
@@ -75,11 +76,21 @@ public class Cliqueur : MonoBehaviour
                 }
 
             }
+
+            if (hit.collider.name == "Boite 0")
+            {
+                if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 0; }
+                
+            }
+            if (hit.collider.name == "Boite 1")
+            {
+                if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 1; }
+
+            }
+            if (hit.collider.name == "Boite 2")
+            {
+                if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 2; }
+            }
         }
-
-        if (Input.GetKeyDown(KeyCode.UpArrow)) { ID_mechas_Spawn = 0; }
-        if (Input.GetKeyDown(KeyCode.LeftArrow)) { ID_mechas_Spawn = 1; }
-        if (Input.GetKeyDown(KeyCode.RightArrow)) { ID_mechas_Spawn = 2; }
-
     }
 }

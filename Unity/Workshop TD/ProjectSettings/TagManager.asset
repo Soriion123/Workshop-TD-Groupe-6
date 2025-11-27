@@ -8,6 +8,9 @@ TagManager:
   - Sol
   - Enemy
   - Flying
+  - Boite 1
+  - Boite 2
+  - Boite 3
   layers:
   - Default
   - TransparentFX
