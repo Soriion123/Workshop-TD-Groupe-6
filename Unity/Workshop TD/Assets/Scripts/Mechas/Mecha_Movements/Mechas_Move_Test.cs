@@ -4,7 +4,7 @@ using UnityEngine.AI;
 public class Mechas_Move_Test : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
-    [SerializeField] private GameObject target;
+    [SerializeField] public GameObject target;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

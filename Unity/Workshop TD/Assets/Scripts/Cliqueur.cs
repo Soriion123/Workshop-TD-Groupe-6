@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,9 +13,17 @@ public class Cliqueur : MonoBehaviour
     public LayerMask Mask;
 
     public bool mechas_selec;
-    public Transform[] New_Target;
+
+    // Mechas
+    public List<GameObject> New_Target = new List<GameObject>();
+    
     public int ref_id_selec;
     public GameObject test_memori;
+
+    public GameObject[] prefab_mechas;
+    public int ID_mechas_Spawn;
+
+    public int cmp_mechas_spawn = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,12 +55,31 @@ public class Cliqueur : MonoBehaviour
 
             if (hit.collider.gameObject.tag == "Sol")
             {
+
                 if (Input.GetMouseButtonDown(0) & test_memori.GetComponent<Info_Mecha>().mechas_selec)
                 {
-                    New_Target[ref_id_selec].position = cursor.position;
+                    New_Target[ref_id_selec].transform.position = cursor.position;
                     mechas_selec = false;
                 }
+
+                if (Input.GetMouseButtonDown(1) & cmp_mechas_spawn < 5)
+                {
+                    GameObject Mechas_Instantiate = Instantiate(prefab_mechas[ID_mechas_Spawn], cursor.transform.position, Quaternion.identity);
+
+                    New_Target.Add(Mechas_Instantiate.gameObject.GetComponent<Mechas_Move_Test>().target = new GameObject("Target"));
+                    New_Target[New_Target.Count - 1].transform.position = cursor.transform.position;
+
+                    Mechas_Instantiate.gameObject.GetComponent<Info_Mecha>().id = cmp_mechas_spawn;
+
+                    cmp_mechas_spawn++;
+                }
+
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow)) { ID_mechas_Spawn = 0; }
+        if (Input.GetKeyDown(KeyCode.LeftArrow)) { ID_mechas_Spawn = 1; }
+        if (Input.GetKeyDown(KeyCode.RightArrow)) { ID_mechas_Spawn = 2; }
+
     }
 }
