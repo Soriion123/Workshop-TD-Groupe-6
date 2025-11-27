@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5162869939190221397}
   - component: {fileID: 2731973633872649743}
   m_Layer: 7
-  m_Name: Enemy
+  m_Name: Ground_Basic
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,6 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee7b01b1e72fff14ca493a82f18cbc00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 5162869939190221397}
-  target: {fileID: 0}
-  Life_Manageur: {fileID: 0}
+  target: {fileID: 5897640639478872787, guid: d3012d787ed3ab040bfa8ca691ed2d88, type: 3}
+  speed: 5
+  maxHealth: 10

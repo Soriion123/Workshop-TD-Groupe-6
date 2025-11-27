@@ -31,22 +31,18 @@ public class Flying_Spawner : MonoBehaviour
 
     private void Update()
     {
-        if (currentWaveIndex >= waves.Length)
-        {
-            Debug.Log("You Survived Every Waves");
-            return;
-        }
+
 
         countdown -= Time.deltaTime;
 
         if (countdown <= 0 && !waveIsRunning)
         {
-            StartCoroutine(SpawnWave());
+            StartCoroutine(SpawnWaveFlying());
             waveIsRunning = true;
         }
     }
 
-    private IEnumerator SpawnWave()
+    private IEnumerator SpawnWaveFlying()
     {
         if (currentWaveIndex < waves.Length)
         {

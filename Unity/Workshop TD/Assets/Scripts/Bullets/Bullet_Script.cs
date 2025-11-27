@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+
     private Transform target;
 
     [Header("Stats")]
@@ -36,14 +37,25 @@ public class Bullet : MonoBehaviour
 
     void HitTarget()
     {
-         //Récupération du script EnnemySmall
-        Flying_Basics enemy = target.GetComponent<Flying_Basics>();
-
-        if (enemy != null)
+        // essaie Flying
+        Flying_Basics fly = target.GetComponent<Flying_Basics>();
+        if (fly != null)
         {
-            enemy.TakeDamage(damage);
+            fly.TakeDamage(damage);
+            Destroy(gameObject);
+            return;
         }
 
-        Destroy(gameObject); // La bullet disparaît après l'impact
+        // essaie Ground
+        Ground_Basic ground = target.GetComponent<Ground_Basic>();
+        if (ground != null)
+        {
+            ground.TakeDamage(damage);
+            Destroy(gameObject);
+            return;
+        }
+
+        Destroy(gameObject);
     }
+
 }

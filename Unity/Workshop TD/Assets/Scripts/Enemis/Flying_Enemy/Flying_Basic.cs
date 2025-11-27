@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Flying_Basics: MonoBehaviour
 {
+
+
     [Header("Stats")]
     [SerializeField] private float speed = 5f;
     [SerializeField] private float maxHealth = 10f;
