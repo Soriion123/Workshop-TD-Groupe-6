@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Player Money")]
     public int gold = 0;
+
+    public TextMeshProUGUI Gold_Ui;
 
     private void Awake()
     {
@@ -19,4 +22,10 @@ public class GameManager : MonoBehaviour
         gold += amount;
         Debug.Log("💰 Gold actuel : " + gold);
     }
+
+    public void Update()
+    {
+        Gold_Ui.text = gold.ToString();
+    }
+
 }
