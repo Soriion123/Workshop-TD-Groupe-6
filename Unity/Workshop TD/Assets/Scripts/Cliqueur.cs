@@ -7,11 +7,11 @@ using UnityEngine.UI;
 
 public class Cliqueur : MonoBehaviour
 {
+
+    // Cursor
     public float profondeur_detection = 1000;
     public Transform cursor;
-
     public LayerMask Mask;
-
     public bool mechas_selec;
 
     // Mechas
@@ -24,6 +24,9 @@ public class Cliqueur : MonoBehaviour
     public int ID_mechas_Spawn;
 
     public int cmp_mechas_spawn = 0;
+
+    // Game Manageur
+    public GameManager game_manager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -55,15 +58,17 @@ public class Cliqueur : MonoBehaviour
 
             if (hit.collider.gameObject.tag == "Sol")
             {
-
                 if (Input.GetMouseButtonDown(0) & test_memori.GetComponent<Info_Mecha>().mechas_selec)
                 {
                     New_Target[ref_id_selec].transform.position = cursor.position;
                     mechas_selec = false;
                 }
 
-                if (Input.GetMouseButtonDown(1) & cmp_mechas_spawn < 5)
+                if (Input.GetMouseButtonDown(1) & cmp_mechas_spawn < 5 & game_manager.gold > prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix)
                 {
+
+                    game_manager.gold = game_manager.gold - prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix;
+
                     GameObject Mechas_Instantiate = Instantiate(prefab_mechas[ID_mechas_Spawn], cursor.transform.position, Quaternion.identity);
 
                     New_Target.Add(Mechas_Instantiate.gameObject.GetComponent<Mechas_Move_Test>().target = new GameObject("Target"));
@@ -73,6 +78,7 @@ public class Cliqueur : MonoBehaviour
                     Mechas_Instantiate.gameObject.GetComponent<Info_Mecha>().id = cmp_mechas_spawn;
 
                     cmp_mechas_spawn++;
+
                 }
 
             }

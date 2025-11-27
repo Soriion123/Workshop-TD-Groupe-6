@@ -445,6 +445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mechas_selec: 0
   id: 0
+  prix: 60
 --- !u!114 &-3657592956422609129
 MonoBehaviour:
   m_ObjectHideFlags: 0
