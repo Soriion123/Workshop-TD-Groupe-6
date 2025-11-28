@@ -64,7 +64,7 @@ public class Cliqueur : MonoBehaviour
                     mechas_selec = false;
                 }
 
-                if (Input.GetMouseButtonDown(1) & cmp_mechas_spawn < 5 & game_manager.gold > prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix)
+                if (Input.GetMouseButtonDown(1) & cmp_mechas_spawn < 5 & game_manager.gold >= prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix)
                 {
 
                     game_manager.gold = game_manager.gold - prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix;
