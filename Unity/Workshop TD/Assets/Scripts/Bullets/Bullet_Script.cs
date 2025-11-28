@@ -37,25 +37,71 @@ public class Bullet : MonoBehaviour
 
     void HitTarget()
     {
-        // essaie Flying
-        Flying_Basics fly = target.GetComponent<Flying_Basics>();
-        if (fly != null)
+        // --- FLYING TYPES ---
+        Flying_Basic flyBasic = target.GetComponent<Flying_Basic>();
+        if (flyBasic != null)
         {
-            fly.TakeDamage(damage);
+            flyBasic.TakeDamage(damage);
             Destroy(gameObject);
             return;
         }
 
-        // essaie Ground
-        Ground_Basic ground = target.GetComponent<Ground_Basic>();
-        if (ground != null)
+        Flying_Fast flyFast = target.GetComponent<Flying_Fast>();
+        if (flyFast != null)
         {
-            ground.TakeDamage(damage);
+            flyFast.TakeDamage(damage);
             Destroy(gameObject);
             return;
         }
 
+        Flying_Tank flyTank = target.GetComponent<Flying_Tank>();
+        if (flyTank != null)
+        {
+            flyTank.TakeDamage(damage);
+            Destroy(gameObject);
+            return;
+        }
+
+        // --- GROUND TYPES ---
+        Ground_Basic groundBasic = target.GetComponent<Ground_Basic>();
+        if (groundBasic != null)
+        {
+            groundBasic.TakeDamage(damage);
+            Destroy(gameObject);
+            return;
+        }
+
+        Ground_Fast groundFast = target.GetComponent<Ground_Fast>();
+        if (groundFast != null)
+        {
+            groundFast.TakeDamage(damage);
+            Destroy(gameObject);
+            return;
+        }
+
+        Ground_Tank groundTank = target.GetComponent<Ground_Tank>();
+        if (groundTank != null)
+        {
+            groundTank.TakeDamage(damage);
+            Destroy(gameObject);
+            return;
+        }
+
+        // === AJOUTE ICI TES NOUVEAUX TYPES D'ENNEMIS ===
+        /*
+        EliteEnemy elite = target.GetComponent<EliteEnemy>();
+        if (elite != null)
+        {
+            elite.TakeDamage(damage);
+            Destroy(gameObject);
+            return;
+        }
+        */
+
+        // Fallback
         Destroy(gameObject);
+        return;
     }
+
 
 }

@@ -1,46 +1,53 @@
 ﻿using UnityEngine;
-using UnityEngine.AI;
 
-public class Ground_Basic : Ground_Enemy
+public class Flying_Fast: Flying_Enemy
 {
-    private NavMeshAgent agent;
 
-    [Header("Target")]
-    //public Transform target;
 
     [Header("Stats")]
     [SerializeField] private float speed = 5f;
     [SerializeField] private float maxHealth = 10f;
+    [SerializeField] private float obstacleDetectionDistance = 2f;
+    [SerializeField] private float avoidanceStrength = 2f;
     [SerializeField] private int goldReward = 1;   // 💰 or gagné à la mort
+
     public float NexusDamage = 5f; // dégâts infligés à l'objectif
 
-    private float currentHealth;
+    [Header("Target")]
+    //public Transform target;
 
-    private void Awake()
-    {
-        agent = GetComponent<NavMeshAgent>();
-    }
+    private float currentHealth;
 
     private void Start()
     {
         currentHealth = maxHealth;
-
-        // si jamais le spawner n’a pas fourni de target
-        if (target == null)
-        {
-            GameObject t = GameObject.Find("Enemy Target / Nexus");
-            if (t != null) target = t.transform;
-        }
     }
 
     private void Update()
     {
-        if (target != null)
+        if (target == null) return;
+
+        // Direction vers la cible
+        Vector3 direction = (target.position - transform.position).normalized;
+
+        // Détection des obstacles avec raycast
+        if (Physics.Raycast(transform.position, direction, out RaycastHit hit, obstacleDetectionDistance))
         {
-            agent.speed = speed;
-            agent.SetDestination(target.position);
+            // Calcul d'une direction de contournement
+            Vector3 avoidDirection = Vector3.Cross(Vector3.up, hit.normal).normalized;
+            direction = Vector3.Lerp(direction, avoidDirection, 0.7f).normalized;
+        }
+
+        // Déplacement
+        transform.position += direction * speed * Time.deltaTime;
+
+        // Vérification si la cible est atteinte
+        if (Vector3.Distance(transform.position, target.position) < 0.5f)
+        {
+            ReachTarget();
         }
     }
+
     private void ReachTarget()
     {
         // On récupère le script BuildingHealth sur la cible
@@ -71,13 +78,11 @@ public class Ground_Basic : Ground_Enemy
         }
     }
 
-
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
         if (currentHealth <= 0) Die();
     }
-
 
     private void Die()
     {

@@ -32,7 +32,7 @@ public class Ground_Spawner : MonoBehaviour
         countdown = waves[0].timeToNextWave;
 
         for (int i = 0; i < waves.Length; i++)
-            waves[i].ennemiesLeft = waves[i].groundBasics != null ? waves[i].groundBasics.Length : 0;
+            waves[i].enemiesLeft = waves[i].enemies != null ? waves[i].enemies.Length : 0;
     }
 
     private void Update()
@@ -51,7 +51,7 @@ public class Ground_Spawner : MonoBehaviour
         if (currentWaveIndex >= waves.Length) yield break;
 
         WaveGround wave = waves[currentWaveIndex];
-        if (wave.groundBasics == null || wave.groundBasics.Length == 0)
+        if (wave.enemies == null || wave.enemies.Length == 0)
         {
             Debug.LogWarning("Wave " + currentWaveIndex + " vide.");
             currentWaveIndex++;
@@ -59,7 +59,7 @@ public class Ground_Spawner : MonoBehaviour
             yield break;
         }
 
-        for (int i = 0; i < wave.groundBasics.Length; i++)
+        for (int i = 0; i < wave.enemies.Length; i++)
         {
             Vector3 localOffset = new Vector3(
                 Random.Range(-spawnAreaSize.x / 2f, spawnAreaSize.x / 2f),
@@ -73,9 +73,10 @@ public class Ground_Spawner : MonoBehaviour
             if (NavMesh.SamplePosition(spawnPos, out NavMeshHit hit, 2f, NavMesh.AllAreas))
                 spawnPos = hit.position;
 
-            // Instantiate en s'assurant que groundBasics est bien Ground_Basic[]
-            Ground_Basic enemy = Instantiate(wave.groundBasics[i], spawnPos, Quaternion.identity);
-            
+            Ground_Enemy enemy = Instantiate(wave.enemies[i], spawnPos, Quaternion.identity);
+            enemy.target = target; // assignation de la cible peu importe le type
+
+
 
             yield return new WaitForSeconds(wave.timeToNextEnnemy);
         }
@@ -106,9 +107,9 @@ public class Ground_Spawner : MonoBehaviour
 [System.Serializable]
 public class WaveGround
 {
-    public Ground_Basic[] groundBasics;
+    public Ground_Enemy[] enemies;   // <-- le spawner lit maintenant TOUS les types
     public float timeToNextEnnemy;
     public float timeToNextWave;
 
-    [HideInInspector] public int ennemiesLeft;
+    [HideInInspector] public int enemiesLeft;
 }

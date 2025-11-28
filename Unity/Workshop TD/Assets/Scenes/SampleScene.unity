@@ -384,28 +384,21 @@ MonoBehaviour:
   target: {fileID: 1876831504}
   spawnAreaSize: {x: 20, y: 4}
   waves:
-  - groundBasics:
-    - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
-    - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
-    - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
-    timeToNextEnnemy: 0.5
-    timeToNextWave: 1.5
-    ennemiesLeft: 0
-  - groundBasics:
-    - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
-    - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
-    - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
+  - enemies:
+    - {fileID: 1716429451737509192, guid: baac286e9cf69d44c9ef44a6d9174f5a, type: 3}
+    - {fileID: -5180152810756829731, guid: 4ce58222a13bfc344af7cc9e1071efef, type: 3}
     - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
     timeToNextEnnemy: 0.5
     timeToNextWave: 1.5
-    ennemiesLeft: 0
-  - groundBasics:
-    - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
-    - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
-    - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
+    enemiesLeft: 0
+  - enemies: []
     timeToNextEnnemy: 0.5
     timeToNextWave: 1.5
-    ennemiesLeft: 0
+    enemiesLeft: 0
+  - enemies: []
+    timeToNextEnnemy: 0.5
+    timeToNextWave: 1.5
+    enemiesLeft: 0
   currentWaveIndex: 0
 --- !u!1 &260187394
 GameObject:
@@ -2501,20 +2494,13 @@ MonoBehaviour:
   target: {fileID: 1876831504}
   spawnAreaSize: {x: 10, y: 10}
   waves:
-  - ennemySmalls:
+  - enemies:
     - {fileID: 6350685989830833738, guid: 3b1ece98939619344ae8a5c5c1eeace4, type: 3}
-    - {fileID: 6350685989830833738, guid: 3b1ece98939619344ae8a5c5c1eeace4, type: 3}
-    - {fileID: 6350685989830833738, guid: 3b1ece98939619344ae8a5c5c1eeace4, type: 3}
-    - {fileID: 6350685989830833738, guid: 3b1ece98939619344ae8a5c5c1eeace4, type: 3}
-    - {fileID: 6350685989830833738, guid: 3b1ece98939619344ae8a5c5c1eeace4, type: 3}
-    - {fileID: 6350685989830833738, guid: 3b1ece98939619344ae8a5c5c1eeace4, type: 3}
-    - {fileID: 6350685989830833738, guid: 3b1ece98939619344ae8a5c5c1eeace4, type: 3}
-    - {fileID: 6350685989830833738, guid: 3b1ece98939619344ae8a5c5c1eeace4, type: 3}
-    - {fileID: 6350685989830833738, guid: 3b1ece98939619344ae8a5c5c1eeace4, type: 3}
-    - {fileID: 6350685989830833738, guid: 3b1ece98939619344ae8a5c5c1eeace4, type: 3}
+    - {fileID: 212063280442590322, guid: c1b810b635199c0488b0bf98d3899744, type: 3}
+    - {fileID: 3194565259581899682, guid: 446b3bc94bf226245a696a6c9494a0c6, type: 3}
     timeToNextEnnemy: 0.5
     timeToNextWave: 0
-    ennemiesLeft: 0
+    enemiesLeft: 0
   currentWaveIndex: 0
 --- !u!4 &877497971
 Transform:
@@ -2699,6 +2685,7 @@ MonoBehaviour:
   prefab_mechas: []
   ID_mechas_Spawn: 0
   cmp_mechas_spawn: 0
+  game_manager: {fileID: 0}
 --- !u!4 &889430691
 Transform:
   m_ObjectHideFlags: 0
@@ -3713,6 +3700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gold: 0
+  Gold_Ui: {fileID: 0}
 --- !u!4 &1269283185
 Transform:
   m_ObjectHideFlags: 0

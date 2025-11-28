@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-public class Ground_Basic : Ground_Enemy
+public class Ground_Tank : Ground_Enemy
 {
     private NavMeshAgent agent;
 
     [Header("Target")]
-    //public Transform target;
+   //public Transform target;
 
     [Header("Stats")]
     [SerializeField] private float speed = 5f;

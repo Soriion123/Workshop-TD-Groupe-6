@@ -25,7 +25,7 @@ public class Flying_Spawner : MonoBehaviour
 
         for (int i = 0; i < waves.Length; i++)
         {
-            waves[i].ennemiesLeft = waves[i].ennemySmalls.Length;
+            waves[i].enemiesLeft = waves[i].enemies.Length;
         }
     }
 
@@ -48,7 +48,7 @@ public class Flying_Spawner : MonoBehaviour
         {
             Wave wave = waves[currentWaveIndex];
 
-            for (int i = 0; i < wave.ennemySmalls.Length; i++)
+            for (int i = 0; i < wave.enemies.Length; i++)
             {
                 // ----- RANDOM OFFSET LOCAL -----
                 Vector3 localOffset = new Vector3(
@@ -63,15 +63,8 @@ public class Flying_Spawner : MonoBehaviour
                 // ----- POSITION FINALE -----
                 Vector3 spawnPosition = SpawnPoint.transform.position + worldOffset;
 
-                // ----- INSTANTIATION -----
-                Flying_Basics Flying_Basic = Instantiate(
-                    wave.ennemySmalls[i],
-                    spawnPosition,
-                    Quaternion.identity
-                );
-
-                // ----- ASSIGNATION DE LA CIBLE -----
-                Flying_Basic.target = target;
+                Flying_Enemy enemy = Instantiate(wave.enemies[i], spawnPosition, Quaternion.identity);
+                enemy.target = target; // assignation de la cible peu importe le type
 
                 yield return new WaitForSeconds(wave.timeToNextEnnemy);
             }
@@ -117,9 +110,9 @@ public class Flying_Spawner : MonoBehaviour
 [System.Serializable]
 public class Wave
 {
-    public Flying_Basics[] ennemySmalls;
+    public Flying_Enemy[] enemies;   // <-- le spawner lit maintenant TOUS les types
     public float timeToNextEnnemy;
     public float timeToNextWave;
 
-    [HideInInspector] public int ennemiesLeft;
+    [HideInInspector] public int enemiesLeft;
 }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Flying_Basics: MonoBehaviour
+public class Flying_Basic: Flying_Enemy
 {
 
 
@@ -14,7 +14,7 @@ public class Flying_Basics: MonoBehaviour
     public float NexusDamage = 5f; // dégâts infligés à l'objectif
 
     [Header("Target")]
-    public Transform target;
+    //public Transform target;
 
     private float currentHealth;
 

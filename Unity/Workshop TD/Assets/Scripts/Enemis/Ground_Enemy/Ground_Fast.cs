@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-public class Ground_Basic : Ground_Enemy
+public class Ground_Fast : Ground_Enemy
 {
     private NavMeshAgent agent;
 
@@ -85,3 +85,4 @@ public class Ground_Basic : Ground_Enemy
         GameManager.instance.AddGold(goldReward);
     }
 }
+
