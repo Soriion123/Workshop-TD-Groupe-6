@@ -11,6 +11,8 @@ public class Flying_Basics: MonoBehaviour
     [SerializeField] private float avoidanceStrength = 2f;
     [SerializeField] private int goldReward = 1;   // 💰 or gagné à la mort
 
+    public float NexusDamage = 5f; // dégâts infligés à l'objectif
+
     [Header("Target")]
     public Transform target;
 
@@ -48,7 +50,32 @@ public class Flying_Basics: MonoBehaviour
 
     private void ReachTarget()
     {
+        // On récupère le script BuildingHealth sur la cible
+        Nexus building = target.GetComponent<Nexus>();
+
+        if (building != null)
+        {
+            building.TakeDamage(NexusDamage);
+        }
+
+        // ❗ Pas de gold ici
         Destroy(gameObject);
+        return;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Nexus"))
+        {
+            Nexus building = other.GetComponent<Nexus>();
+
+            if (building != null)
+            {
+                building.TakeDamage(NexusDamage);
+            }
+
+            Destroy(gameObject); // L'ennemi disparaît après impact
+        }
     }
 
     public void TakeDamage(float amount)

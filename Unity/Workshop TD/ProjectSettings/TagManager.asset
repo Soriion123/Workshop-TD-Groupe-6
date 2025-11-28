@@ -11,6 +11,7 @@ TagManager:
   - Boite 1
   - Boite 2
   - Boite 3
+  - Nexus
   layers:
   - Default
   - TransparentFX
