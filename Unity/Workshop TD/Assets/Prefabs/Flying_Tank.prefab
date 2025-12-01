@@ -154,7 +154,7 @@ MonoBehaviour:
   target: {fileID: 5897640639478872787, guid: d3012d787ed3ab040bfa8ca691ed2d88, type: 3}
   speed: 3
   maxHealth: 20
-  obstacleDetectionDistance: 2
-  avoidanceStrength: 2
+  obstacleDetectionDistance: 50
+  avoidanceStrength: 30
   goldReward: 1
   NexusDamage: 5

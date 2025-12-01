@@ -23,6 +23,8 @@ public class Nexus : MonoBehaviour
         if (currenthealth <= 0)
         {
             Die();
+            Destroy(gameObject);
+            return;
         }
     }
 

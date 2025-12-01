@@ -12,6 +12,7 @@ TagManager:
   - Boite 2
   - Boite 3
   - Nexus
+  - Entity
   layers:
   - Default
   - TransparentFX
