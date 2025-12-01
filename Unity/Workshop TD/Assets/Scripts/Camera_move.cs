@@ -21,47 +21,47 @@ public class Camera_move : MonoBehaviour
         // Gauche
         if (Input.GetKey(KeyCode.A))
         {
-            tr_camera_Pivot.Rotate(0, speed_cam , 0,Space.World);
+            tr_camera_Pivot.Rotate(0, speed_cam * Time.deltaTime , 0,Space.World);
         }
 
         // Droit
         if (Input.GetKey(KeyCode.D))
         {
-            tr_camera_Pivot.Rotate(0, -speed_cam, 0,Space.World);   
+            tr_camera_Pivot.Rotate(0, -speed_cam * Time.deltaTime, 0,Space.World);   
         }
 
         // Haut
         if (Input.GetKey(KeyCode.W))
         {
-            tr_camera_Pivot.Rotate(speed_cam, 0, 0, Space.Self);
+            tr_camera_Pivot.Rotate(speed_cam * Time.deltaTime, 0, 0, Space.Self);
         }
 
         // Bas
         if (Input.GetKey(KeyCode.S))
         {
-            tr_camera_Pivot.Rotate(-speed_cam, 0, 0, Space.Self);
+            tr_camera_Pivot.Rotate(-speed_cam * Time.deltaTime, 0, 0, Space.Self);
         }
 
         // Cam recule
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
-            tr_camera_Position.position += tr_camera_Position.forward * -speed_cam;
+            tr_camera_Position.position += tr_camera_Position.forward * -speed_cam * 10 * Time.deltaTime;
         }
 
         // Cam avance
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
-            tr_camera_Position.position += tr_camera_Position.forward * speed_cam;
+            tr_camera_Position.position += tr_camera_Position.forward * speed_cam * 10 * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.Z))
         {
-            tr_camera_Pivot.Translate(0, speed_cam,0,Space.World);
+            tr_camera_Pivot.Translate(0, speed_cam * Time.deltaTime, 0,Space.World);
         }
 
         if (Input.GetKey(KeyCode.C))
         {
-            tr_camera_Pivot.Translate(0, -speed_cam, 0, Space.World);
+            tr_camera_Pivot.Translate(0, -speed_cam * Time.deltaTime, 0, Space.World);
         }
     }
 }

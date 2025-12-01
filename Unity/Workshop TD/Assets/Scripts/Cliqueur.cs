@@ -69,7 +69,9 @@ public class Cliqueur : MonoBehaviour
 
                     game_manager.gold = game_manager.gold - prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix;
 
-                    GameObject Mechas_Instantiate = Instantiate(prefab_mechas[ID_mechas_Spawn], cursor.transform.position, Quaternion.identity);
+                    
+
+                    GameObject Mechas_Instantiate = Instantiate(prefab_mechas[ID_mechas_Spawn], new Vector3(cursor.transform.position.x, cursor.transform.position.y + 1, cursor.transform.position.z), Quaternion.identity);
 
                     New_Target.Add(Mechas_Instantiate.gameObject.GetComponent<Mechas_Move_Test>().target = new GameObject("Target"));
 
