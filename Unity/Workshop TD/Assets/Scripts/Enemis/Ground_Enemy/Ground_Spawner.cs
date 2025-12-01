@@ -24,7 +24,7 @@ public class Ground_Spawner : MonoBehaviour
     {
         if (waves == null || waves.Length == 0)
         {
-            Debug.LogError("Aucune vague définie dans l'inspector !");
+            //Debug.LogError("Aucune vague définie dans l'inspector !");
             enabled = false;
             return;
         }

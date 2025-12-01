@@ -1,4 +1,4 @@
-using UnityEngine;
+    using UnityEngine;
 
 public class Info_Mecha : MonoBehaviour
 {
@@ -8,15 +8,12 @@ public class Info_Mecha : MonoBehaviour
 
     public int prix;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [Header("Dernier upgrade ramassé (debug)")]
+    public string lastUpgradeCollected = "Aucun";
 
-    // Update is called once per frame
-    void Update()
+    public void PickupUpgrade(string upgradeName)
     {
-        
+        lastUpgradeCollected = upgradeName;
+        Debug.Log("Le mecha a ramassé : " + lastUpgradeCollected);
     }
 }

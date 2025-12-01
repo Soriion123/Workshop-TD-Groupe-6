@@ -1,27 +1,67 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Spawn_Upgrade : MonoBehaviour
 {
-    public GameObject prefab;          // L'objet à faire apparaître
-    public Transform[] spawnPoints;    // Les positions prédéfinies
-    public float spawnInterval = 2f;   // Intervalle entre les apparitions
+    [Header("Liste de prefabs upgrades possibles")]
+    public GameObject[] upgradePrefabs;
+
+    [Header("Points de spawn prédéfinis")]
+    public Transform[] spawnPoints;
+
+    [Header("Timing")]
+    public float spawnInterval = 2f;
+
+    private List<int> freePoints = new List<int>();
 
     private void Start()
     {
-        InvokeRepeating(nameof(SpawnObject), 0f, spawnInterval);
+        // Initialiser les points libres
+        for (int i = 0; i < spawnPoints.Length; i++)
+            freePoints.Add(i);
+
+        InvokeRepeating(nameof(SpawnUpgrade), 0f, spawnInterval);
     }
 
-    void SpawnObject()
+    void SpawnUpgrade()
     {
-        if (spawnPoints.Length == 0)
+        if (freePoints.Count == 0)
         {
-            Debug.LogWarning("Aucun point de spawn défini !");
+            Debug.Log("Tous les points sont occupés !");
             return;
         }
 
-        // Choisir un point aléatoire
-        Transform chosenPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        if (upgradePrefabs.Length == 0)
+        {
+            Debug.LogWarning("Aucun prefab d’upgrade défini !");
+            return;
+        }
 
-        Instantiate(prefab, chosenPoint.position, chosenPoint.rotation);
+        // Choisir un point libre
+        int index = freePoints[Random.Range(0, freePoints.Count)];
+        Transform chosenPoint = spawnPoints[index];
+
+        // Choisir un upgrade aléatoire
+        GameObject chosenUpgrade = upgradePrefabs[Random.Range(0, upgradePrefabs.Length)];
+
+        // Instancier l’upgrade
+        GameObject spawned = Instantiate(chosenUpgrade, chosenPoint.position, chosenPoint.rotation);
+
+        // Marquer le point comme occupé
+        freePoints.Remove(index);
+
+        // Donner les infos au Collectible
+        Collectible cp = spawned.GetComponent<Collectible>();
+        if (cp == null)
+            cp = spawned.AddComponent<Collectible>();
+
+        cp.spawner = this;
+        cp.pointIndex = index;
+    }
+
+    public void FreePoint(int index)
+    {
+        if (!freePoints.Contains(index))
+            freePoints.Add(index);
     }
 }
