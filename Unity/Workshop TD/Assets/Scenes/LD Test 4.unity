@@ -14988,8 +14988,8 @@ MonoBehaviour:
   test_memori: {fileID: 1093424144}
   prefab_mechas:
   - {fileID: 5062116806956296331, guid: bc684c360f802264ba41623415d14a96, type: 3}
-  - {fileID: 2498660506581491870, guid: 5a6081104975b844796c0647a7b7293b, type: 3}
-  - {fileID: 5214062079436855361, guid: 32d1e085a7851a3488e67940040104c2, type: 3}
+  - {fileID: 5062116806956296331, guid: 0d331bac2d6f19f4ea555dd4825011bb, type: 3}
+  - {fileID: 5062116806956296331, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
   ID_mechas_Spawn: 0
   cmp_mechas_spawn: 0
   game_manager: {fileID: 1437382625}
@@ -16856,7 +16856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43caad60f5da22d478dde4615366216e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 899438148130001617, guid: 9faf2f94d5b429d488800b6f14139ce5, type: 3}
+  upgradePrefabs: []
   spawnPoints:
   - {fileID: 1119357853}
   - {fileID: 353023129}
@@ -25502,6 +25502,7 @@ MonoBehaviour:
   mechas_selec: 0
   id: -1
   prix: 0
+  lastUpgradeCollected: Aucun
 --- !u!1 &1119357852
 GameObject:
   m_ObjectHideFlags: 0
