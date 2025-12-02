@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class Spawn_Upgrade : MonoBehaviour
+public class Spawn_ability : MonoBehaviour
 {
     [Header("Liste de prefabs upgrades possibles")]
     public GameObject[] upgradePrefabs;
@@ -51,9 +51,13 @@ public class Spawn_Upgrade : MonoBehaviour
         freePoints.Remove(index);
 
         // Donner les infos au Collectible
-        Collectible cp = spawned.GetComponent<Collectible>();
+        A_Gold cp = spawned.GetComponent<A_Gold>();
         if (cp == null)
-            cp = spawned.AddComponent<Collectible>();
+            cp = spawned.AddComponent<A_Gold>();
+
+        /*A_Slow cp = spawned.GetComponent<A_Slow>();
+        if (cp == null)
+            cp = spawned.AddComponent<A_Slow>();*/
 
         cp.spawner = this;
         cp.pointIndex = index;
