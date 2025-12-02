@@ -28,7 +28,11 @@ public class Cliqueur : MonoBehaviour
     public int Limit_mechas = 5;
 
     public GameObject Debug_Mechas_Selec;
-    private int test_aaa;
+
+    public bool Mechas_drag = false;
+
+    //private int test_aaa;
+    //public List<int> ID_in_scene_test = new List<int>();
 
     // Game Manageur
     public GameManager game_manager;
@@ -57,6 +61,7 @@ public class Cliqueur : MonoBehaviour
                 {
                     hit.collider.gameObject.GetComponent<Info_Mecha>().mechas_selec = true;
                     ref_id_selec = hit.collider.gameObject.GetComponent<Info_Mecha>().id;
+
                     test_memori = hit.collider.gameObject;
                 }
                 
@@ -64,7 +69,8 @@ public class Cliqueur : MonoBehaviour
                 {
                     game_manager.gold = game_manager.gold + prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix / 2;
 
-                   
+                    //ID_in_scene_test[ref_id_selec] = 100;
+
                     GameObject.Destroy(New_Target[ref_id_selec]);
                     
                     New_Target[ref_id_selec] = Debug_Mechas_Selec;
@@ -86,12 +92,11 @@ public class Cliqueur : MonoBehaviour
                     mechas_selec = false;
                 }
 
-                if (Input.GetMouseButtonDown(1) & cmp_mechas_spawn < Limit_mechas & game_manager.gold >= prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix)
+                if (Input.GetMouseButtonUp(1) & cmp_mechas_spawn < Limit_mechas & game_manager.gold >= prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix & Mechas_drag)
                 {
-
+                    Mechas_drag = false;
                     game_manager.gold = game_manager.gold - prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix;
 
-                    
 
                     GameObject Mechas_Instantiate = Instantiate(prefab_mechas[ID_mechas_Spawn], new Vector3(cursor.transform.position.x, cursor.transform.position.y + 1, cursor.transform.position.z), Quaternion.identity);
 
@@ -103,27 +108,47 @@ public class Cliqueur : MonoBehaviour
 
                     cmp_mechas_spawn++;
 
+                    /*
+                    if (ID_in_scene_test.Count == 5)
+                    {
+                        for (int i = 0; i < ID_in_scene_test.Count; i++)
+                        {
+                            if (ID_in_scene_test[i] == 100)
+                            {
+                                ID_in_scene_test[i] = cmp_mechas_spawn;
+                                return;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        ID_in_scene_test.Add(cmp_mechas_spawn);
+                    }
+                    */
+
                 }
 
             }
 
-            if (hit.collider.name == "Boite 0")
+            if (hit.collider.tag == "Boite 1")
             {
-                if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 0; }
-                
-            }
-            if (hit.collider.name == "Boite 1")
-            {
-                if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 1; }
+                if (Input.GetMouseButtonDown(1)) { ID_mechas_Spawn = 0; Mechas_drag = true; }
+                if (Input.GetMouseButtonUp(1)) { Mechas_drag = false; }
 
             }
-            if (hit.collider.name == "Boite 2")
+            if (hit.collider.tag == "Boite 2")
             {
-                if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 2; }
+                if (Input.GetMouseButtonDown(1)) { ID_mechas_Spawn = 1; Mechas_drag = true; }
+                if (Input.GetMouseButtonUp(1)) { Mechas_drag = false; }
+            }
+            if (hit.collider.tag == "Boite 3")
+            {
+                if (Input.GetMouseButtonDown(1)) { ID_mechas_Spawn = 2; Mechas_drag = true; }
+                if (Input.GetMouseButtonUp(1)) { Mechas_drag = false; }
             }
 
-
-
+            
+            /*
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 recherche_ID_en_vie(0);
@@ -144,24 +169,14 @@ public class Cliqueur : MonoBehaviour
             {
                 recherche_ID_en_vie(4);
             }
+            */
 
         }
     }
-
+    /*
     public void recherche_ID_en_vie(int touche)
     {
-        test_aaa = 0;
-        for (int i = 0; i < New_Target.Count; i++)
-        {
-            if (New_Target[i] != Debug_Mechas_Selec)
-            {
-                if (test_aaa == touche)
-                {
-                    ref_id_selec = i;
-                    return;
-                }
-                test_aaa++;
-            }
-        }
+        ref_id_selec = ID_in_scene_test[touche];
     }
+    */
 }

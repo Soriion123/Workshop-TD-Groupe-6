@@ -54,12 +54,12 @@ public class Camera_move : MonoBehaviour
             tr_camera_Position.position += tr_camera_Position.forward * speed_cam * 10 * Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.Z))
+        if (Input.GetKey(KeyCode.Q))
         {
             tr_camera_Pivot.Translate(0, speed_cam * Time.deltaTime, 0,Space.World);
         }
 
-        if (Input.GetKey(KeyCode.C))
+        if (Input.GetKey(KeyCode.E))
         {
             tr_camera_Pivot.Translate(0, -speed_cam * Time.deltaTime, 0, Space.World);
         }
