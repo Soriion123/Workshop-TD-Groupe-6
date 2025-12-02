@@ -14992,6 +14992,8 @@ MonoBehaviour:
   - {fileID: 5062116806956296331, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
   ID_mechas_Spawn: 0
   cmp_mechas_spawn: 0
+  Limit_mechas: 5
+  Debug_Mechas_Selec: {fileID: 1093424144}
   game_manager: {fileID: 1437382625}
 --- !u!4 &488323234
 Transform:
@@ -23616,7 +23618,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &984687420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30809,7 +30811,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1404189117
 MonoBehaviour:
   m_ObjectHideFlags: 0

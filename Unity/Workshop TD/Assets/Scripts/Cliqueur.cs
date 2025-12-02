@@ -25,6 +25,11 @@ public class Cliqueur : MonoBehaviour
 
     public int cmp_mechas_spawn = 0;
 
+    public int Limit_mechas = 5;
+
+    public GameObject Debug_Mechas_Selec;
+    private int test_aaa;
+
     // Game Manageur
     public GameManager game_manager;
 
@@ -54,6 +59,23 @@ public class Cliqueur : MonoBehaviour
                     ref_id_selec = hit.collider.gameObject.GetComponent<Info_Mecha>().id;
                     test_memori = hit.collider.gameObject;
                 }
+                
+                if (Input.GetMouseButtonDown(2) & hit.collider.gameObject.GetComponent<Info_Mecha>().mechas_selec)
+                {
+                    game_manager.gold = game_manager.gold + prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix / 2;
+
+                   
+                    GameObject.Destroy(New_Target[ref_id_selec]);
+                    
+                    New_Target[ref_id_selec] = Debug_Mechas_Selec;
+                    test_memori = Debug_Mechas_Selec;
+                    Limit_mechas++;
+                    
+                    GameObject.Destroy(hit.collider.gameObject);
+                    return;
+                    
+                }
+                
             }
 
             if (hit.collider.gameObject.tag == "Sol")
@@ -64,7 +86,7 @@ public class Cliqueur : MonoBehaviour
                     mechas_selec = false;
                 }
 
-                if (Input.GetMouseButtonDown(1) & cmp_mechas_spawn < 5 & game_manager.gold >= prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix)
+                if (Input.GetMouseButtonDown(1) & cmp_mechas_spawn < Limit_mechas & game_manager.gold >= prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix)
                 {
 
                     game_manager.gold = game_manager.gold - prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix;
@@ -98,6 +120,47 @@ public class Cliqueur : MonoBehaviour
             if (hit.collider.name == "Boite 2")
             {
                 if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 2; }
+            }
+
+
+
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                recherche_ID_en_vie(0);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                recherche_ID_en_vie(1);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                recherche_ID_en_vie(2);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                recherche_ID_en_vie(3);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                recherche_ID_en_vie(4);
+            }
+
+        }
+    }
+
+    public void recherche_ID_en_vie(int touche)
+    {
+        test_aaa = 0;
+        for (int i = 0; i < New_Target.Count; i++)
+        {
+            if (New_Target[i] != Debug_Mechas_Selec)
+            {
+                if (test_aaa == touche)
+                {
+                    ref_id_selec = i;
+                    return;
+                }
+                test_aaa++;
             }
         }
     }
