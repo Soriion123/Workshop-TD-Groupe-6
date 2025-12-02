@@ -34597,7 +34597,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tr_camera_Pivot: {fileID: 1623900782}
   tr_camera_Position: {fileID: 1593607526}
-  speed_cam: 200
+  speed_cam_Mousse: 200
+  speed_cam_ZQSD: 75
+  speed_cam_MOLETTE: 50
 --- !u!4 &1623900782
 Transform:
   m_ObjectHideFlags: 0

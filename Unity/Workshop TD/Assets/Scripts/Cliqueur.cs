@@ -37,6 +37,8 @@ public class Cliqueur : MonoBehaviour
     // Game Manageur
     public GameManager game_manager;
 
+    public GameObject[] List_de_mechaas;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -57,14 +59,26 @@ public class Cliqueur : MonoBehaviour
 
             if (hit.collider.gameObject.tag == "Mechas")
             {
+                // Selection de ID du mechas
                 if (Input.GetMouseButtonDown(0))
                 {
+                    List_de_mechaas = GameObject.FindGameObjectsWithTag("Mechas");
+
+                    print(List_de_mechaas);
+
+                    for(int i = 0; i < List_de_mechaas.Length; i++)
+                    {
+                        List_de_mechaas[i].GetComponent<Info_Mecha>().mechas_selec = false;
+                    }
+
                     hit.collider.gameObject.GetComponent<Info_Mecha>().mechas_selec = true;
+
                     ref_id_selec = hit.collider.gameObject.GetComponent<Info_Mecha>().id;
 
                     test_memori = hit.collider.gameObject;
                 }
                 
+                // Vente du mechas
                 if (Input.GetMouseButtonDown(2) & hit.collider.gameObject.GetComponent<Info_Mecha>().mechas_selec)
                 {
                     game_manager.gold = game_manager.gold + prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix / 2;
@@ -79,19 +93,21 @@ public class Cliqueur : MonoBehaviour
                     
                     GameObject.Destroy(hit.collider.gameObject);
                     return;
-                    
                 }
                 
             }
 
             if (hit.collider.gameObject.tag == "Sol")
             {
+                
+                // Selection New Target Mechas 
                 if (Input.GetMouseButtonDown(0) & test_memori.GetComponent<Info_Mecha>().mechas_selec)
                 {
                     New_Target[ref_id_selec].transform.position = cursor.position;
                     mechas_selec = false;
                 }
 
+                // Creation Mechas "Drop" 
                 if (Input.GetMouseButtonUp(0) & cmp_mechas_spawn < Limit_mechas & game_manager.gold >= prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix & Mechas_drag)
                 {
                     Mechas_drag = false;
@@ -132,6 +148,8 @@ public class Cliqueur : MonoBehaviour
 
             if (Input.GetMouseButtonUp(0)) { Mechas_drag = false; }
 
+
+            // Selection Mechas "Drage" 
             if (hit.collider.tag == "Boite 1")
             {
                 if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 0; Mechas_drag = true; }
@@ -144,6 +162,8 @@ public class Cliqueur : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 2; Mechas_drag = true; }
             }
+
+
 
             
             /*

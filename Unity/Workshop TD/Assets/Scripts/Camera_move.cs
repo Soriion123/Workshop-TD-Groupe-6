@@ -52,8 +52,6 @@ public class Camera_move : MonoBehaviour
             tr_camera_Pivot.Rotate(0, Input.GetAxis("Mouse X") * Time.deltaTime * speed_cam_Mousse, 0, Space.World);
 
             tr_camera_Pivot.Rotate(-Input.GetAxis("Mouse Y") * Time.deltaTime * speed_cam_Mousse, 0, 0, Space.Self);
-            
-            print(Input.GetAxis("Mouse X"));
         }
 
 
