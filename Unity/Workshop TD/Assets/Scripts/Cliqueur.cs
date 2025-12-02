@@ -92,7 +92,7 @@ public class Cliqueur : MonoBehaviour
                     mechas_selec = false;
                 }
 
-                if (Input.GetMouseButtonUp(1) & cmp_mechas_spawn < Limit_mechas & game_manager.gold >= prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix & Mechas_drag)
+                if (Input.GetMouseButtonUp(0) & cmp_mechas_spawn < Limit_mechas & game_manager.gold >= prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix & Mechas_drag)
                 {
                     Mechas_drag = false;
                     game_manager.gold = game_manager.gold - prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix;
@@ -130,21 +130,19 @@ public class Cliqueur : MonoBehaviour
 
             }
 
+            if (Input.GetMouseButtonUp(0)) { Mechas_drag = false; }
+
             if (hit.collider.tag == "Boite 1")
             {
-                if (Input.GetMouseButtonDown(1)) { ID_mechas_Spawn = 0; Mechas_drag = true; }
-                if (Input.GetMouseButtonUp(1)) { Mechas_drag = false; }
-
+                if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 0; Mechas_drag = true; }
             }
             if (hit.collider.tag == "Boite 2")
             {
-                if (Input.GetMouseButtonDown(1)) { ID_mechas_Spawn = 1; Mechas_drag = true; }
-                if (Input.GetMouseButtonUp(1)) { Mechas_drag = false; }
+                if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 1; Mechas_drag = true; }
             }
             if (hit.collider.tag == "Boite 3")
             {
-                if (Input.GetMouseButtonDown(1)) { ID_mechas_Spawn = 2; Mechas_drag = true; }
-                if (Input.GetMouseButtonUp(1)) { Mechas_drag = false; }
+                if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 2; Mechas_drag = true; }
             }
 
             
