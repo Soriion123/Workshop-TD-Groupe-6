@@ -6,6 +6,7 @@ public class Info_Mecha : MonoBehaviour
     [SerializeField] public bool mechas_selec;
     [SerializeField] public int id;
 
+    public int id_ui;
 
     public GameObject icone_selec;
 

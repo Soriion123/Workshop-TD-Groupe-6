@@ -41,6 +41,8 @@ public class Cliqueur : MonoBehaviour
 
     public GameObject[] List_de_mechaas;
 
+    public List<GameObject> UI_mechas_scene = new List<GameObject>();
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -88,6 +90,9 @@ public class Cliqueur : MonoBehaviour
                     {
                         game_manager.gold = game_manager.gold + prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix / 2;
 
+
+                        UI_mechas_scene[hit.collider.gameObject.GetComponent<Info_Mecha>().id_ui] = null;
+
                         //ID_in_scene_test[ref_id_selec] = 100;
 
                         GameObject.Destroy(New_Target[ref_id_selec]);
@@ -100,7 +105,6 @@ public class Cliqueur : MonoBehaviour
                         return;
                     }
 
-                    
                 }
                 
             }
@@ -133,23 +137,28 @@ public class Cliqueur : MonoBehaviour
 
                     cmp_mechas_spawn++;
 
-                    /*
-                    if (ID_in_scene_test.Count == 5)
+                    
+                    if (UI_mechas_scene.Count == 5)
                     {
-                        for (int i = 0; i < ID_in_scene_test.Count; i++)
+                        for (int i = 0; i < UI_mechas_scene.Count; i++)
                         {
-                            if (ID_in_scene_test[i] == 100)
+                            if (UI_mechas_scene[i] == null)
                             {
-                                ID_in_scene_test[i] = cmp_mechas_spawn;
+                                UI_mechas_scene[i] = Mechas_Instantiate;
+
+                                Mechas_Instantiate.gameObject.GetComponent<Info_Mecha>().id_ui = i;
+                                
                                 return;
                             }
                         }
                     }
                     else
                     {
-                        ID_in_scene_test.Add(cmp_mechas_spawn);
+                        UI_mechas_scene.Add(Mechas_Instantiate);
+
+                        Mechas_Instantiate.gameObject.GetComponent<Info_Mecha>().id_ui = cmp_mechas_spawn - 1;
                     }
-                    */
+                    
 
                 }
 
