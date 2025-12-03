@@ -21226,7 +21226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdown: 2
   SpawnPointGround: {fileID: 560423122}
-  target: {fileID: 0}
+  target: {fileID: 5897640639478872787, guid: d3012d787ed3ab040bfa8ca691ed2d88, type: 3}
   spawnAreaSize: {x: 6, y: 3}
   waves: []
   currentWaveIndex: 0
@@ -25712,7 +25712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdown: 2
   SpawnPointGround: {fileID: 741350691}
-  target: {fileID: 0}
+  target: {fileID: 5897640639478872787, guid: d3012d787ed3ab040bfa8ca691ed2d88, type: 3}
   spawnAreaSize: {x: 6, y: 3}
   waves: []
   currentWaveIndex: 0
@@ -26519,7 +26519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdown: 0
   SpawnPoint: {fileID: 784103599}
-  target: {fileID: 0}
+  target: {fileID: 5897640639478872787, guid: d3012d787ed3ab040bfa8ca691ed2d88, type: 3}
   spawnAreaSize: {x: 6, y: 10}
   waves: []
   currentWaveIndex: 0
@@ -28706,7 +28706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdown: 2
   SpawnPointGround: {fileID: 885521498}
-  target: {fileID: 0}
+  target: {fileID: 5897640639478872787, guid: d3012d787ed3ab040bfa8ca691ed2d88, type: 3}
   spawnAreaSize: {x: 6, y: 3}
   waves:
   - enemies:
@@ -46276,7 +46276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdown: 2
   SpawnPoint: {fileID: 1585189825}
-  target: {fileID: 0}
+  target: {fileID: 5897640639478872787, guid: d3012d787ed3ab040bfa8ca691ed2d88, type: 3}
   spawnAreaSize: {x: 6, y: 10}
   waves: []
   currentWaveIndex: 0
@@ -50320,7 +50320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdown: 2
   SpawnPointGround: {fileID: 1766879275}
-  target: {fileID: 0}
+  target: {fileID: 5897640639478872787, guid: d3012d787ed3ab040bfa8ca691ed2d88, type: 3}
   spawnAreaSize: {x: 6, y: 3}
   waves:
   - enemies:
