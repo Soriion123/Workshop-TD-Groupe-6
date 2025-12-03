@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI_Manageur : MonoBehaviour
 {
@@ -31,7 +32,25 @@ public class UI_Manageur : MonoBehaviour
             else
             {
                 Icone_Mechas[i].gameObject.SetActive(true);
+
+
+                if (cliqueur.UI_mechas_scene[i].name == "Mechas_Air(Clone)")
+                {
+                    Icone_Mechas[i].GetComponent<Image>().color = Color.blue;
+                }
+                if (cliqueur.UI_mechas_scene[i].name == "Mechas_All(Clone)")
+                {
+                    Icone_Mechas[i].GetComponent<Image>().color = Color.magenta;
+                }
+                if (cliqueur.UI_mechas_scene[i].name == "Mechas_Ground(Clone)")
+                {
+                    Icone_Mechas[i].GetComponent<Image>().color = Color.green;
+                }
+
             }
+
+            
+
         }
     }
 }
