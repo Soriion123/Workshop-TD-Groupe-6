@@ -21226,7 +21226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdown: 2
   SpawnPointGround: {fileID: 560423122}
-  target: {fileID: 5897640639478872787, guid: d3012d787ed3ab040bfa8ca691ed2d88, type: 3}
+  target: {fileID: 177787400}
   spawnAreaSize: {x: 6, y: 3}
   waves: []
   currentWaveIndex: 0
@@ -25712,7 +25712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdown: 2
   SpawnPointGround: {fileID: 741350691}
-  target: {fileID: 5897640639478872787, guid: d3012d787ed3ab040bfa8ca691ed2d88, type: 3}
+  target: {fileID: 177787400}
   spawnAreaSize: {x: 6, y: 3}
   waves: []
   currentWaveIndex: 0
@@ -28706,7 +28706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdown: 2
   SpawnPointGround: {fileID: 885521498}
-  target: {fileID: 5897640639478872787, guid: d3012d787ed3ab040bfa8ca691ed2d88, type: 3}
+  target: {fileID: 177787400}
   spawnAreaSize: {x: 6, y: 3}
   waves:
   - enemies:
@@ -34489,6 +34489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mechas_selec: 0
   id: -1
+  id_read_for_ui: 0
   icone_selec: {fileID: 1093424144}
   prix: 0
   lastUpgradeCollected: Aucun
@@ -50320,7 +50321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdown: 2
   SpawnPointGround: {fileID: 1766879275}
-  target: {fileID: 5897640639478872787, guid: d3012d787ed3ab040bfa8ca691ed2d88, type: 3}
+  target: {fileID: 177787400}
   spawnAreaSize: {x: 6, y: 3}
   waves:
   - enemies:
