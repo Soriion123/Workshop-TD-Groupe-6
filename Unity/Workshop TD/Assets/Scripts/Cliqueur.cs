@@ -14,6 +14,8 @@ public class Cliqueur : MonoBehaviour
     public LayerMask Mask;
     public bool mechas_selec;
 
+    public Material[] Material_cursor;
+
     // Mechas
     public List<GameObject> New_Target = new List<GameObject>();
     
@@ -79,20 +81,26 @@ public class Cliqueur : MonoBehaviour
                 }
                 
                 // Vente du mechas
-                if (Input.GetMouseButtonDown(2) & hit.collider.gameObject.GetComponent<Info_Mecha>().mechas_selec)
+                if (Input.GetMouseButton(0) & hit.collider.gameObject.GetComponent<Info_Mecha>().mechas_selec)
                 {
-                    game_manager.gold = game_manager.gold + prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix / 2;
-
-                    //ID_in_scene_test[ref_id_selec] = 100;
-
-                    GameObject.Destroy(New_Target[ref_id_selec]);
                     
-                    New_Target[ref_id_selec] = Debug_Mechas_Selec;
-                    test_memori = Debug_Mechas_Selec;
-                    Limit_mechas++;
+                    if (Input.GetMouseButtonDown(1) & hit.collider.gameObject.GetComponent<Info_Mecha>().mechas_selec)
+                    {
+                        game_manager.gold = game_manager.gold + prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix / 2;
+
+                        //ID_in_scene_test[ref_id_selec] = 100;
+
+                        GameObject.Destroy(New_Target[ref_id_selec]);
+
+                        New_Target[ref_id_selec] = Debug_Mechas_Selec;
+                        test_memori = Debug_Mechas_Selec;
+                        Limit_mechas++;
+
+                        GameObject.Destroy(hit.collider.gameObject);
+                        return;
+                    }
+
                     
-                    GameObject.Destroy(hit.collider.gameObject);
-                    return;
                 }
                 
             }
@@ -113,6 +121,7 @@ public class Cliqueur : MonoBehaviour
                     Mechas_drag = false;
                     game_manager.gold = game_manager.gold - prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix;
 
+                    cursor.GetComponent<MeshRenderer>().material = Material_cursor[0];
 
                     GameObject Mechas_Instantiate = Instantiate(prefab_mechas[ID_mechas_Spawn], new Vector3(cursor.transform.position.x, cursor.transform.position.y + 1, cursor.transform.position.z), Quaternion.identity);
 
@@ -146,21 +155,21 @@ public class Cliqueur : MonoBehaviour
 
             }
 
-            if (Input.GetMouseButtonUp(0)) { Mechas_drag = false; }
+            if (Input.GetMouseButtonUp(0)) { Mechas_drag = false; cursor.GetComponent<MeshRenderer>().material = Material_cursor[0]; }
 
 
             // Selection Mechas "Drage" 
             if (hit.collider.tag == "Boite 1")
             {
-                if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 0; Mechas_drag = true; }
+                if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 0; Mechas_drag = true; cursor.GetComponent<MeshRenderer>().material = Material_cursor[1]; }
             }
             if (hit.collider.tag == "Boite 2")
             {
-                if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 1; Mechas_drag = true; }
+                if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 1; Mechas_drag = true; cursor.GetComponent<MeshRenderer>().material = Material_cursor[2]; }
             }
             if (hit.collider.tag == "Boite 3")
             {
-                if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 2; Mechas_drag = true; }
+                if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 2; Mechas_drag = true; cursor.GetComponent<MeshRenderer>().material = Material_cursor[3]; }
             }
 
 
