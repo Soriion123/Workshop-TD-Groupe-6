@@ -126,8 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4735b7fc94bb5634389be8f9c0c2d2f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 5897640639478872787, guid: d3012d787ed3ab040bfa8ca691ed2d88, type: 3}
   speed: 10
+  currentspeed: 0
   maxHealth: 10
   goldReward: 1
   NexusDamage: 5

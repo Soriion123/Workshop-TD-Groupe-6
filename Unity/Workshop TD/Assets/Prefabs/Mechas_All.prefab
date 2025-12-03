@@ -405,7 +405,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 4551474938306958513}
   target: {fileID: 0}
-  info_mechas: {fileID: 3159601720176944011}
 --- !u!54 &8049072747307714783
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -462,7 +461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8193b552f74b42a4aa758a6ba5d72fe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 931018905385309481, guid: a3ce9ef2a4590b747be9968e5b08ea6f, type: 3}
+  Bullet: {fileID: 931018905385309481, guid: 6dc44ae41241c4146801557b082293a1, type: 3}
   Canon: {fileID: 706483199632773037}
   Shoot_Point: {fileID: 9141403236154188855}
   range: 15
