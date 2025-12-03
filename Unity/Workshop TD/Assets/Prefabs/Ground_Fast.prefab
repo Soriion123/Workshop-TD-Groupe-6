@@ -127,11 +127,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 5897640639478872787, guid: d3012d787ed3ab040bfa8ca691ed2d88, type: 3}
-  speed: 10
+  speed: 1.9
   currentspeed: 0
-  maxHealth: 10
-  goldReward: 1
-  NexusDamage: 5
+  maxHealth: 19
+  goldReward: 86
+  NexusDamage: 13
 --- !u!195 &-404819485221092150
 NavMeshAgent:
   m_ObjectHideFlags: 0

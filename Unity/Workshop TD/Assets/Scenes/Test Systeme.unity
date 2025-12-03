@@ -50324,16 +50324,13 @@ MonoBehaviour:
   spawnAreaSize: {x: 6, y: 3}
   waves:
   - enemies:
-    - {fileID: 1716429451737509192, guid: baac286e9cf69d44c9ef44a6d9174f5a, type: 3}
-    - {fileID: -5180152810756829731, guid: 4ce58222a13bfc344af7cc9e1071efef, type: 3}
-    - {fileID: -5180152810756829731, guid: 4ce58222a13bfc344af7cc9e1071efef, type: 3}
-    - {fileID: -5180152810756829731, guid: 4ce58222a13bfc344af7cc9e1071efef, type: 3}
-    - {fileID: -5180152810756829731, guid: 4ce58222a13bfc344af7cc9e1071efef, type: 3}
-    - {fileID: -5180152810756829731, guid: 4ce58222a13bfc344af7cc9e1071efef, type: 3}
-    - {fileID: -5180152810756829731, guid: 4ce58222a13bfc344af7cc9e1071efef, type: 3}
-    - {fileID: -5180152810756829731, guid: 4ce58222a13bfc344af7cc9e1071efef, type: 3}
-    - {fileID: -5180152810756829731, guid: 4ce58222a13bfc344af7cc9e1071efef, type: 3}
-    - {fileID: -5180152810756829731, guid: 4ce58222a13bfc344af7cc9e1071efef, type: 3}
+    - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
+    - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
+    - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
+    - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
+    - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
+    - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
+    - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
     timeToNextEnnemy: 0.35
     timeToNextWave: 2
     enemiesLeft: 0

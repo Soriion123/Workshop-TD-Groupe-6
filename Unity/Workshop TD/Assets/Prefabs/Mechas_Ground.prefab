@@ -437,7 +437,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 4551474938306958513}
   target: {fileID: 0}
-  info_mechas: {fileID: 3159601720176944011}
 --- !u!54 &8049072747307714783
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -504,7 +503,7 @@ MonoBehaviour:
   Layer:
     serializedVersion: 2
     m_Bits: 128
-  fireRate: 1
+  fireRate: 1.5
 --- !u!1 &7766685138213827696
 GameObject:
   m_ObjectHideFlags: 0

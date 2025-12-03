@@ -447,7 +447,7 @@ MonoBehaviour:
   mechas_selec: 0
   id: 0
   icone_selec: {fileID: 7919160229957212565}
-  prix: 60
+  prix: 1289
   lastUpgradeCollected: Aucun
 --- !u!114 &-3657592956422609129
 MonoBehaviour:
@@ -464,7 +464,7 @@ MonoBehaviour:
   Bullet: {fileID: 931018905385309481, guid: 6d9f7f8c32f623f4f9a46d1a98c3588d, type: 3}
   Canon: {fileID: 706483199632773037}
   Shoot_Point: {fileID: 9141403236154188855}
-  range: 15
+  range: 19
   PartToRotate: {fileID: 1460314313370277593}
   turnSpeed: 6
   ennemyTag: Enemy
