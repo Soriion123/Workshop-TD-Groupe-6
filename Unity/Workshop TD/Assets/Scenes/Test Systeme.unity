@@ -43261,7 +43261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 923eaf289bbd11b4babfb71a4a28bac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 50000
+  gold: 412
   Gold_Ui: {fileID: 192237395}
 --- !u!4 &1437382626
 Transform:
