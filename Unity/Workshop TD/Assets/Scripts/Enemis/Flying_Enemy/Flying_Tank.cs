@@ -5,7 +5,8 @@ public class Flying_Tank: Flying_Enemy
 
 
     [Header("Stats")]
-    [SerializeField] private float speed = 5f;
+    [SerializeField] public float speed = 5f;
+    [HideInInspector] public float originalSpeed;
     [SerializeField] private float maxHealth = 10f;
     [SerializeField] private float obstacleDetectionDistance = 2f;
     [SerializeField] private float avoidanceStrength = 2f;
@@ -20,11 +21,13 @@ public class Flying_Tank: Flying_Enemy
 
     private void Start()
     {
+        originalSpeed = speed;
         currentHealth = maxHealth;
     }
 
     private void Update()
     {
+        
         if (target == null) return;
 
         // Direction vers la cible

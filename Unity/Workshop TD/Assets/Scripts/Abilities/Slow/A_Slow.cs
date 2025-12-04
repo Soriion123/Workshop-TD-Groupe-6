@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class SlowZone : MonoBehaviour
+public class A_Slow : MonoBehaviour
 {
     [Range(0.1f, 1f)]
     public float slowMultiplier = 0.5f;
@@ -30,6 +30,25 @@ public class SlowZone : MonoBehaviour
         }*/
 
         // ⚠️ Ajoute une ligne par type d’ennemi, si tu en as plusieurs
+
+
+        // On vérifie si c'est un Flying_Enemy
+        Flying_Enemy ennemy = other.GetComponent<Flying_Enemy>();
+        if (enemy == null) return;
+
+        // On vérifie si le script possède une variable speed + originalSpeed
+        if (other.TryGetComponent(out Flying_Fast fastF))
+        {
+            fastF.speed = fastF.originalSpeed * slowMultiplier;
+        }
+        else if (other.TryGetComponent(out Flying_Fast tank))
+        {
+            tank.speed = tank.originalSpeed * slowMultiplier;
+        }
+        else if (other.TryGetComponent(out Flying_Basic basic))
+        {
+            basic.speed = basic.originalSpeed * slowMultiplier;
+        }
     }
 
     private void OnTriggerExit(Collider other)

@@ -55,10 +55,6 @@ public class Spawn_ability : MonoBehaviour
         if (cp == null)
             cp = spawned.AddComponent<A_Gold>();
 
-        /*A_Slow cp = spawned.GetComponent<A_Slow>();
-        if (cp == null)
-            cp = spawned.AddComponent<A_Slow>();*/
-
         cp.spawner = this;
         cp.pointIndex = index;
     }
