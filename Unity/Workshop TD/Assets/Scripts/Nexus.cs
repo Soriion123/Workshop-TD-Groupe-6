@@ -4,7 +4,7 @@ public class Nexus : MonoBehaviour
 {
     [Header("Stats")]
     public float maxHealth = 100f;
-    private float currenthealth;
+    public float currenthealth;
 
     private void Start()
     {

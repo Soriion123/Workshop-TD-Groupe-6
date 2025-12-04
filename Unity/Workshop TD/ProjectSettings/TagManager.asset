@@ -13,6 +13,7 @@ TagManager:
   - Boite 3
   - Nexus
   - Entity
+  - Boite UpGrade
   layers:
   - Default
   - TransparentFX

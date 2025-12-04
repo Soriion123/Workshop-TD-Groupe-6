@@ -2,6 +2,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+using TMPro;
+
 public class UI_Manageur : MonoBehaviour
 {
 
@@ -10,8 +13,19 @@ public class UI_Manageur : MonoBehaviour
     public Nexus Nexus;
     public Cliqueur cliqueur;
 
+    public TextMeshProUGUI Nexus_Life_UI;
 
-    public GameObject[] Icone_Mechas;
+    public GameObject[] Icone_Mechas_Centre;
+    public GameObject[] Icone_Mechas_Outline;
+
+    public TextMeshProUGUI[] Niveau_Mechas_UI;
+
+
+
+
+    public Color[] Color_Mechas;
+
+    public GameObject test;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,34 +37,43 @@ public class UI_Manageur : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Nexus_Life_UI.text = Nexus.currenthealth.ToString();
+
         for (int i = 0; i < cliqueur.UI_mechas_scene.Count; i++)
         {
             if (cliqueur.UI_mechas_scene[i] == null)
             {
-                Icone_Mechas[i].gameObject.SetActive(false);
+                Icone_Mechas_Outline[i].gameObject.SetActive(false);
             }
             else
             {
-                Icone_Mechas[i].gameObject.SetActive(true);
-
+                Icone_Mechas_Outline[i].gameObject.SetActive(true);
 
                 if (cliqueur.UI_mechas_scene[i].name == "Mechas_Air(Clone)")
                 {
-                    Icone_Mechas[i].GetComponent<Image>().color = Color.blue;
+                    Icone_Mechas_Centre[i].GetComponent<Image>().color = Color.cyan ;
                 }
                 if (cliqueur.UI_mechas_scene[i].name == "Mechas_All(Clone)")
                 {
-                    Icone_Mechas[i].GetComponent<Image>().color = Color.magenta;
+                    Icone_Mechas_Centre[i].GetComponent<Image>().color = Color.magenta ;
                 }
                 if (cliqueur.UI_mechas_scene[i].name == "Mechas_Ground(Clone)")
                 {
-                    Icone_Mechas[i].GetComponent<Image>().color = Color.green;
+                    Icone_Mechas_Centre[i].GetComponent<Image>().color = Color.green ;
                 }
 
+                if (cliqueur.UI_mechas_scene[i].GetComponent<Info_Mecha>().mechas_selec == true)
+                {
+                    Icone_Mechas_Outline[i].GetComponent<Image>().color = Color.yellow;
+                }
+                else
+                {
+                    Icone_Mechas_Outline[i].GetComponent<Image>().color = Color.black;
+                }
+
+                Niveau_Mechas_UI[i].text = cliqueur.UI_mechas_scene[i].GetComponent<Info_Mecha>().Niveau_UpGrade.ToString();
+
             }
-
-            
-
         }
     }
 }

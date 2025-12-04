@@ -12,6 +12,8 @@ public class Info_Mecha : MonoBehaviour
 
     public int prix;
 
+    public int Niveau_UpGrade;
+
     [Header("Dernier upgrade ramassé (debug)")]
     public string lastUpgradeCollected = "Aucun";
 

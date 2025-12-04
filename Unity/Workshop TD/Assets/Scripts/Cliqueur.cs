@@ -43,6 +43,11 @@ public class Cliqueur : MonoBehaviour
 
     public List<GameObject> UI_mechas_scene = new List<GameObject>();
 
+
+    // UpGrade
+    public bool Upgrade_drag = false;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -70,12 +75,9 @@ public class Cliqueur : MonoBehaviour
 
                     print(List_de_mechaas);
 
-                    for(int i = 0; i < List_de_mechaas.Length; i++)
-                    {
-                        List_de_mechaas[i].GetComponent<Info_Mecha>().mechas_selec = false;
-                    }
 
-                    hit.collider.gameObject.GetComponent<Info_Mecha>().mechas_selec = true;
+                    New_selection(hit.collider.gameObject);
+
 
                     ref_id_selec = hit.collider.gameObject.GetComponent<Info_Mecha>().id;
 
@@ -106,7 +108,54 @@ public class Cliqueur : MonoBehaviour
                     }
 
                 }
-                
+
+                if (Input.GetMouseButtonUp(0) & Upgrade_drag)
+                {
+
+                    if (hit.collider.gameObject.name == "Mechas_Air(Clone)")
+                    {
+                        game_manager.gold = game_manager.gold - 1934;
+
+                        hit.collider.gameObject.GetComponent<Mechas_Air>().range = hit.collider.gameObject.GetComponent<Mechas_Air>().range * 1.5f ;
+                        hit.collider.gameObject.GetComponent<Mechas_Air>().turnSpeed = hit.collider.gameObject.GetComponent<Mechas_Air>().turnSpeed * 1.5f;
+                        hit.collider.gameObject.GetComponent<Mechas_Air>().fireRate = hit.collider.gameObject.GetComponent<Mechas_Air>().fireRate * 1.5f;
+                        
+                        hit.collider.gameObject.GetComponent<Info_Mecha>().Niveau_UpGrade++;
+
+                    }
+
+                    if (hit.collider.gameObject.name == "Mechas_All(Clone)")
+                    {
+                        game_manager.gold = game_manager.gold - 2021;
+
+                        hit.collider.gameObject.GetComponent<Mechas_All>().range = hit.collider.gameObject.GetComponent<Mechas_All>().range * 1.5f;
+                        hit.collider.gameObject.GetComponent<Mechas_All>().turnSpeed = hit.collider.gameObject.GetComponent<Mechas_All>().turnSpeed * 1.5f;
+                        hit.collider.gameObject.GetComponent<Mechas_All>().fireRate = hit.collider.gameObject.GetComponent<Mechas_All>().fireRate * 1.5f;
+                        
+                        hit.collider.gameObject.GetComponent<Info_Mecha>().Niveau_UpGrade++;
+                    }
+
+                    if (hit.collider.gameObject.name == "Mechas_Ground(Clone)")
+                    {
+                        game_manager.gold = game_manager.gold - 1122;
+
+                        hit.collider.gameObject.GetComponent<Mechas_Ground>().range = hit.collider.gameObject.GetComponent<Mechas_Ground>().range * 1.5f;
+                        hit.collider.gameObject.GetComponent<Mechas_Ground>().turnSpeed = hit.collider.gameObject.GetComponent<Mechas_Ground>().turnSpeed * 1.5f;
+                        hit.collider.gameObject.GetComponent<Mechas_Ground>().fireRate = hit.collider.gameObject.GetComponent<Mechas_Ground>().fireRate * 1.5f;
+
+                        hit.collider.gameObject.GetComponent<Info_Mecha>().Niveau_UpGrade++;
+                    }
+
+                    // Sol Aire * 1.5
+                    // All * 1.4
+
+                    // Sol prix 1122
+                    // Aire prix 1934
+                    // All prix 2021
+
+                }
+
+
             }
 
             if (hit.collider.gameObject.tag == "Sol")
@@ -164,7 +213,7 @@ public class Cliqueur : MonoBehaviour
 
             }
 
-            if (Input.GetMouseButtonUp(0)) { Mechas_drag = false; cursor.GetComponent<MeshRenderer>().material = Material_cursor[0]; }
+            if (Input.GetMouseButtonUp(0)) { Mechas_drag = false; Upgrade_drag = false; cursor.GetComponent<MeshRenderer>().material = Material_cursor[0]; }
 
 
             // Selection Mechas "Drage" 
@@ -180,10 +229,13 @@ public class Cliqueur : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 2; Mechas_drag = true; cursor.GetComponent<MeshRenderer>().material = Material_cursor[3]; }
             }
+            if (hit.collider.tag == "Boite UpGrade")
+            {
+                if (Input.GetMouseButtonDown(0)) { Upgrade_drag = true; }
+            }
 
 
 
-            
             /*
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
@@ -215,4 +267,13 @@ public class Cliqueur : MonoBehaviour
         ref_id_selec = ID_in_scene_test[touche];
     }
     */
+    public void New_selection(GameObject New_selec)
+    {
+        for (int i = 0; i < List_de_mechaas.Length; i++)
+        {
+            List_de_mechaas[i].GetComponent<Info_Mecha>().mechas_selec = false;
+        }
+
+        New_selec.GetComponent<Info_Mecha>().mechas_selec = true;
+    }
 }
