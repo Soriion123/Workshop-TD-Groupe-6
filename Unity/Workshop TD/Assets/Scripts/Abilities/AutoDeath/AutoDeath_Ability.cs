@@ -9,8 +9,12 @@ public class AutoDeath_Ability : MonoBehaviour
     private bool isReady = true;
     private Mecha_Inventory mecha_Inventory;
 
+    private GameObject cliqueur;
+
     private void Start()
     {
+        cliqueur = GameObject.Find("Cliquer");
+
         mecha_Inventory = GetComponent<Mecha_Inventory>();
 
         if (AutoDeath_Zone != null)
@@ -41,6 +45,6 @@ public class AutoDeath_Ability : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         // Destruction du mecha
-        Destroy(gameObject);
+        cliqueur.GetComponent<Cliqueur>().Mechas_Dead(gameObject);
     }
 }

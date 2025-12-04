@@ -92,19 +92,8 @@ public class Cliqueur : MonoBehaviour
                     {
                         game_manager.gold = game_manager.gold + prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix / 2;
 
+                        Mechas_Dead(hit.collider.gameObject);
 
-                        UI_mechas_scene[hit.collider.gameObject.GetComponent<Info_Mecha>().id_ui] = null;
-
-                        //ID_in_scene_test[ref_id_selec] = 100;
-
-                        GameObject.Destroy(New_Target[ref_id_selec]);
-
-                        New_Target[ref_id_selec] = Debug_Mechas_Selec;
-                        test_memori = Debug_Mechas_Selec;
-                        Limit_mechas++;
-
-                        GameObject.Destroy(hit.collider.gameObject);
-                        return;
                     }
 
                 }
@@ -296,9 +285,29 @@ public class Cliqueur : MonoBehaviour
     {
         for (int i = 0; i < UI_mechas_scene.Count; i++)
         {
-            UI_mechas_scene[i].GetComponent<Info_Mecha>().mechas_selec = false;
+            if (UI_mechas_scene[i] != null)
+            {
+                UI_mechas_scene[i].GetComponent<Info_Mecha>().mechas_selec = false;
+            }
         }
 
         New_selec.GetComponent<Info_Mecha>().mechas_selec = true;
     }
+
+    public void Mechas_Dead(GameObject Victime)
+    {
+        UI_mechas_scene[Victime.GetComponent<Info_Mecha>().id_ui] = null;
+
+        //ID_in_scene_test[ref_id_selec] = 100;
+
+        GameObject.Destroy(New_Target[ref_id_selec]);
+
+        New_Target[ref_id_selec] = Debug_Mechas_Selec;
+        test_memori = Debug_Mechas_Selec;
+        Limit_mechas++;
+
+        GameObject.Destroy(Victime);
+        return;
+    }
+
 }
