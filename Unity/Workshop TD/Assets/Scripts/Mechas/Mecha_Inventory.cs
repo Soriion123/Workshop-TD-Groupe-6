@@ -20,7 +20,7 @@ public class Mecha_Inventory : MonoBehaviour
             slowTokens--;
     }
 
-
+    //---------------------------------------------
     public int AOETokens = 0;
 
     public bool HasAOEToken()
@@ -58,4 +58,22 @@ public class Mecha_Inventory : MonoBehaviour
             AutodeathTokens--;
     }
 
+    //---------------------------------------------
+    public int teleportTokens = 0;
+
+    public bool HasTeleportToken()
+    {
+        return teleportTokens > 0;
+    }
+
+    public void AddTeleportToken()
+    {
+        teleportTokens++;
+    }
+
+    public void ConsumeTeleportToken()
+    {
+        if (teleportTokens > 0)
+            teleportTokens--;
+    }
 }
