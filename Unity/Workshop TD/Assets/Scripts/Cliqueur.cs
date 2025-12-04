@@ -102,7 +102,7 @@ public class Cliqueur : MonoBehaviour
                 {
 
                     // UpGrade
-                    if (hit.collider.gameObject.name == "Mechas_Air(Clone)")
+                    if (hit.collider.gameObject.name == "Mechas_Air(Clone)" & game_manager.gold >= 1934)
                     {
                         game_manager.gold = game_manager.gold - 1934;
 
@@ -114,7 +114,7 @@ public class Cliqueur : MonoBehaviour
 
                     }
 
-                    if (hit.collider.gameObject.name == "Mechas_All(Clone)")
+                    if (hit.collider.gameObject.name == "Mechas_All(Clone)" & game_manager.gold >= 2021)
                     {
                         game_manager.gold = game_manager.gold - 2021;
 
@@ -125,7 +125,7 @@ public class Cliqueur : MonoBehaviour
                         hit.collider.gameObject.GetComponent<Info_Mecha>().Niveau_UpGrade++;
                     }
 
-                    if (hit.collider.gameObject.name == "Mechas_Ground(Clone)")
+                    if (hit.collider.gameObject.name == "Mechas_Ground(Clone)" & game_manager.gold >= 1122)
                     {
                         game_manager.gold = game_manager.gold - 1122;
 
