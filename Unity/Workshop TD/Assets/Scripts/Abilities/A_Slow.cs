@@ -1,73 +1,57 @@
-using UnityEngine;
-using System.Collections.Generic;
+Ôªøusing UnityEngine;
 
-public class A_Slow : MonoBehaviour
+public class SlowZone : MonoBehaviour
 {
-    [SerializeField] private float slowMultiplier = 0.5f;
-    [SerializeField] private string enemyTag = "Enemy";
-
-    public Spawn_ability spawner;
-    public int pointIndex;
-    public string A_slow = "Slow Upgrade";
-
-    private List<ISlowable> affectedEnemies = new();
-
-    public bool IsActive { get; private set; } = false;
-
-    public void Activate()
-    {
-        IsActive = true;
-
-        foreach (var enemy in affectedEnemies)
-        {
-            enemy.ModifySpeed(slowMultiplier);
-        }
-    }
-
-    public void Deactivate()
-    {
-        IsActive = false;
-
-        foreach (var enemy in affectedEnemies)
-        {
-            enemy.ModifySpeed(1f);
-        }
-
-        affectedEnemies.Clear();
-    }
+    [Range(0.1f, 1f)]
+    public float slowMultiplier = 0.5f;
 
     private void OnTriggerEnter(Collider other)
     {
-        Info_Mecha mecha = other.GetComponent<Info_Mecha>();
-        if (mecha != null)
+        // On v√©rifie si c'est un Ground_Enemy
+        Ground_Enemy enemy = other.GetComponent<Ground_Enemy>();
+        if (enemy == null) return;
+
+        // On v√©rifie si le script poss√®de une variable speed + originalSpeed
+        if (other.TryGetComponent(out Ground_Fast fast))
         {
-            Debug.Log("Upgrade Slow rÈcupÈrÈ !");
-
-            // Informer le mecha (si tu veux garder la trace)
-            mecha.PickupUpgrade(A_slow);
-
-            // DÈtruire l'upgrade
-            Destroy(gameObject);
+            fast.speedF = fast.originalSpeed * slowMultiplier;
         }
-
-        if (!IsActive) return;
-        if (!other.CompareTag(enemyTag)) return;
-
-        ISlowable slowable = other.GetComponent<ISlowable>();
-        if (slowable != null)
+        else if (other.TryGetComponent(out Ground_Tank tank))
         {
-            slowable.ModifySpeed(slowMultiplier);
-            affectedEnemies.Add(slowable);
+            tank.speedT = tank.originalSpeed * slowMultiplier;
         }
+        else if (other.TryGetComponent(out Ground_Basic basic))
+        {
+            basic.speedB = basic.originalSpeed * slowMultiplier;
+        }
+        /*else if (other.TryGetComponent(out Ground_Boss boss))
+        {
+            boss.speed = boss.originalSpeed * slowMultiplier;
+        }*/
+
+        // ‚ö†Ô∏è Ajoute une ligne par type d‚Äôennemi, si tu en as plusieurs
     }
 
     private void OnTriggerExit(Collider other)
     {
-        ISlowable slowable = other.GetComponent<ISlowable>();
-        if (slowable != null && affectedEnemies.Contains(slowable))
+        Ground_Enemy enemy = other.GetComponent<Ground_Enemy>();
+        if (enemy == null) return;
+
+        if (other.TryGetComponent(out Ground_Fast fast))
         {
-            slowable.ModifySpeed(1f);
-            affectedEnemies.Remove(slowable);
+            fast.speedF = fast.originalSpeed;
         }
+        else if (other.TryGetComponent(out Ground_Tank tank))
+        {
+            tank.speedT = tank.originalSpeed;
+        }
+        else if (other.TryGetComponent(out Ground_Basic basic))
+        {
+            basic.speedB = basic.originalSpeed;
+        }
+        /*else if (other.TryGetComponent(out Ground_Boss boss))
+        {
+            boss.speed = boss.originalSpeed;
+        }*/
     }
 }

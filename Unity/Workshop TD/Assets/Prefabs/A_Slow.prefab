@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 298594007768577405}
   - component: {fileID: 2948165424277306192}
   - component: {fileID: -4770300665208546102}
-  - component: {fileID: 372156519425815016}
+  - component: {fileID: -583687503073198868}
   m_Layer: 0
   m_Name: A_Slow
   m_TagString: Sol
@@ -137,7 +137,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &372156519425815016
+--- !u!114 &-583687503073198868
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,6 +146,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3721816642193609156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd5eed6d8f9dcf54fa97d8e9c020de41, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c7d291d34a833b4997e43bf54f21480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

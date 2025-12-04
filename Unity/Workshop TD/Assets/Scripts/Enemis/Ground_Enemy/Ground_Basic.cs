@@ -9,8 +9,8 @@ public class Ground_Basic : Ground_Enemy
     //public Transform target;
 
     [Header("Stats")]
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private float currentspeed = 5f;
+    [SerializeField] public float speedB = 5f;
+    [HideInInspector] public float originalSpeed;
     [SerializeField] private float maxHealth = 10f;
     [SerializeField] private int goldReward = 1;   // 💰 or gagné à la mort
     public float NexusDamage = 5f; // dégâts infligés à l'objectif
@@ -24,7 +24,7 @@ public class Ground_Basic : Ground_Enemy
 
     private void Start()
     {
-        currentspeed = speed;
+        originalSpeed = speedB;
         currentHealth = maxHealth;
 
         // si jamais le spawner n’a pas fourni de target
@@ -35,18 +35,13 @@ public class Ground_Basic : Ground_Enemy
         }
     }
 
-    public void ModifySpeed(float multiplier)
-    {
-        currentspeed = speed * multiplier;
-    }
 
     private void Update()
     {
-        transform.Translate(Vector3.forward * currentspeed * Time.deltaTime);
-
+        
         if (target != null)
         {
-            agent.speed = speed;
+            agent.speed = speedB;
             agent.SetDestination(target.position);
         }
     }

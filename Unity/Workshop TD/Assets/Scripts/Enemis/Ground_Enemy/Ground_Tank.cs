@@ -9,8 +9,8 @@ public class Ground_Tank : Ground_Enemy
    //public Transform target;
 
     [Header("Stats")]
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private float currentspeed = 5f;
+    [SerializeField] public float speedT = 5f;
+    [HideInInspector] public float originalSpeed;
     [SerializeField] private float maxHealth = 10f;
     [SerializeField] private int goldReward = 1;   // 💰 or gagné à la mort
     public float NexusDamage = 5f; // dégâts infligés à l'objectif
@@ -24,7 +24,7 @@ public class Ground_Tank : Ground_Enemy
 
     private void Start()
     {
-        currentspeed = speed;
+        originalSpeed = speedT;
         currentHealth = maxHealth;
 
         // si jamais le spawner n’a pas fourni de target
@@ -34,18 +34,14 @@ public class Ground_Tank : Ground_Enemy
             if (t != null) target = t.transform;
         }
     }
-    public void ModifySpeed(float multiplier)
-    {
-        currentspeed = speed * multiplier;
-    }
+    
 
     private void Update()
     {
-        transform.Translate(Vector3.forward * currentspeed * Time.deltaTime);
 
         if (target != null)
         {
-            agent.speed = speed;
+            agent.speed = speedT;
             agent.SetDestination(target.position);
         }
     }
