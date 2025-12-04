@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI Gold_Ui;
 
+
+    public float TimeScale = 1;
+
     private void Awake()
     {
         // Singleton basique
@@ -26,6 +29,16 @@ public class GameManager : MonoBehaviour
     public void Update()
     {
         Gold_Ui.text = gold.ToString();
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            Time.timeScale = TimeScale;
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            Time.timeScale = 1;
+        }
+
     }
 
 }
