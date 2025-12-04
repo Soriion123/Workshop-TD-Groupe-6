@@ -71,9 +71,9 @@ public class Cliqueur : MonoBehaviour
                 // Selection de ID du mechas
                 if (Input.GetMouseButtonDown(0))
                 {
-                    List_de_mechaas = GameObject.FindGameObjectsWithTag("Mechas");
+                    //List_de_mechaas = GameObject.FindGameObjectsWithTag("Mechas");
 
-                    print(List_de_mechaas);
+                    //print(List_de_mechaas);
 
 
                     New_selection(hit.collider.gameObject);
@@ -112,6 +112,7 @@ public class Cliqueur : MonoBehaviour
                 if (Input.GetMouseButtonUp(0) & Upgrade_drag)
                 {
 
+                    // UpGrade
                     if (hit.collider.gameObject.name == "Mechas_Air(Clone)")
                     {
                         game_manager.gold = game_manager.gold - 1934;
@@ -165,7 +166,6 @@ public class Cliqueur : MonoBehaviour
                 if (Input.GetMouseButtonDown(0) & test_memori.GetComponent<Info_Mecha>().mechas_selec)
                 {
                     New_Target[ref_id_selec].transform.position = cursor.position;
-                    mechas_selec = false;
                 }
 
                 // Creation Mechas "Drop" 
@@ -236,7 +236,7 @@ public class Cliqueur : MonoBehaviour
 
 
 
-            /*
+            
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 recherche_ID_en_vie(0);
@@ -257,21 +257,46 @@ public class Cliqueur : MonoBehaviour
             {
                 recherche_ID_en_vie(4);
             }
-            */
+            
 
         }
     }
-    /*
+    
+
     public void recherche_ID_en_vie(int touche)
     {
-        ref_id_selec = ID_in_scene_test[touche];
+
+        for (int i = 0; i < UI_mechas_scene.Count; i++)
+        {
+            if (UI_mechas_scene[i] != null)
+            {
+                UI_mechas_scene[i].GetComponent<Info_Mecha>().mechas_selec = false;
+            }
+        }
+
+
+        for (int i = 0; i < UI_mechas_scene.Count; i++)
+        {
+            if (UI_mechas_scene[i] == null)
+            {
+
+            }
+            else if (i == touche)
+            {
+                UI_mechas_scene[i].GetComponent<Info_Mecha>().mechas_selec = true;
+                ref_id_selec = UI_mechas_scene[i].gameObject.GetComponent<Info_Mecha>().id;
+                test_memori = UI_mechas_scene[i];
+            }
+        }
+
     }
-    */
+
+    
     public void New_selection(GameObject New_selec)
     {
-        for (int i = 0; i < List_de_mechaas.Length; i++)
+        for (int i = 0; i < UI_mechas_scene.Count; i++)
         {
-            List_de_mechaas[i].GetComponent<Info_Mecha>().mechas_selec = false;
+            UI_mechas_scene[i].GetComponent<Info_Mecha>().mechas_selec = false;
         }
 
         New_selec.GetComponent<Info_Mecha>().mechas_selec = true;
