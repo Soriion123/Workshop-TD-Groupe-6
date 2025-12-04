@@ -128,9 +128,9 @@ MonoBehaviour:
   target: {fileID: 5897640639478872787, guid: d3012d787ed3ab040bfa8ca691ed2d88, type: 3}
   speedT: 3.9
   originalSpeed: 0
-  maxHealth: 28
+  maxHealth: 33
   goldReward: 115
-  NexusDamage: 19
+  NexusDamage: 22
 --- !u!195 &6630833942158798430
 NavMeshAgent:
   m_ObjectHideFlags: 0
