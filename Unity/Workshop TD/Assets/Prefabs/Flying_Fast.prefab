@@ -125,13 +125,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 5897640639478872787, guid: d3012d787ed3ab040bfa8ca691ed2d88, type: 3}
-  speed: 3.8
+  speed: 7.6
   originalSpeed: 0
   maxHealth: 20
   obstacleDetectionDistance: 50
   avoidanceStrength: 30
   goldReward: 90
-  NexusDamage: 14
+  NexusDamage: 28
 --- !u!54 &340976898250487706
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -3507,6 +3507,7 @@ MonoBehaviour:
     timeToNextWave: 50
     enemiesLeft: 0
   - enemies:
+    - {fileID: 1716429451737509192, guid: baac286e9cf69d44c9ef44a6d9174f5a, type: 3}
     - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
     - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
     - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
