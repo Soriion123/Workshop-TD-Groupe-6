@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 9879331}
   - component: {fileID: 9879330}
   - component: {fileID: 9879329}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (13)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -836,7 +836,7 @@ GameObject:
   - component: {fileID: 175577126}
   - component: {fileID: 175577125}
   - component: {fileID: 175577124}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (24)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -1971,7 +1971,7 @@ GameObject:
   - component: {fileID: 209185042}
   - component: {fileID: 209185041}
   - component: {fileID: 209185040}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (2)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -2705,7 +2705,7 @@ GameObject:
   - component: {fileID: 359434665}
   - component: {fileID: 359434664}
   - component: {fileID: 359434663}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (23)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -3573,7 +3573,7 @@ GameObject:
   - component: {fileID: 395211972}
   - component: {fileID: 395211971}
   - component: {fileID: 395211970}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (14)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -4165,7 +4165,7 @@ GameObject:
   - component: {fileID: 473200133}
   - component: {fileID: 473200132}
   - component: {fileID: 473200131}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (12)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -4534,15 +4534,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7195131656408830379, guid: 0f147decb1c16eb4084bda77c83e8121, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.45
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 7195131656408830379, guid: 0f147decb1c16eb4084bda77c83e8121, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7195131656408830379, guid: 0f147decb1c16eb4084bda77c83e8121, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 27.6
+      value: 38.14
       objectReference: {fileID: 0}
     - target: {fileID: 7195131656408830379, guid: 0f147decb1c16eb4084bda77c83e8121, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4828,7 +4828,7 @@ GameObject:
   - component: {fileID: 569891944}
   - component: {fileID: 569891943}
   - component: {fileID: 569891942}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (19)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -5969,6 +5969,83 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &813938775
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 435087685298583482, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 435087685298583482, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 435087685298583482, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 27.40733
+      objectReference: {fileID: 0}
+    - target: {fileID: 435087685298583482, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 435087685298583482, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435087685298583482, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435087685298583482, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435087685298583482, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435087685298583482, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435087685298583482, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4024123709755680662, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
+      propertyPath: maxTeleportRange
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062116806956296331, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
+      propertyPath: m_Name
+      value: Mechas_Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215701000773622964, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
+      propertyPath: AOETokens
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215701000773622964, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
+      propertyPath: slowTokens
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215701000773622964, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
+      propertyPath: teleportTokens
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215701000773622964, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
+      propertyPath: AutodeathTokens
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
 --- !u!1 &834951268
 GameObject:
   m_ObjectHideFlags: 0
@@ -5983,7 +6060,7 @@ GameObject:
   - component: {fileID: 834951272}
   - component: {fileID: 834951271}
   - component: {fileID: 834951270}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (10)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -7066,7 +7143,7 @@ GameObject:
   - component: {fileID: 901609374}
   - component: {fileID: 901609373}
   - component: {fileID: 901609372}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (3)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -7756,7 +7833,7 @@ GameObject:
   - component: {fileID: 984465810}
   - component: {fileID: 984465809}
   - component: {fileID: 984465808}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (15)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -8215,7 +8292,7 @@ GameObject:
   - component: {fileID: 1007857425}
   - component: {fileID: 1007857424}
   - component: {fileID: 1007857423}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (20)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -8588,7 +8665,7 @@ GameObject:
   - component: {fileID: 1071131598}
   - component: {fileID: 1071131597}
   - component: {fileID: 1071131596}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (25)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -9385,7 +9462,7 @@ GameObject:
   - component: {fileID: 1148653560}
   - component: {fileID: 1148653559}
   - component: {fileID: 1148653558}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (21)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -9923,7 +10000,7 @@ GameObject:
   - component: {fileID: 1219954230}
   - component: {fileID: 1219954229}
   - component: {fileID: 1219954228}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (29)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -10670,7 +10747,7 @@ GameObject:
   - component: {fileID: 1293602359}
   - component: {fileID: 1293602358}
   - component: {fileID: 1293602357}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -14477,89 +14554,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1001 &1404093908
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 435087685298583482, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.93
-      objectReference: {fileID: 0}
-    - target: {fileID: 435087685298583482, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 9.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 435087685298583482, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 24.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 435087685298583482, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 435087685298583482, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 435087685298583482, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 435087685298583482, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 435087685298583482, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 435087685298583482, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 435087685298583482, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5062116806956296331, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
-      propertyPath: m_Name
-      value: Mechas_Ground
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5062116806956296331, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1404093910}
-  m_SourcePrefab: {fileID: 100100000, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
---- !u!1 &1404093909 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5062116806956296331, guid: 096e41e1472551f409bce1c6c9f67c86, type: 3}
-  m_PrefabInstance: {fileID: 1404093908}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1404093910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1404093909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a98490d6a9d6ad4faf9a42c462d12c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activationKey: 116
-  teleportPreview: {fileID: 0}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  slowTimeScale: 0.2
 --- !u!1 &1404189116
 GameObject:
   m_ObjectHideFlags: 0
@@ -14660,7 +14654,7 @@ GameObject:
   - component: {fileID: 1404958585}
   - component: {fileID: 1404958584}
   - component: {fileID: 1404958583}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (18)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -15033,7 +15027,7 @@ GameObject:
   - component: {fileID: 1417208571}
   - component: {fileID: 1417208570}
   - component: {fileID: 1417208569}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (8)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -15753,6 +15747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gold: 500
   Gold_Ui: {fileID: 192237395}
+  TimeScale: 1
 --- !u!4 &1437382626
 Transform:
   m_ObjectHideFlags: 0
@@ -15782,7 +15777,7 @@ GameObject:
   - component: {fileID: 1450577015}
   - component: {fileID: 1450577014}
   - component: {fileID: 1450577013}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (16)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -16650,7 +16645,7 @@ GameObject:
   - component: {fileID: 1522814221}
   - component: {fileID: 1522814220}
   - component: {fileID: 1522814219}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (28)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -17023,7 +17018,7 @@ GameObject:
   - component: {fileID: 1553467398}
   - component: {fileID: 1553467397}
   - component: {fileID: 1553467396}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (11)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -17798,7 +17793,7 @@ GameObject:
   - component: {fileID: 1636137367}
   - component: {fileID: 1636137366}
   - component: {fileID: 1636137365}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (1)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -18171,7 +18166,7 @@ GameObject:
   - component: {fileID: 1654433985}
   - component: {fileID: 1654433984}
   - component: {fileID: 1654433983}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (27)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -18740,7 +18735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1717252007}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Blocking
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -19465,7 +19460,7 @@ GameObject:
   - component: {fileID: 1875158593}
   - component: {fileID: 1875158592}
   - component: {fileID: 1875158591}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (17)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -20168,7 +20163,7 @@ GameObject:
   - component: {fileID: 1955554960}
   - component: {fileID: 1955554959}
   - component: {fileID: 1955554958}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (26)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -20541,7 +20536,7 @@ GameObject:
   - component: {fileID: 1969301642}
   - component: {fileID: 1969301641}
   - component: {fileID: 1969301640}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (22)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -21079,7 +21074,7 @@ GameObject:
   - component: {fileID: 2056048816}
   - component: {fileID: 2056048815}
   - component: {fileID: 2056048814}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (4)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -21452,7 +21447,7 @@ GameObject:
   - component: {fileID: 2080073038}
   - component: {fileID: 2080073037}
   - component: {fileID: 2080073036}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (5)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -21825,7 +21820,7 @@ GameObject:
   - component: {fileID: 2114689132}
   - component: {fileID: 2114689131}
   - component: {fileID: 2114689130}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (9)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -22666,7 +22661,7 @@ GameObject:
   - component: {fileID: 2143436272}
   - component: {fileID: 2143436271}
   - component: {fileID: 2143436270}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape (7)
   m_TagString: Sol
   m_Icon: {fileID: 0}
@@ -23025,6 +23020,63 @@ MonoBehaviour:
   m_EditMode: 0
   m_FlipNormals: 0
   isOnGrid: 1
+--- !u!1001 &3603402825642739732
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4096446810635074572, guid: c2554124e1261bf47818869014d3e82b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096446810635074572, guid: c2554124e1261bf47818869014d3e82b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096446810635074572, guid: c2554124e1261bf47818869014d3e82b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 32.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096446810635074572, guid: c2554124e1261bf47818869014d3e82b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096446810635074572, guid: c2554124e1261bf47818869014d3e82b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096446810635074572, guid: c2554124e1261bf47818869014d3e82b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096446810635074572, guid: c2554124e1261bf47818869014d3e82b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096446810635074572, guid: c2554124e1261bf47818869014d3e82b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096446810635074572, guid: c2554124e1261bf47818869014d3e82b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096446810635074572, guid: c2554124e1261bf47818869014d3e82b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7171315243618581512, guid: c2554124e1261bf47818869014d3e82b, type: 3}
+      propertyPath: m_Name
+      value: A_Jump
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c2554124e1261bf47818869014d3e82b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -23043,5 +23095,6 @@ SceneRoots:
   - {fileID: 984687421}
   - {fileID: 1404189118}
   - {fileID: 794332835}
-  - {fileID: 1404093908}
   - {fileID: 474335815}
+  - {fileID: 3603402825642739732}
+  - {fileID: 813938775}

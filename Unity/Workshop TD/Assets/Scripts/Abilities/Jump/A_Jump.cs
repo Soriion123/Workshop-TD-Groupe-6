@@ -1,31 +1,45 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
-public class A_Jump : MonoBehaviour
+public class TeleportAbility : MonoBehaviour
 {
-    [Header("Teleport Settings")]
+    [Header("Activation")]
     public KeyCode activationKey = KeyCode.T;
-    public GameObject teleportPreview;     // Zone visuelle au sol
-    public LayerMask groundLayer;          // Layer du sol
-    public float slowTimeScale = 0.2f;     // Ralenti du temps
+
+    [Header("Teleport Settings")]
+    public float maxTeleportRange = 10f;
+    public float slowTimeScale = 0.2f;
+
+    [Header("Visuals")]
+    public GameObject teleportRangePreview;   // grand cercle de portée
+    public LayerMask groundLayer;
 
     private bool isAiming = false;
     private bool isReady = true;
 
     private Mecha_Inventory inventory;
     private Camera mainCam;
+    private NavMeshAgent agent;
+
+    private Vector3 targetPosition; // position finale du TP (invisible)
 
     private void Start()
     {
         inventory = GetComponent<Mecha_Inventory>();
         mainCam = Camera.main;
+        agent = GetComponent<NavMeshAgent>();
 
-        if (teleportPreview != null)
-            teleportPreview.SetActive(false);
+        if (teleportRangePreview != null)
+            teleportRangePreview.SetActive(false);
+
+        // 🔵 Mise à l’échelle auto de la zone de portée
+        if (teleportRangePreview != null)
+            teleportRangePreview.transform.localScale = Vector3.one * maxTeleportRange * 2f;
     }
 
     private void Update()
     {
-        // ✅ Activation du mode TP
+        // ✅ Activation du mode téléportation
         if (Input.GetKeyDown(activationKey)
             && isReady
             && !isAiming
@@ -34,28 +48,24 @@ public class A_Jump : MonoBehaviour
             StartTeleportAim();
         }
 
-        // ✅ Pendant le mode visée
+        // ✅ Pendant la visée
         if (isAiming)
         {
-            UpdatePreviewPosition();
+            UpdateTargetPosition();
 
             // ✅ Clic gauche = téléportation
             if (Input.GetMouseButtonDown(0))
-            {
                 ConfirmTeleport();
-            }
 
-            // ✅ Clic droit = annuler
+            // ✅ Clic droit = annulation
             if (Input.GetMouseButtonDown(1))
-            {
                 CancelTeleport();
-            }
         }
     }
 
-    // =============================
-    // 🎯 ACTIVATION DU MODE TP
-    // =============================
+    // ===========================
+    // 🎯 DÉMARRAGE DU MODE TP
+    // ===========================
     private void StartTeleportAim()
     {
         isReady = false;
@@ -64,52 +74,60 @@ public class A_Jump : MonoBehaviour
         // ✅ Consomme le token
         inventory.ConsumeTeleportToken();
 
-        // ✅ Active le ralenti
+        // ✅ Ralenti du temps
         Time.timeScale = slowTimeScale;
 
-        // ✅ Affiche la preview
-        teleportPreview.SetActive(true);
+        // ✅ Affiche uniquement la zone de portée
+        teleportRangePreview.SetActive(true);
     }
 
-    // =============================
-    // 🎯 UPDATE POSITION PREVIEW
-    // =============================
-    private void UpdatePreviewPosition()
+    // ===========================
+    // 🎯 CALCUL POSITION INVISIBLE
+    // ===========================
+    private void UpdateTargetPosition()
     {
         Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
+
         if (Physics.Raycast(ray, out RaycastHit hit, 1000f, groundLayer))
         {
-            teleportPreview.transform.position = hit.point;
+            Vector3 rawTarget = hit.point;
+
+            // ✅ Clamp dans la portée max
+            targetPosition = transform.position +
+                Vector3.ClampMagnitude(rawTarget - transform.position, maxTeleportRange);
         }
     }
 
-    // =============================
+    // ===========================
     // ✅ CONFIRMATION DU TP
-    // =============================
+    // ===========================
     private void ConfirmTeleport()
     {
-        transform.position = teleportPreview.transform.position;
+        if (agent != null)
+            agent.Warp(targetPosition);
+        else
+            transform.position = targetPosition;
 
         EndTeleport();
     }
 
-    // =============================
+    // ===========================
     // ❌ ANNULATION
-    // =============================
+    // ===========================
     private void CancelTeleport()
     {
         EndTeleport();
     }
 
-    // =============================
+    // ===========================
     // 🔚 FIN DU MODE TP
-    // =============================
+    // ===========================
     private void EndTeleport()
     {
         isAiming = false;
         isReady = true;
 
-        teleportPreview.SetActive(false);
+        teleportRangePreview.SetActive(false);
 
         // ✅ Retour au temps normal
         Time.timeScale = 1f;

@@ -39,7 +39,7 @@ public class Mecha_Inventory : MonoBehaviour
             AOETokens--;
     }
 
-
+    //---------------------------------------------
     public int AutodeathTokens = 0;
 
     public bool HasAutoDeathToken()
