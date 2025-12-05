@@ -158,4 +158,4 @@ MonoBehaviour:
   obstacleDetectionDistance: 50
   avoidanceStrength: 30
   goldReward: 150
-  NexusDamage: 26
+  NexusDamage: 29
