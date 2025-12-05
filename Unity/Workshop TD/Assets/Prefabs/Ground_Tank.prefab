@@ -130,7 +130,7 @@ MonoBehaviour:
   originalSpeed: 0
   maxHealth: 33
   goldReward: 115
-  NexusDamage: 22
+  NexusDamage: 28
 --- !u!195 &6630833942158798430
 NavMeshAgent:
   m_ObjectHideFlags: 0

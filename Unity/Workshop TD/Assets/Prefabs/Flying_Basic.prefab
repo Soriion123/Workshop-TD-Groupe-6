@@ -131,7 +131,7 @@ MonoBehaviour:
   obstacleDetectionDistance: 50
   avoidanceStrength: 30
   goldReward: 59
-  NexusDamage: 20
+  NexusDamage: 9
 --- !u!54 &-6168073237448909036
 Rigidbody:
   m_ObjectHideFlags: 0
