@@ -12,124 +12,106 @@ public class TeleportAbility : MonoBehaviour
 
     [Header("Visuals")]
     public GameObject teleportRangePreview;   // grand cercle de portée
-    public LayerMask groundLayer;
+
+    public GameObject cliqueur;
 
     private bool isAiming = false;
     private bool isReady = true;
 
     private Mecha_Inventory inventory;
-    private Camera mainCam;
     private NavMeshAgent agent;
 
-    private Vector3 targetPosition; // position finale du TP (invisible)
+    private Vector3 targetPosition;
+
+    public Transform mecha;
 
     private void Start()
     {
         inventory = GetComponent<Mecha_Inventory>();
-        mainCam = Camera.main;
         agent = GetComponent<NavMeshAgent>();
+        mecha = GetComponent<Transform>();
+
+        // ✅ Récupération automatique du cliqueur
+        cliqueur = GameObject.Find("Cursor");
 
         if (teleportRangePreview != null)
+        {
             teleportRangePreview.SetActive(false);
-
-        // 🔵 Mise à l’échelle auto de la zone de portée
-        if (teleportRangePreview != null)
             teleportRangePreview.transform.localScale = Vector3.one * maxTeleportRange * 2f;
+        }
+
+
     }
 
     private void Update()
     {
-        // ✅ Activation du mode téléportation
-        if (Input.GetKeyDown(activationKey)
-            && isReady
-            && !isAiming
-            && inventory.HasTeleportToken())
+
+
+
+        if (Input.GetKeyDown(activationKey) & isReady & !isAiming & inventory.HasTeleportToken())
         {
             StartTeleportAim();
         }
 
-        // ✅ Pendant la visée
         if (isAiming)
         {
-            UpdateTargetPosition();
+            UpdateTargetPositionFromCliqueur();
 
-            // ✅ Clic gauche = téléportation
             if (Input.GetMouseButtonDown(0))
                 ConfirmTeleport();
-
-            // ✅ Clic droit = annulation
-            if (Input.GetMouseButtonDown(1))
-                CancelTeleport();
         }
     }
 
-    // ===========================
-    // 🎯 DÉMARRAGE DU MODE TP
-    // ===========================
     private void StartTeleportAim()
     {
         isReady = false;
         isAiming = true;
 
-        // ✅ Consomme le token
         inventory.ConsumeTeleportToken();
-
-        // ✅ Ralenti du temps
         Time.timeScale = slowTimeScale;
 
-        // ✅ Affiche uniquement la zone de portée
         teleportRangePreview.SetActive(true);
     }
 
-    // ===========================
-    // 🎯 CALCUL POSITION INVISIBLE
-    // ===========================
-    private void UpdateTargetPosition()
+    private void UpdateTargetPositionFromCliqueur()
     {
-        Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out RaycastHit hit, 1000f, groundLayer))
-        {
-            Vector3 rawTarget = hit.point;
+        targetPosition = cliqueur.transform.position;
 
-            // ✅ Clamp dans la portée max
-            targetPosition = transform.position +
-                Vector3.ClampMagnitude(rawTarget - transform.position, maxTeleportRange);
-        }
     }
 
-    // ===========================
-    // ✅ CONFIRMATION DU TP
+
     // ===========================
     private void ConfirmTeleport()
     {
         if (agent != null)
-            agent.Warp(targetPosition);
+        {
+            agent.ResetPath(); // 🔥 Stop le déplacement en cours
+            agent.Warp(new Vector3(
+                targetPosition.x,
+                targetPosition.y + 0.5f,
+                targetPosition.z
+            ));
+        }
         else
-            transform.position = targetPosition;
+        {
+            // sécurité au cas où
+            mecha.position = new Vector3(
+                targetPosition.x,
+                targetPosition.y + 0.5f,
+                targetPosition.z
+            );
+        }
 
         EndTeleport();
     }
 
-    // ===========================
-    // ❌ ANNULATION
-    // ===========================
-    private void CancelTeleport()
-    {
-        EndTeleport();
-    }
-
-    // ===========================
-    // 🔚 FIN DU MODE TP
-    // ===========================
     private void EndTeleport()
     {
         isAiming = false;
         isReady = true;
 
         teleportRangePreview.SetActive(false);
-
-        // ✅ Retour au temps normal
         Time.timeScale = 1f;
     }
 }

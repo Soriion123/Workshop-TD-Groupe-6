@@ -510,10 +510,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a371703bbf5544cbe0f3080b263e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowTokens: 0
-  AOETokens: 0
-  AutodeathTokens: 0
-  teleportTokens: 0
+  slowTokens: 5
+  AOETokens: 5
+  AutodeathTokens: 5
+  teleportTokens: 50
 --- !u!114 &2731605133039419719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -557,7 +557,6 @@ MonoBehaviour:
   activationKey: 116
   maxTeleportRange: 5
   slowTimeScale: 0.2
-  teleportPreview: {fileID: 7397229019302692669, guid: ce6a0b182dfe5df4997548fddc2753ad, type: 3}
   teleportRangePreview: {fileID: 4217465854699340685}
   groundLayer:
     serializedVersion: 2
