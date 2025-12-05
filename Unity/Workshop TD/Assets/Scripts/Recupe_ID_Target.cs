@@ -1,22 +1,16 @@
 using UnityEngine;
 
-public class Waring_LookAt : MonoBehaviour
+public class Recupe_ID_Target : MonoBehaviour
 {
-
-
-    public Canvas canvas;
-    public Camera cameraScene;
-
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        cameraScene = Camera.main;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        canvas.transform.rotation = cameraScene.transform.rotation;
+        
     }
 }

@@ -9,7 +9,7 @@ public class Nexus : MonoBehaviour
     private void Start()
     {
         currenthealth = maxHealth;
-        Debug.Log("Vie Nexus : " + currenthealth); // Affiche la vie initiale
+        // Debug.Log("Vie Nexus : " + currenthealth); // Affiche la vie initiale
     }
 
     // Appelé quand un ennemi touche le bâtiment
@@ -18,7 +18,7 @@ public class Nexus : MonoBehaviour
         currenthealth -= amount;
 
         // 🔥 Affichage dans la console
-        Debug.Log("Vie Nexus : " + currenthealth);
+        // Debug.Log("Vie Nexus : " + currenthealth);
 
         if (currenthealth <= 0)
         {

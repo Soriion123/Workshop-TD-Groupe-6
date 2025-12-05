@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -46,6 +47,8 @@ public class Cliqueur : MonoBehaviour
 
     // UpGrade
     public bool Upgrade_drag = false;
+
+    public GameObject Prefab_Target;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -167,7 +170,7 @@ public class Cliqueur : MonoBehaviour
 
                     GameObject Mechas_Instantiate = Instantiate(prefab_mechas[ID_mechas_Spawn], new Vector3(cursor.transform.position.x, cursor.transform.position.y + 1, cursor.transform.position.z), Quaternion.identity);
 
-                    New_Target.Add(Mechas_Instantiate.gameObject.GetComponent<Mechas_Move_Test>().target = new GameObject("Target"));
+                    New_Target.Add(Mechas_Instantiate.gameObject.GetComponent<Mechas_Move_Test>().target = Instantiate(Prefab_Target));
 
                     New_Target[New_Target.Count - 1].transform.position = cursor.transform.position;
 
@@ -175,7 +178,6 @@ public class Cliqueur : MonoBehaviour
 
                     cmp_mechas_spawn++;
 
-                    
                     if (UI_mechas_scene.Count == 5)
                     {
                         for (int i = 0; i < UI_mechas_scene.Count; i++)
@@ -196,7 +198,7 @@ public class Cliqueur : MonoBehaviour
 
                         Mechas_Instantiate.gameObject.GetComponent<Info_Mecha>().id_ui = cmp_mechas_spawn - 1;
                     }
-                    
+
 
                 }
 
