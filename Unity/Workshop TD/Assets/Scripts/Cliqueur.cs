@@ -16,6 +16,7 @@ public class Cliqueur : MonoBehaviour
     public bool mechas_selec;
 
     public Material[] Material_cursor;
+    public Material Material_memori_target;
 
     // Mechas
     public List<GameObject> New_Target = new List<GameObject>();
@@ -47,6 +48,8 @@ public class Cliqueur : MonoBehaviour
 
     // UpGrade
     public bool Upgrade_drag = false;
+    public bool Trash_drag = false;
+
 
     public GameObject Prefab_Target;
 
@@ -85,20 +88,17 @@ public class Cliqueur : MonoBehaviour
                     ref_id_selec = hit.collider.gameObject.GetComponent<Info_Mecha>().id;
 
                     test_memori = hit.collider.gameObject;
+
+                    New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
                 }
                 
                 // Vente du mechas
-                if (Input.GetMouseButton(0) & hit.collider.gameObject.GetComponent<Info_Mecha>().mechas_selec)
+                if (Input.GetMouseButtonDown(0) & hit.collider.gameObject.GetComponent<Info_Mecha>().mechas_selec)
                 {
-                    
-                    if (Input.GetMouseButtonDown(1) & hit.collider.gameObject.GetComponent<Info_Mecha>().mechas_selec)
-                    {
-                        game_manager.gold = game_manager.gold + prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix / 2;
-
-                        Mechas_Dead(hit.collider.gameObject);
-
-                    }
-
+                    Trash_drag = true;
+                    if (hit.collider.gameObject.name == "Mechas_Air(Clone)") { cursor.GetComponent<MeshRenderer>().material = Material_cursor[0]; }
+                    if (hit.collider.gameObject.name == "Mechas_All(Clone)") { cursor.GetComponent<MeshRenderer>().material = Material_cursor[1]; }
+                    if (hit.collider.gameObject.name == "Mechas_Ground(Clone)") { cursor.GetComponent<MeshRenderer>().material = Material_cursor[2]; }
                 }
 
                 if (Input.GetMouseButtonUp(0) & Upgrade_drag)
@@ -166,7 +166,7 @@ public class Cliqueur : MonoBehaviour
                     Mechas_drag = false;
                     game_manager.gold = game_manager.gold - prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix;
 
-                    cursor.GetComponent<MeshRenderer>().material = Material_cursor[0];
+                    cursor.GetComponent<MeshRenderer>().material = Material_cursor[3];
 
                     GameObject Mechas_Instantiate = Instantiate(prefab_mechas[ID_mechas_Spawn], new Vector3(cursor.transform.position.x, cursor.transform.position.y + 1, cursor.transform.position.z), Quaternion.identity);
 
@@ -199,54 +199,70 @@ public class Cliqueur : MonoBehaviour
                         Mechas_Instantiate.gameObject.GetComponent<Info_Mecha>().id_ui = cmp_mechas_spawn - 1;
                     }
 
+                    New_Target[New_Target.Count - 1].GetComponentInChildren<MeshRenderer>().material = Material_cursor[ID_mechas_Spawn];
 
                 }
 
             }
 
-            if (Input.GetMouseButtonUp(0)) { Mechas_drag = false; Upgrade_drag = false; cursor.GetComponent<MeshRenderer>().material = Material_cursor[0]; }
 
+            if (hit.collider.tag == "Trash")
+            {
+                if (Input.GetMouseButtonUp(0) & Trash_drag)
+                {
+                    game_manager.gold = game_manager.gold + prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix / 2;
 
-            // Selection Mechas "Drage" 
+                    Mechas_Dead(UI_mechas_scene[ref_id_selec]);
+                }
+            }
+
+            if (Input.GetMouseButtonUp(0)) { Mechas_drag = false; Upgrade_drag = false; Trash_drag = false; cursor.GetComponent<MeshRenderer>().material = Material_cursor[3]; }
+
+            // Selection "Drag" 
             if (hit.collider.tag == "Boite 1")
             {
-                if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 0; Mechas_drag = true; cursor.GetComponent<MeshRenderer>().material = Material_cursor[1]; }
+                if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 0; Mechas_drag = true; cursor.GetComponent<MeshRenderer>().material = Material_cursor[0]; }
             }
             if (hit.collider.tag == "Boite 2")
             {
-                if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 1; Mechas_drag = true; cursor.GetComponent<MeshRenderer>().material = Material_cursor[2]; }
+                if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 1; Mechas_drag = true; cursor.GetComponent<MeshRenderer>().material = Material_cursor[1]; }
             }
             if (hit.collider.tag == "Boite 3")
             {
-                if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 2; Mechas_drag = true; cursor.GetComponent<MeshRenderer>().material = Material_cursor[3]; }
+                if (Input.GetMouseButtonDown(0)) { ID_mechas_Spawn = 2; Mechas_drag = true; cursor.GetComponent<MeshRenderer>().material = Material_cursor[2]; }
             }
             if (hit.collider.tag == "Boite UpGrade")
             {
                 if (Input.GetMouseButtonDown(0)) { Upgrade_drag = true; }
             }
-
-
-
             
+
+
+
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 recherche_ID_en_vie(0);
+                New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
             }
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
                 recherche_ID_en_vie(1);
+                New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
             }
             if (Input.GetKeyDown(KeyCode.Alpha3))
             {
                 recherche_ID_en_vie(2);
+                New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
             }
             if (Input.GetKeyDown(KeyCode.Alpha4))
             {
                 recherche_ID_en_vie(3);
+                New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
             }
             if (Input.GetKeyDown(KeyCode.Alpha5))
             {
                 recherche_ID_en_vie(4);
+                New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
             }
             
 
@@ -262,17 +278,18 @@ public class Cliqueur : MonoBehaviour
             if (UI_mechas_scene[i] != null)
             {
                 UI_mechas_scene[i].GetComponent<Info_Mecha>().mechas_selec = false;
+
+                if (UI_mechas_scene[i].name == "Mechas_Air(Clone)") { New_Target[i].GetComponentInChildren<MeshRenderer>().material = Material_cursor[0]; }
+                if (UI_mechas_scene[i].name == "Mechas_All(Clone)") { New_Target[i].GetComponentInChildren<MeshRenderer>().material = Material_cursor[1]; }
+                if (UI_mechas_scene[i].name == "Mechas_Ground(Clone)") { New_Target[i].GetComponentInChildren<MeshRenderer>().material = Material_cursor[2]; }
+
             }
         }
 
 
         for (int i = 0; i < UI_mechas_scene.Count; i++)
         {
-            if (UI_mechas_scene[i] == null)
-            {
-
-            }
-            else if (i == touche)
+            if (UI_mechas_scene[i] != null && i == touche)
             {
                 UI_mechas_scene[i].GetComponent<Info_Mecha>().mechas_selec = true;
                 ref_id_selec = UI_mechas_scene[i].gameObject.GetComponent<Info_Mecha>().id;
@@ -290,6 +307,11 @@ public class Cliqueur : MonoBehaviour
             if (UI_mechas_scene[i] != null)
             {
                 UI_mechas_scene[i].GetComponent<Info_Mecha>().mechas_selec = false;
+
+                if (UI_mechas_scene[i].name == "Mechas_Air(Clone)") { New_Target[i].GetComponentInChildren<MeshRenderer>().material = Material_cursor[0]; }
+                if (UI_mechas_scene[i].name == "Mechas_All(Clone)") { New_Target[i].GetComponentInChildren<MeshRenderer>().material = Material_cursor[1]; }
+                if (UI_mechas_scene[i].name == "Mechas_Ground(Clone)") { New_Target[i].GetComponentInChildren<MeshRenderer>().material = Material_cursor[2]; }
+
             }
         }
 

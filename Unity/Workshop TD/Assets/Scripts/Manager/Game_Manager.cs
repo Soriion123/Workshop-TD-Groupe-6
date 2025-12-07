@@ -12,9 +12,13 @@ public class GameManager : MonoBehaviour
 
 
     public float TimeScale = 1;
+    public GameObject Canvas_Pause;
+
+    public GameObject Cliquer;
 
     private void Awake()
     {
+        Time.timeScale = 1f;
         // Singleton basique
         if (instance == null) instance = this;
         else Destroy(gameObject);
@@ -36,6 +40,13 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             Time.timeScale = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Canvas_Pause.SetActive(true);
+            Time.timeScale = 0;
+            Cliquer.SetActive(false);
+
         }
 
     }
