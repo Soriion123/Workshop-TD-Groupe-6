@@ -1,41 +1,56 @@
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
 public class AOE_Ability : MonoBehaviour
 {
-    public GameObject AOE_Zone;
-    public KeyCode activationKey = KeyCode.E;
+    [Header("AOE Settings")]
+    public GameObject AOE_ZonePrefab;   // ✅ PREFAB ici
+    private KeyCode activationKey = KeyCode.F;
+    public float cooldown = 0.5f;
 
     private bool isReady = true;
-    private Mecha_Inventory mecha_Inventory;
+    private Mecha_AbilityManager abilityManager;
+    private Info_Mecha info;
 
     private void Start()
     {
-        mecha_Inventory = GetComponent<Mecha_Inventory>();
+        abilityManager = GetComponent<Mecha_AbilityManager>();
 
-        if (AOE_Zone != null)
-            AOE_Zone.SetActive(false);
+        info = GetComponent<Info_Mecha>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(activationKey)
-            && isReady
-            && mecha_Inventory.HasAOEToken()) // si tu ajoutes ce token
+        // ✅ Uniquement le mecha sélectionné
+        if (info != null && info.mechas_selec)
         {
-            ActivateExplosion();
+            if (Input.GetKeyDown(activationKey)
+                && isReady)
+            {
+                StartCoroutine(ActivateAOE());
+            }
         }
     }
 
-    private void ActivateExplosion()
+    private IEnumerator ActivateAOE()
     {
         isReady = false;
 
-        // Consomme la cl�
-        mecha_Inventory.ConsumeAOEToken();
+        // ✅ Instancie la zone à la position du mecha
+        GameObject aoe = Instantiate(
+            AOE_ZonePrefab,
+            transform.position,
+            Quaternion.identity
+        );
 
-        // Active la zone (elle explose toute seule)
-        AOE_Zone.SetActive(true);
+        // ✅ Nettoyage automatique
+        Destroy(aoe, 1f);
 
-        isReady = true; // ici pas de cooldown
+        yield return new WaitForSeconds(cooldown);
+
+        isReady = true;
+
+        // consommation de l'ability
+        abilityManager.ConsumeAbility();
     }
 }

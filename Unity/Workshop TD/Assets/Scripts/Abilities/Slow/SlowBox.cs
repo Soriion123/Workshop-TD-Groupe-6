@@ -4,14 +4,13 @@ public class SlowBox : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Mecha_Inventory inventory = other.GetComponent<Mecha_Inventory>();
+        Mecha_AbilityManager manager = other.GetComponent<Mecha_AbilityManager>();
 
-        if (inventory != null)
+        if (manager != null)
         {
-            inventory.AddSlowToken();
-
-            // Effets / son / particules ici
+            manager.SetAbility(AbilityType.Slow);
             Destroy(gameObject);
         }
+
     }
 }

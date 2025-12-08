@@ -1,47 +1,79 @@
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
 public class SlowAbility : MonoBehaviour
 {
     [Header("Ability Settings")]
-    public GameObject slowZone;
+    public GameObject slowZonePrefab;   // ✅ DOIT être un prefab
     public float activeTime = 3f;
-    public KeyCode activationKey = KeyCode.F;
+    private KeyCode activationKey = KeyCode.F;
 
     private bool isActive = false;
 
-    private Mecha_Inventory mecha_Inventory;
+    private Mecha_AbilityManager abilityManager;
+    private GameObject slowZoneInstance;
 
-    private void Start()
+    public Info_Mecha info;
+
+    private void Awake()
     {
-        mecha_Inventory = GetComponent<Mecha_Inventory>();
+        // ✅ On récupère le script de sélection
+        Info_Mecha info = GetComponent<Info_Mecha>();
 
-        if (slowZone != null)
-            slowZone.SetActive(false);
+        
+        abilityManager = GetComponent<Mecha_AbilityManager>();
+
+        // ✅ Suppression de toute zone déjà présente (sécurité anti-bug prefab)
+        A_Slow existingZone = GetComponentInChildren<A_Slow>();
+        if (existingZone != null)
+        {
+            Debug.LogWarning($"[{name}] Une zone slow existait déjà, suppression pour éviter partage !");
+            Destroy(existingZone.gameObject);
+        }
+
+        // ✅ Création d'une instance UNIQUE
+        slowZoneInstance = Instantiate(
+            slowZonePrefab,
+            transform.position,
+            Quaternion.identity,
+            transform
+        );
+
+        slowZoneInstance.name = "SlowZone_Instance_" + gameObject.name;
+        slowZoneInstance.SetActive(false);
+
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(activationKey) && !isActive && mecha_Inventory.HasSlowToken())
+       
+
+        // ✅ Seul le mecha sélectionné peut activer l’ability
+        if (info != null && info.mechas_selec)
         {
-            StartCoroutine(ActivateSlowZone());
+            if (Input.GetKeyDown(activationKey)
+                && !isActive)
+               
+            {
+                StartCoroutine(ActivateSlowZone());
+            }
         }
     }
 
-    private System.Collections.IEnumerator ActivateSlowZone()
+
+    private IEnumerator ActivateSlowZone()
     {
         isActive = true;
 
-        // Consommer 1 token
-        mecha_Inventory.ConsumeSlowToken();
-
-        // Activer la zone
-        slowZone.SetActive(true);
+        slowZoneInstance.SetActive(true);
 
         yield return new WaitForSeconds(activeTime);
 
-        // D�sactiver la zone
-        slowZone.SetActive(false);
+        slowZoneInstance.SetActive(false);
 
         isActive = false;
+
+        // consommation de l'ability
+        abilityManager.ConsumeAbility();
     }
 }

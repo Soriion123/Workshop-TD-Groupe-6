@@ -4,50 +4,46 @@ public class A_AutoDeath : MonoBehaviour
 {
     [Header("AutoDeath Settings")]
     public float damage = 5000f;
-    public float duration = 0.1f; // Temps très court, juste pour détecter
+    public float radius = 5f;
 
-    private void OnEnable()
+    private void Start()
     {
-        // Dès que la zone est activée → explosion
         Explode();
-        Invoke(nameof(DisableZone), duration);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        // On vérifie si c'est un ennemi
-        Ground_Enemy enemy = other.GetComponent<Ground_Enemy>();
-        if (enemy == null) return;
-
-        // On applique les dégâts selon le type réel de l’ennemi
-        if (other.TryGetComponent(out Ground_Fast fast))
-        {
-            fast.TakeDamage(damage);
-        }
-        else if (other.TryGetComponent(out Ground_Tank tank))
-        {
-            tank.TakeDamage(damage);
-        }
-        else if (other.TryGetComponent(out Ground_Basic basic))
-        {
-            basic.TakeDamage(damage);
-        }
-        /*else if (other.TryGetComponent(out Ground_Boss boss))
-        {
-            boss.TakeDamage(damage);
-        }*/
+        Destroy(gameObject, 0.2f); // La zone disparaît toute seule
     }
 
     private void Explode()
     {
-        // Tu peux ajouter ici :
-        // - particules
-        // - son
-        // - screen shake
+        // ✅ Détection forcée de tous les ennemis dans la zone
+        Collider[] hits = Physics.OverlapSphere(transform.position, radius);
+
+        foreach (Collider hit in hits)
+        {
+            if (hit.TryGetComponent(out Ground_Fast fast))
+            {
+                fast.TakeDamage(damage);
+            }
+            else if (hit.TryGetComponent(out Ground_Tank tank))
+            {
+                tank.TakeDamage(damage);
+            }
+            else if (hit.TryGetComponent(out Ground_Basic basic))
+            {
+                basic.TakeDamage(damage);
+            }
+            /*else if (hit.TryGetComponent(out Ground_Boss boss))
+            {
+                boss.TakeDamage(damage);
+            }*/
+        }
+
+        // ✅ Ici tu peux ajouter VFX / son / screen shake
     }
 
-    private void DisableZone()
+    // 🔍 Juste pour visualiser le rayon dans l’éditeur
+    private void OnDrawGizmosSelected()
     {
-        gameObject.SetActive(false);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }

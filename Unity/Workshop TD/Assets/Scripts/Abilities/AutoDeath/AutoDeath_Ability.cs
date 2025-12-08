@@ -3,48 +3,57 @@ using System.Collections;
 
 public class AutoDeath_Ability : MonoBehaviour
 {
-    public GameObject AutoDeath_Zone;
-    public KeyCode activationKey = KeyCode.R;
+    public GameObject AutoDeath_ZonePrefab;   // ✅ PREFAB ici
+    private KeyCode activationKey = KeyCode.F;
 
-    private bool isReady = true;
-    private Mecha_Inventory mecha_Inventory;
+    private bool isActive = false;
 
+    private Mecha_AbilityManager abilityManager;
     private GameObject cliqueur;
+    private Info_Mecha info;
 
     private void Start()
     {
+        info = GetComponent<Info_Mecha>();
+
+        abilityManager = GetComponent<Mecha_AbilityManager>();
+
         cliqueur = GameObject.Find("Cliquer");
-
-        mecha_Inventory = GetComponent<Mecha_Inventory>();
-
-        if (AutoDeath_Zone != null)
-            AutoDeath_Zone.SetActive(false);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(activationKey)
-            && isReady
-            && mecha_Inventory.HasAutoDeathToken())
+        if (info != null && info.mechas_selec)
         {
-            StartCoroutine(ActivateAndDie());
+            if (Input.GetKeyDown(activationKey)
+                && !isActive) 
+            {
+                StartCoroutine(ActivateAndDie());
+            }
         }
     }
 
     private IEnumerator ActivateAndDie()
     {
-        isReady = false;
+        isActive = true;
 
-        // Consomme la clé
-        mecha_Inventory.ConsumeAutoDeathToken();
+        // ✅ INSTANCIATION DE L’EXPLOSION
+        GameObject explosion = Instantiate(
+            AutoDeath_ZonePrefab,
+            transform.position,
+            Quaternion.identity
+        );
 
-        // Active la zone
-        AutoDeath_Zone.SetActive(true);
+        // (optionnel) destruction auto de la zone après 2s
+        Destroy(explosion, 2f);
 
-        // Attente de 1 seconde
+        // ✅ Attends que l’explosion fasse ses dégâts
         yield return new WaitForSeconds(1f);
 
-        // Destruction du mecha
+        // ✅ Tue le mecha
         cliqueur.GetComponent<Cliqueur>().Mechas_Dead(gameObject);
+
+        // consommation de l'ability
+        abilityManager.ConsumeAbility();
     }
 }

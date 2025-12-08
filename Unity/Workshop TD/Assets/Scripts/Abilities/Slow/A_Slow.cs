@@ -7,70 +7,75 @@ public class A_Slow : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // On vérifie si c'est un Ground_Enemy
-        Ground_Enemy enemy = other.GetComponent<Ground_Enemy>();
-        if (enemy == null) return;
+        // =========================
+        // ✅ GROUND ENEMIES
+        // =========================
+        Ground_Enemy ground = other.GetComponent<Ground_Enemy>();
+        if (ground != null)
+        {
+            if (other.TryGetComponent(out Ground_Fast fast))
+                fast.speedF = fast.originalSpeed * slowMultiplier;
 
-        // On vérifie si le script possède une variable speed + originalSpeed
-        if (other.TryGetComponent(out Ground_Fast fast))
-        {
-            fast.speedF = fast.originalSpeed * slowMultiplier;
-        }
-        else if (other.TryGetComponent(out Ground_Tank tank))
-        {
-            tank.speedT = tank.originalSpeed * slowMultiplier;
-        }
-        else if (other.TryGetComponent(out Ground_Basic basic))
-        {
-            basic.speedB = basic.originalSpeed * slowMultiplier;
-        }
-        /*else if (other.TryGetComponent(out Ground_Boss boss))
-        {
-            boss.speed = boss.originalSpeed * slowMultiplier;
-        }*/
+            else if (other.TryGetComponent(out Ground_Tank tank))
+                tank.speedT = tank.originalSpeed * slowMultiplier;
 
-        // ⚠️ Ajoute une ligne par type d’ennemi, si tu en as plusieurs
+            else if (other.TryGetComponent(out Ground_Basic basic))
+                basic.speedB = basic.originalSpeed * slowMultiplier;
 
-
-        // On vérifie si c'est un Flying_Enemy
-        Flying_Enemy ennemy = other.GetComponent<Flying_Enemy>();
-        if (enemy == null) return;
-
-        // On vérifie si le script possède une variable speed + originalSpeed
-        if (other.TryGetComponent(out Flying_Fast fastF))
-        {
-            fastF.speed = fastF.originalSpeed * slowMultiplier;
+            return;
         }
-        else if (other.TryGetComponent(out Flying_Fast tank))
+
+        // =========================
+        // ✅ FLYING ENEMIES
+        // =========================
+        Flying_Enemy flying = other.GetComponent<Flying_Enemy>();
+        if (flying != null)
         {
-            tank.speed = tank.originalSpeed * slowMultiplier;
-        }
-        else if (other.TryGetComponent(out Flying_Basic basic))
-        {
-            basic.speed = basic.originalSpeed * slowMultiplier;
+            if (other.TryGetComponent(out Flying_Fast fastF))
+                fastF.speed = fastF.originalSpeed * slowMultiplier;
+
+            else if (other.TryGetComponent(out Flying_Tank tankF))
+                tankF.speed = tankF.originalSpeed * slowMultiplier;
+
+            else if (other.TryGetComponent(out Flying_Basic basicF))
+                basicF.speed = basicF.originalSpeed * slowMultiplier;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Ground_Enemy enemy = other.GetComponent<Ground_Enemy>();
-        if (enemy == null) return;
+        // =========================
+        // ✅ RESTORE GROUND
+        // =========================
+        Ground_Enemy ground = other.GetComponent<Ground_Enemy>();
+        if (ground != null)
+        {
+            if (other.TryGetComponent(out Ground_Fast fast))
+                fast.speedF = fast.originalSpeed;
 
-        if (other.TryGetComponent(out Ground_Fast fast))
-        {
-            fast.speedF = fast.originalSpeed;
+            else if (other.TryGetComponent(out Ground_Tank tank))
+                tank.speedT = tank.originalSpeed;
+
+            else if (other.TryGetComponent(out Ground_Basic basic))
+                basic.speedB = basic.originalSpeed;
+
+            return;
         }
-        else if (other.TryGetComponent(out Ground_Tank tank))
+
+        // =========================
+        // ✅ RESTORE FLYING
+        // =========================
+        Flying_Enemy flying = other.GetComponent<Flying_Enemy>();
+        if (flying != null)
         {
-            tank.speedT = tank.originalSpeed;
+            if (other.TryGetComponent(out Flying_Fast fastF))
+                fastF.speed = fastF.originalSpeed;
+
+            else if (other.TryGetComponent(out Flying_Tank tankF))
+                tankF.speed = tankF.originalSpeed;
+
+            else if (other.TryGetComponent(out Flying_Basic basicF))
+                basicF.speed = basicF.originalSpeed;
         }
-        else if (other.TryGetComponent(out Ground_Basic basic))
-        {
-            basic.speedB = basic.originalSpeed;
-        }
-        /*else if (other.TryGetComponent(out Ground_Boss boss))
-        {
-            boss.speed = boss.originalSpeed;
-        }*/
     }
 }

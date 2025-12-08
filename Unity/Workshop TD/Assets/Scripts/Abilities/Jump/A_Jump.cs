@@ -1,37 +1,39 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-public class TeleportAbility : MonoBehaviour
+public class A_Jump : MonoBehaviour
 {
     [Header("Activation")]
-    public KeyCode activationKey = KeyCode.T;
+    private KeyCode activationKey = KeyCode.F;
 
     [Header("Teleport Settings")]
     public float maxTeleportRange = 10f;
     public float slowTimeScale = 0.2f;
 
     [Header("Visuals")]
-    public GameObject teleportRangePreview;   // grand cercle de portée
-
-    public GameObject cliqueur;
+    public GameObject teleportRangePreview;   // cercle de portée (ENFANT du mecha)
 
     private bool isAiming = false;
     private bool isReady = true;
 
-    private Mecha_Inventory inventory;
+    private Mecha_AbilityManager abilityManager;
     private NavMeshAgent agent;
+    private Info_Mecha info;
 
     private Vector3 targetPosition;
 
-    public Transform mecha;
+    private GameObject cliqueur;
+    private Transform mecha;
 
     private void Start()
     {
-        inventory = GetComponent<Mecha_Inventory>();
-        agent = GetComponent<NavMeshAgent>();
-        mecha = GetComponent<Transform>();
+        abilityManager = GetComponent<Mecha_AbilityManager>();
 
-        // ✅ Récupération automatique du cliqueur
+        agent = GetComponent<NavMeshAgent>();
+        info = GetComponent<Info_Mecha>();
+        mecha = transform;
+
+        // ✅ Récupération automatique du curseur
         cliqueur = GameObject.Find("Cursor");
 
         if (teleportRangePreview != null)
@@ -39,18 +41,19 @@ public class TeleportAbility : MonoBehaviour
             teleportRangePreview.SetActive(false);
             teleportRangePreview.transform.localScale = Vector3.one * maxTeleportRange * 2f;
         }
-
-
     }
 
     private void Update()
     {
-
-
-
-        if (Input.GetKeyDown(activationKey) & isReady & !isAiming & inventory.HasTeleportToken())
+        // ✅ Seulement le mecha sélectionné
+        if (info != null && info.mechas_selec)
         {
-            StartTeleportAim();
+            if (Input.GetKeyDown(activationKey)
+                && isReady
+                && !isAiming)
+            {
+                StartTeleportAim();
+            }
         }
 
         if (isAiming)
@@ -59,6 +62,9 @@ public class TeleportAbility : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
                 ConfirmTeleport();
+
+            if (Input.GetMouseButtonDown(1))
+                CancelTeleport();
         }
     }
 
@@ -67,7 +73,6 @@ public class TeleportAbility : MonoBehaviour
         isReady = false;
         isAiming = true;
 
-        inventory.ConsumeTeleportToken();
         Time.timeScale = slowTimeScale;
 
         teleportRangePreview.SetActive(true);
@@ -75,34 +80,37 @@ public class TeleportAbility : MonoBehaviour
 
     private void UpdateTargetPositionFromCliqueur()
     {
+        // ✅ Position du curseur SANS raycast
+        Vector3 rawTarget = cliqueur.transform.position;
 
-        targetPosition = cliqueur.transform.position;
-
+        // ✅ Clamp dans la portée max
+        targetPosition = mecha.position +
+            Vector3.ClampMagnitude(rawTarget - mecha.position, maxTeleportRange);
     }
 
-
-    // ===========================
     private void ConfirmTeleport()
     {
+        Vector3 finalPos = new Vector3(
+            targetPosition.x,
+            targetPosition.y + 0.5f,
+            targetPosition.z
+        );
+
         if (agent != null)
         {
-            agent.ResetPath(); // 🔥 Stop le déplacement en cours
-            agent.Warp(new Vector3(
-                targetPosition.x,
-                targetPosition.y + 0.5f,
-                targetPosition.z
-            ));
+            agent.ResetPath();     // 🔥 empêche le retour arrière
+            agent.Warp(finalPos); // ✅ vrai teleport propre
         }
         else
         {
-            // sécurité au cas où
-            mecha.position = new Vector3(
-                targetPosition.x,
-                targetPosition.y + 0.5f,
-                targetPosition.z
-            );
+            mecha.position = finalPos;
         }
 
+        EndTeleport();
+    }
+
+    private void CancelTeleport()
+    {
         EndTeleport();
     }
 
@@ -113,5 +121,7 @@ public class TeleportAbility : MonoBehaviour
 
         teleportRangePreview.SetActive(false);
         Time.timeScale = 1f;
+        // consommation de l'ability
+        abilityManager.ConsumeAbility();
     }
 }
