@@ -20,6 +20,8 @@ public class Ground_Spawner : MonoBehaviour
 
     private bool waveIsRunning = false;
 
+    public GameObject Waring_Canvas;
+
     private void Start()
     {
         if (waves == null || waves.Length == 0)
@@ -39,10 +41,17 @@ public class Ground_Spawner : MonoBehaviour
     {
         countdown -= Time.deltaTime;
 
+        if (countdown <= 5 && !waveIsRunning)
+        {
+            Waring_Canvas.SetActive(true);
+        }
+
         if (countdown <= 0f && !waveIsRunning)
         {
             StartCoroutine(SpawnWaveGround());
             waveIsRunning = true;
+
+            Waring_Canvas.SetActive(false);
         }
     }
 

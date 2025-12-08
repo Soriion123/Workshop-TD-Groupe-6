@@ -19,6 +19,7 @@ public class Flying_Spawner : MonoBehaviour
 
     private bool waveIsRunning = false;
 
+    public GameObject Waring_Canvas;
     private void Start()
     {
         countdown = waves[0].timeToNextWave;
@@ -35,10 +36,18 @@ public class Flying_Spawner : MonoBehaviour
 
         countdown -= Time.deltaTime;
 
+
+        if (countdown <= 5 && !waveIsRunning)
+        {
+            Waring_Canvas.SetActive(true);
+        }
+
         if (countdown <= 0 && !waveIsRunning)
         {
             StartCoroutine(SpawnWaveFlying());
             waveIsRunning = true;
+
+            Waring_Canvas.SetActive(false);
         }
     }
 
