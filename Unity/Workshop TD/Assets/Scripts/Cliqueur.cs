@@ -82,6 +82,7 @@ public class Cliqueur : MonoBehaviour
                     //print(List_de_mechaas);
 
 
+
                     New_selection(hit.collider.gameObject);
 
 
@@ -90,6 +91,7 @@ public class Cliqueur : MonoBehaviour
                     test_memori = hit.collider.gameObject;
 
                     New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
+
                 }
                 
                 // Vente du mechas
@@ -187,7 +189,7 @@ public class Cliqueur : MonoBehaviour
                                 UI_mechas_scene[i] = Mechas_Instantiate;
 
                                 Mechas_Instantiate.gameObject.GetComponent<Info_Mecha>().id_ui = i;
-                                
+
                                 return;
                             }
                         }
@@ -199,7 +201,7 @@ public class Cliqueur : MonoBehaviour
                         Mechas_Instantiate.gameObject.GetComponent<Info_Mecha>().id_ui = cmp_mechas_spawn - 1;
                     }
 
-                    New_Target[New_Target.Count - 1].GetComponentInChildren<MeshRenderer>().material = Material_cursor[ID_mechas_Spawn];
+                    New_Target[Mechas_Instantiate.GetComponent<Info_Mecha>().id].GetComponentInChildren<MeshRenderer>().material = Material_cursor[ID_mechas_Spawn];
 
                 }
 
@@ -239,27 +241,27 @@ public class Cliqueur : MonoBehaviour
 
 
 
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.Alpha1) && UI_mechas_scene.Count != 0)
             {
                 recherche_ID_en_vie(0);
                 New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
             }
-            if (Input.GetKeyDown(KeyCode.Alpha2))
+            if (Input.GetKeyDown(KeyCode.Alpha2) && UI_mechas_scene.Count != 0)
             {
                 recherche_ID_en_vie(1);
                 New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
             }
-            if (Input.GetKeyDown(KeyCode.Alpha3))
+            if (Input.GetKeyDown(KeyCode.Alpha3) && UI_mechas_scene.Count != 0)
             {
                 recherche_ID_en_vie(2);
                 New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
             }
-            if (Input.GetKeyDown(KeyCode.Alpha4))
+            if (Input.GetKeyDown(KeyCode.Alpha4) && UI_mechas_scene.Count != 0)
             {
                 recherche_ID_en_vie(3);
                 New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
             }
-            if (Input.GetKeyDown(KeyCode.Alpha5))
+            if (Input.GetKeyDown(KeyCode.Alpha5) && UI_mechas_scene.Count != 0)
             {
                 recherche_ID_en_vie(4);
                 New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
@@ -273,16 +275,34 @@ public class Cliqueur : MonoBehaviour
     public void recherche_ID_en_vie(int touche)
     {
 
-        for (int i = 0; i < UI_mechas_scene.Count; i++)
+        if (UI_mechas_scene.Count == 5)
         {
-            if (UI_mechas_scene[i] != null)
+            for (int i = 0; i < UI_mechas_scene.Count; i++)
             {
-                UI_mechas_scene[i].GetComponent<Info_Mecha>().mechas_selec = false;
+                if (UI_mechas_scene[i] != null)
+                {
+                    UI_mechas_scene[i].GetComponent<Info_Mecha>().mechas_selec = false;
 
-                if (UI_mechas_scene[i].name == "Mechas_Air(Clone)") { New_Target[i].GetComponentInChildren<MeshRenderer>().material = Material_cursor[0]; }
-                if (UI_mechas_scene[i].name == "Mechas_All(Clone)") { New_Target[i].GetComponentInChildren<MeshRenderer>().material = Material_cursor[1]; }
-                if (UI_mechas_scene[i].name == "Mechas_Ground(Clone)") { New_Target[i].GetComponentInChildren<MeshRenderer>().material = Material_cursor[2]; }
+                    if (UI_mechas_scene[i].name == "Mechas_Air(Clone)") { New_Target[UI_mechas_scene[i].GetComponent<Info_Mecha>().id].GetComponentInChildren<MeshRenderer>().material = Material_cursor[0]; }
+                    if (UI_mechas_scene[i].name == "Mechas_All(Clone)") { New_Target[UI_mechas_scene[i].GetComponent<Info_Mecha>().id].GetComponentInChildren<MeshRenderer>().material = Material_cursor[1]; }
+                    if (UI_mechas_scene[i].name == "Mechas_Ground(Clone)") { New_Target[UI_mechas_scene[i].GetComponent<Info_Mecha>().id].GetComponentInChildren<MeshRenderer>().material = Material_cursor[2]; }
 
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < UI_mechas_scene.Count; i++)
+            {
+                if (UI_mechas_scene[i] != null)
+                {
+                    UI_mechas_scene[i].GetComponent<Info_Mecha>().mechas_selec = false;
+
+                    if (UI_mechas_scene[i].name == "Mechas_Air(Clone)") { New_Target[i].GetComponentInChildren<MeshRenderer>().material = Material_cursor[0]; }
+                    if (UI_mechas_scene[i].name == "Mechas_All(Clone)") { New_Target[i].GetComponentInChildren<MeshRenderer>().material = Material_cursor[1]; }
+                    if (UI_mechas_scene[i].name == "Mechas_Ground(Clone)") { New_Target[i].GetComponentInChildren<MeshRenderer>().material = Material_cursor[2]; }
+
+                }
             }
         }
 
@@ -302,19 +322,37 @@ public class Cliqueur : MonoBehaviour
     
     public void New_selection(GameObject New_selec)
     {
-        for (int i = 0; i < UI_mechas_scene.Count; i++)
+        if (UI_mechas_scene.Count == 5)
         {
-            if (UI_mechas_scene[i] != null)
+            for (int i = 0; i < UI_mechas_scene.Count; i++)
             {
-                UI_mechas_scene[i].GetComponent<Info_Mecha>().mechas_selec = false;
+                if (UI_mechas_scene[i] != null)
+                {
+                    UI_mechas_scene[i].GetComponent<Info_Mecha>().mechas_selec = false;
 
-                if (UI_mechas_scene[i].name == "Mechas_Air(Clone)") { New_Target[i].GetComponentInChildren<MeshRenderer>().material = Material_cursor[0]; }
-                if (UI_mechas_scene[i].name == "Mechas_All(Clone)") { New_Target[i].GetComponentInChildren<MeshRenderer>().material = Material_cursor[1]; }
-                if (UI_mechas_scene[i].name == "Mechas_Ground(Clone)") { New_Target[i].GetComponentInChildren<MeshRenderer>().material = Material_cursor[2]; }
+                    if (UI_mechas_scene[i].name == "Mechas_Air(Clone)") {  New_Target[UI_mechas_scene[i].GetComponent<Info_Mecha>().id].GetComponentInChildren<MeshRenderer>().material = Material_cursor[0]; }
+                    if (UI_mechas_scene[i].name == "Mechas_All(Clone)") { New_Target[UI_mechas_scene[i].GetComponent<Info_Mecha>().id].GetComponentInChildren<MeshRenderer>().material = Material_cursor[1]; }
+                    if (UI_mechas_scene[i].name == "Mechas_Ground(Clone)") { New_Target[UI_mechas_scene[i].GetComponent<Info_Mecha>().id].GetComponentInChildren<MeshRenderer>().material = Material_cursor[2]; }
 
+                }
             }
         }
+        else
+        {
+            for (int i = 0; i < UI_mechas_scene.Count; i++)
+            {
+                if (UI_mechas_scene[i] != null)
+                {
+                    UI_mechas_scene[i].GetComponent<Info_Mecha>().mechas_selec = false;
 
+                    if (UI_mechas_scene[i].name == "Mechas_Air(Clone)") { New_Target[i].GetComponentInChildren<MeshRenderer>().material = Material_cursor[0]; }
+                    if (UI_mechas_scene[i].name == "Mechas_All(Clone)") { New_Target[i].GetComponentInChildren<MeshRenderer>().material = Material_cursor[1]; }
+                    if (UI_mechas_scene[i].name == "Mechas_Ground(Clone)") { New_Target[i].GetComponentInChildren<MeshRenderer>().material = Material_cursor[2]; }
+
+                }
+            }
+        }
+            
         New_selec.GetComponent<Info_Mecha>().mechas_selec = true;
     }
 
