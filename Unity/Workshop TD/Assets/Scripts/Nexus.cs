@@ -6,6 +6,10 @@ public class Nexus : MonoBehaviour
     public float maxHealth = 100f;
     public float currenthealth;
 
+
+    public GameObject Canvas_Dead;
+    public GameObject Cliquer;
+
     private void Start()
     {
         currenthealth = maxHealth;
@@ -22,6 +26,10 @@ public class Nexus : MonoBehaviour
 
         if (currenthealth <= 0)
         {
+            Canvas_Dead.SetActive(true);
+            Time.timeScale = 0;
+            Cliquer.SetActive(false);
+
             Die();
             Destroy(gameObject);
             return;

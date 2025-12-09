@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 
 using TMPro;
+using System.Collections;
 
 public class UI_Manageur : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class UI_Manageur : MonoBehaviour
     public GameManager gameManager;
     public Nexus Nexus;
     public Cliqueur cliqueur;
+    
 
     public TextMeshProUGUI Nexus_Life_UI;
 
@@ -27,12 +29,13 @@ public class UI_Manageur : MonoBehaviour
     public Ground_Spawner Ground_Spawner;
     public TextMeshProUGUI NB_Wave;
 
-
+    public GameObject Cancas_Win;
+    public GameObject Cliquer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -40,6 +43,12 @@ public class UI_Manageur : MonoBehaviour
     {
         Nexus_Life_UI.text = Nexus.currenthealth.ToString();
         NB_Wave.text = Ground_Spawner.cmp_Wave.ToString();
+
+        
+        if (Ground_Spawner.cmp_Wave == 10)
+        {
+            StartCoroutine(Last_Wave());
+        }
 
         for (int i = 0; i < cliqueur.UI_mechas_scene.Count; i++)
         {
@@ -111,5 +120,13 @@ public class UI_Manageur : MonoBehaviour
         }
     }
 
+    IEnumerator Last_Wave()
+    {
+        yield return new WaitForSeconds(65f);
+
+        Cancas_Win.SetActive(true);
+        Cliquer.SetActive(false);
+        Time.timeScale = 0;
+    }
 
 }
