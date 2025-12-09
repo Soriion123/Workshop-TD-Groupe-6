@@ -50337,6 +50337,7 @@ MonoBehaviour:
   - {fileID: 1704531688}
   - {fileID: 451856138}
   - {fileID: 1470264401}
+  text_ui_habiliti: []
   Color_Mechas:
   - {r: 0, g: 0.9407029, b: 1, a: 0}
   - {r: 1, g: 0, b: 0.87176275, a: 0}
