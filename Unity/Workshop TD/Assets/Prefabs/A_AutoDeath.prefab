@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4850240980845392691}
   - component: {fileID: 9006894617296719097}
   - component: {fileID: -617621156847000637}
+  - component: {fileID: 2843320265472877790}
   m_Layer: 0
   m_Name: A_AutoDeath
   m_TagString: Sol
@@ -149,3 +150,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2843320265472877790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8912189699769007412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cd9c7acdee1a3c4b88c7037044ab37a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

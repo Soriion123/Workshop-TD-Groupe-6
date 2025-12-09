@@ -62,9 +62,6 @@ public class A_Jump : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
                 ConfirmTeleport();
-
-            if (Input.GetMouseButtonDown(1))
-                CancelTeleport();
         }
     }
 
@@ -106,11 +103,6 @@ public class A_Jump : MonoBehaviour
             mecha.position = finalPos;
         }
 
-        EndTeleport();
-    }
-
-    private void CancelTeleport()
-    {
         EndTeleport();
     }
 

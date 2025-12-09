@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections.Generic;
 
 public class Spawn_ability : MonoBehaviour
@@ -6,7 +6,7 @@ public class Spawn_ability : MonoBehaviour
     [Header("Liste de prefabs upgrades possibles")]
     public GameObject[] upgradePrefabs;
 
-    [Header("Points de spawn prédéfinis")]
+    [Header("Points de spawn prÃ©dÃ©finis")]
     public Transform[] spawnPoints;
 
     [Header("Timing")]
@@ -26,37 +26,26 @@ public class Spawn_ability : MonoBehaviour
     void SpawnUpgrade()
     {
         if (freePoints.Count == 0)
-        {
-            Debug.Log("Tous les points sont occupés !");
             return;
-        }
 
         if (upgradePrefabs.Length == 0)
-        {
-            Debug.LogWarning("Aucun prefab d’upgrade défini !");
             return;
-        }
 
         // Choisir un point libre
         int index = freePoints[Random.Range(0, freePoints.Count)];
         Transform chosenPoint = spawnPoints[index];
 
-        // Choisir un upgrade aléatoire
+        // Choisir un upgrade alÃ©atoire
         GameObject chosenUpgrade = upgradePrefabs[Random.Range(0, upgradePrefabs.Length)];
 
-        // Instancier l’upgrade
+        // Instancier lâ€™upgrade
         GameObject spawned = Instantiate(chosenUpgrade, chosenPoint.position, chosenPoint.rotation);
 
-        // Marquer le point comme occupé
+        // Marquer comme occupÃ©
         freePoints.Remove(index);
 
-        // Donner les infos au Collectible
-        A_Gold cp = spawned.GetComponent<A_Gold>();
-        if (cp == null)
-            cp = spawned.AddComponent<A_Gold>();
-
-        cp.spawner = this;
-        cp.pointIndex = index;
+        // â˜… Assigner lâ€™index et le spawner au script du collectible
+        spawned.GetComponent<A_UpgradePickup>().Init(this, index);
     }
 
     public void FreePoint(int index)

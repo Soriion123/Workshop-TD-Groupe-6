@@ -534,7 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a98490d6a9d6ad4faf9a42c462d12c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTeleportRange: 41
+  maxTeleportRange: 20.5
   slowTimeScale: 0.2
   teleportRangePreview: {fileID: 4822687914617045287}
 --- !u!114 &-2782114789563296650
@@ -812,15 +812,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6233324865482404266, guid: 3f26a988a5db748479e200ff6e3bfd4c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6233324865482404266, guid: 3f26a988a5db748479e200ff6e3bfd4c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6233324865482404266, guid: 3f26a988a5db748479e200ff6e3bfd4c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6233324865482404266, guid: 3f26a988a5db748479e200ff6e3bfd4c, type: 3}
       propertyPath: m_LocalPosition.x
