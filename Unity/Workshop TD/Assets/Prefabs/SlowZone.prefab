@@ -107,7 +107,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5000001
+  m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
@@ -123,4 +123,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd5eed6d8f9dcf54fa97d8e9c020de41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowMultiplier: 0.2
+  slowMultiplier: 0.27
