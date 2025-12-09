@@ -107,7 +107,7 @@ public class Cliqueur : MonoBehaviour
                 {
 
                     // UpGrade
-                    if (hit.collider.gameObject.name == "Mechas_Air(Clone)" & game_manager.gold >= 1934)
+                    if (hit.collider.gameObject.name == "Mechas_Air(Clone)" & game_manager.gold >= 1934 & hit.collider.gameObject.GetComponent<Info_Mecha>().Niveau_UpGrade == 0)
                     {
                         game_manager.gold = game_manager.gold - 1934;
 
@@ -119,7 +119,7 @@ public class Cliqueur : MonoBehaviour
 
                     }
 
-                    if (hit.collider.gameObject.name == "Mechas_All(Clone)" & game_manager.gold >= 2021)
+                    if (hit.collider.gameObject.name == "Mechas_All(Clone)" & game_manager.gold >= 2021 & hit.collider.gameObject.GetComponent<Info_Mecha>().Niveau_UpGrade == 0)
                     {
                         game_manager.gold = game_manager.gold - 2021;
 
@@ -130,7 +130,7 @@ public class Cliqueur : MonoBehaviour
                         hit.collider.gameObject.GetComponent<Info_Mecha>().Niveau_UpGrade++;
                     }
 
-                    if (hit.collider.gameObject.name == "Mechas_Ground(Clone)" & game_manager.gold >= 1122)
+                    if (hit.collider.gameObject.name == "Mechas_Ground(Clone)" & game_manager.gold >= 1122 & hit.collider.gameObject.GetComponent<Info_Mecha>().Niveau_UpGrade == 0)
                     {
                         game_manager.gold = game_manager.gold - 1122;
 
@@ -240,7 +240,7 @@ public class Cliqueur : MonoBehaviour
             
 
 
-
+            // Selction via Key 12345
             if (Input.GetKeyDown(KeyCode.Alpha1) && UI_mechas_scene.Count != 0)
             {
                 recherche_ID_en_vie(0);
@@ -372,6 +372,8 @@ public class Cliqueur : MonoBehaviour
         return;
     }
 
+
+    // Selction Via UI
     public void selec_with_UI_1()
     {
         recherche_ID_en_vie(0);
