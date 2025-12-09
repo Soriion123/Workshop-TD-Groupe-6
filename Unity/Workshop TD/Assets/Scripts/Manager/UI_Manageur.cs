@@ -24,7 +24,9 @@ public class UI_Manageur : MonoBehaviour
 
     public Color[] Color_Mechas;
 
-    public GameObject test;
+    public Ground_Spawner Ground_Spawner;
+    public TextMeshProUGUI NB_Wave;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,6 +39,7 @@ public class UI_Manageur : MonoBehaviour
     void Update()
     {
         Nexus_Life_UI.text = Nexus.currenthealth.ToString();
+        NB_Wave.text = Ground_Spawner.cmp_Wave.ToString();
 
         for (int i = 0; i < cliqueur.UI_mechas_scene.Count; i++)
         {
@@ -80,12 +83,6 @@ public class UI_Manageur : MonoBehaviour
 
                 Niveau_Mechas_UI[i].text = cliqueur.UI_mechas_scene[i].GetComponent<Info_Mecha>().Niveau_UpGrade.ToString();
                 
-
-
-
-
-
-
             }
         }
     }

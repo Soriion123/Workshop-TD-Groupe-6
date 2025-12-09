@@ -22,6 +22,8 @@ public class Ground_Spawner : MonoBehaviour
 
     public GameObject Waring_Canvas;
 
+    public int cmp_Wave = 0;
+
     private void Start()
     {
         if (waves == null || waves.Length == 0)
@@ -50,7 +52,7 @@ public class Ground_Spawner : MonoBehaviour
         {
             StartCoroutine(SpawnWaveGround());
             waveIsRunning = true;
-
+            if (cmp_Wave < 10) { cmp_Wave++; }
             Waring_Canvas.SetActive(false);
         }
     }
