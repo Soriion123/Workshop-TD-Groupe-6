@@ -372,4 +372,34 @@ public class Cliqueur : MonoBehaviour
         return;
     }
 
+    public void selec_with_UI_1()
+    {
+        recherche_ID_en_vie(0);
+        New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
+    }
+
+    public void selec_with_UI_2()
+    {
+        recherche_ID_en_vie(1);
+        New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
+    }
+
+    public void selec_with_UI_3()
+    {
+        recherche_ID_en_vie(2);
+        New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
+    }
+
+    public void selec_with_UI_4()
+    {
+        recherche_ID_en_vie(3);
+        New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
+    }
+
+    public void selec_with_UI_5()
+    {
+        recherche_ID_en_vie(4);
+        New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
+    }
+
 }
