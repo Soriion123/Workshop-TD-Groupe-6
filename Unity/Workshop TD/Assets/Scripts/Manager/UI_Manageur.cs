@@ -20,8 +20,7 @@ public class UI_Manageur : MonoBehaviour
 
     public TextMeshProUGUI[] Niveau_Mechas_UI;
 
-
-
+    public TextMeshProUGUI[] text_ui_habiliti;
 
     public Color[] Color_Mechas;
 
@@ -49,14 +48,20 @@ public class UI_Manageur : MonoBehaviour
             {
                 Icone_Mechas_Outline[i].gameObject.SetActive(true);
 
+                check_abiliti(i);
+
                 if (cliqueur.UI_mechas_scene[i].name == "Mechas_Air(Clone)")
                 {
                     Icone_Mechas_Centre[i].GetComponent<Image>().color = Color.cyan ;
                 }
+                
+                
                 if (cliqueur.UI_mechas_scene[i].name == "Mechas_All(Clone)")
                 {
                     Icone_Mechas_Centre[i].GetComponent<Image>().color = Color.magenta ;
                 }
+                
+                
                 if (cliqueur.UI_mechas_scene[i].name == "Mechas_Ground(Clone)")
                 {
                     Icone_Mechas_Centre[i].GetComponent<Image>().color = Color.green ;
@@ -66,14 +71,48 @@ public class UI_Manageur : MonoBehaviour
                 {
                     Icone_Mechas_Outline[i].GetComponent<Image>().color = Color.yellow;
                 }
+                
+                
                 else
                 {
                     Icone_Mechas_Outline[i].GetComponent<Image>().color = Color.black;
                 }
 
                 Niveau_Mechas_UI[i].text = cliqueur.UI_mechas_scene[i].GetComponent<Info_Mecha>().Niveau_UpGrade.ToString();
+                
+
+
+
+
+
 
             }
         }
     }
+
+    public void check_abiliti(int i)
+    {
+        if (cliqueur.UI_mechas_scene[i].GetComponent<Mecha_AbilityManager>().slowAbility.enabled)
+        {
+            text_ui_habiliti[i].text = "Slow";
+        }
+        else if (cliqueur.UI_mechas_scene[i].GetComponent<Mecha_AbilityManager>().aoeAbility.enabled)
+        {
+            text_ui_habiliti[i].text = "AOE";
+        }
+        else if (cliqueur.UI_mechas_scene[i].GetComponent<Mecha_AbilityManager>().autoDeathAbility.enabled)
+        {
+            text_ui_habiliti[i].text = "AUTO DEAD";
+        }
+        else if (cliqueur.UI_mechas_scene[i].GetComponent<Mecha_AbilityManager>().teleportAbility.enabled)
+        {
+            text_ui_habiliti[i].text = "Teleport";
+        }
+        else
+        {
+            text_ui_habiliti[i].text = " ";
+        }
+    }
+
+
 }
