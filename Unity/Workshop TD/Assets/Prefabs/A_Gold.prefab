@@ -151,5 +151,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
   pointIndex: 0
-  A_gold: ma bite
+  A_gold: je suis riche
   goldAmount: 100
