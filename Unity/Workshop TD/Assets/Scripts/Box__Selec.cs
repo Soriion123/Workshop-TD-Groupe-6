@@ -21,14 +21,55 @@ public class Box__Selec : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Type_box == 0) { Switch_color(0); }
-        if (Type_box == 1) { Switch_color(1); }
-        if (Type_box == 2) { Switch_color(2); }
+        if (This_BOX.tag == "Boite 1" || This_BOX.tag == "Boite 2" || This_BOX.tag == "Boite 3")
+        {
+            if (Type_box == 0) { Switch_color_Box_Crea(0); }
+            if (Type_box == 1) { Switch_color_Box_Crea(1); }
+            if (Type_box == 2) { Switch_color_Box_Crea(2); }
+        }
+        else
+        {
+            if (Type_box == 0) 
+            {
+                if (Game_Manager.gold > 1934)
+                {
+                    This_BOX.GetComponent<MeshRenderer>().material = Material_Box[0];
+                }
+                else
+                {
+                    This_BOX.GetComponent<MeshRenderer>().material = Material_Box[3];
+                }
+            }
+            if (Type_box == 1) 
+            {
+                if (Game_Manager.gold > 2021)
+                {
+                    This_BOX.GetComponent<MeshRenderer>().material = Material_Box[1];
+                }
+                else
+                {
+                    This_BOX.GetComponent<MeshRenderer>().material = Material_Box[3];
+                }
+            }
+            if (Type_box == 2) 
+            {
+                if (Game_Manager.gold > 1122)
+                {
+                    This_BOX.GetComponent<MeshRenderer>().material = Material_Box[2];
+                }
+                else
+                {
+                    This_BOX.GetComponent<MeshRenderer>().material = Material_Box[3];
+                }
+            }
+        
+        }
+
+        
     }
 
-    void Switch_color(int type)
+    void Switch_color_Box_Crea(int type)
     {
-
         if (Game_Manager.gold > prefab_mechas[type].GetComponent<Info_Mecha>().prix)
         {
             This_BOX.GetComponent<MeshRenderer>().material = Material_Box[type];
@@ -38,5 +79,7 @@ public class Box__Selec : MonoBehaviour
             This_BOX.GetComponent<MeshRenderer>().material = Material_Box[3];
         }
     }
+
+    
 
 }
