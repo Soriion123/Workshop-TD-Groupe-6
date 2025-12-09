@@ -214,7 +214,21 @@ public class Cliqueur : MonoBehaviour
                 {
                     game_manager.gold = game_manager.gold + prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix / 2;
 
-                    Mechas_Dead(UI_mechas_scene[ref_id_selec]);
+
+
+                    for (int i = 0; i < UI_mechas_scene.Count; i++)
+                    {
+                        if (UI_mechas_scene[i] != null)
+                        {
+                            if (UI_mechas_scene[i].GetComponent<Info_Mecha>().mechas_selec)
+                            {
+                                Mechas_Dead(UI_mechas_scene[UI_mechas_scene[i].GetComponent<Info_Mecha>().id_ui]);
+                            }
+                        }
+                    }
+
+                    
+                    //Mechas_Dead(UI_mechas_scene[ref_id_selec]);
                 }
             }
 
