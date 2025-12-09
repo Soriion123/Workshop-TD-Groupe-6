@@ -8,8 +8,6 @@ public class Flying_Tank: Flying_Enemy
     [SerializeField] public float speed = 5f;
     [HideInInspector] public float originalSpeed;
     [SerializeField] private float maxHealth = 10f;
-    [SerializeField] private float obstacleDetectionDistance = 2f;
-    [SerializeField] private float avoidanceStrength = 2f;
     [SerializeField] private int goldReward = 1;   // 💰 or gagné à la mort
 
     public float NexusDamage = 5f; // dégâts infligés à l'objectif
@@ -19,6 +17,10 @@ public class Flying_Tank: Flying_Enemy
 
     private float currentHealth;
 
+    private float obstacleCheckRadius = 4f;  // rayon de la sphère
+    private float climbSpeed = 4f;           // vitesse pour monter
+    private float climbHeight = 5f;          // hauteur d’évitement
+
     private void Start()
     {
         originalSpeed = speed;
@@ -27,29 +29,48 @@ public class Flying_Tank: Flying_Enemy
 
     private void Update()
     {
-        
         if (target == null) return;
 
-        // Direction vers la cible
         Vector3 direction = (target.position - transform.position).normalized;
 
-        // Détection des obstacles avec raycast
-        if (Physics.Raycast(transform.position, direction, out RaycastHit hit, obstacleDetectionDistance))
+        // --- CHECK OBSTACLES DANS LA SPHÈRE ---
+        Collider[] hits = Physics.OverlapSphere(transform.position, obstacleCheckRadius);
+
+        bool wallDetected = false;
+
+        foreach (var hit in hits)
         {
-            // Calcul d'une direction de contournement
-            Vector3 avoidDirection = Vector3.Cross(Vector3.up, hit.normal).normalized;
-            direction = Vector3.Lerp(direction, avoidDirection, 0.7f).normalized;
+            if (hit.CompareTag("Wall"))
+            {
+                wallDetected = true;
+                break;
+            }
         }
 
-        // Déplacement
-        transform.position += direction * speed * Time.deltaTime;
+        // --- SI MUR DÉTECTÉ → MONTER ---
+        if (wallDetected)
+        {
+            Vector3 climbTarget = transform.position + Vector3.up * climbHeight;
 
-        // Vérification si la cible est atteinte
+            transform.position = Vector3.Lerp(
+                transform.position,
+                climbTarget,
+                Time.deltaTime * climbSpeed
+            );
+        }
+        else
+        {
+            // Déplacement normal
+            transform.position += direction * speed * Time.deltaTime;
+        }
+
+        // Vérification objectif
         if (Vector3.Distance(transform.position, target.position) < 0.5f)
         {
             ReachTarget();
         }
     }
+
 
     private void ReachTarget()
     {
