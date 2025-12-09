@@ -4824,7 +4824,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -1573880381320145548, guid: d3012d787ed3ab040bfa8ca691ed2d88, type: 3}
       propertyPath: maxHealth
-      value: 1100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: -1573880381320145548, guid: d3012d787ed3ab040bfa8ca691ed2d88, type: 3}
       propertyPath: currenthealth
@@ -26709,7 +26709,7 @@ GameObject:
   - component: {fileID: 639380757}
   - component: {fileID: 639380756}
   m_Layer: 0
-  m_Name: Spawner_Upgrades
+  m_Name: Spawner_Abilities
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26741,7 +26741,7 @@ MonoBehaviour:
   - {fileID: 980957826}
   - {fileID: 1291958336}
   - {fileID: 1286198582}
-  spawnInterval: 15
+  spawnInterval: 60
 --- !u!4 &639380757
 Transform:
   m_ObjectHideFlags: 0
