@@ -4,7 +4,7 @@ using System.Collections;
 
 public class Ground_Spawner : MonoBehaviour
 {
-    [SerializeField] private float countdown;
+    [SerializeField] public float countdown;
 
     [Header("Spawn Settings")]
     [SerializeField] private GameObject SpawnPointGround;
