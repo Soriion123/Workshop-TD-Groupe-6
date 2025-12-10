@@ -44,7 +44,7 @@ public class UI_Manageur : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Nexus_Life_UI.text = Nexus.currenthealth.ToString();
+        Nexus_Life_UI.text = "Piggy Bank : " + Nexus.currenthealth.ToString();
         NB_Wave.text = Ground_Spawner.cmp_Wave.ToString();
         
         if (Ground_Spawner.countdown > 0)

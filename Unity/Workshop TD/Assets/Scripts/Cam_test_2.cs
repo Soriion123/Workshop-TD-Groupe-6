@@ -67,7 +67,10 @@ public class Cam_test_2 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             // Reset transforms
-            tr_camera_Pivot.rotation = Memori_cam_1;
+
+            tr_camera_Pivot.rotation = Quaternion.Slerp(tr_camera_Pivot.rotation, Memori_cam_1, Time.timeScale * 3);
+
+            //tr_camera_Pivot.rotation = Memori_cam_1;
             tr_camera_Position.position = Memori_cam_2;
 
             // Reset des variables internes sinon la rotation est écrasée ensuite
