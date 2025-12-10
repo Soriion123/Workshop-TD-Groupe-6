@@ -32,6 +32,8 @@ public class UI_Manageur : MonoBehaviour
     public GameObject Cancas_Win;
     public GameObject Cliquer;
 
+    public TMP_InputField[] Name_Mechas;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -91,7 +93,10 @@ public class UI_Manageur : MonoBehaviour
                 }
 
                 Niveau_Mechas_UI[i].text = cliqueur.UI_mechas_scene[i].GetComponent<Info_Mecha>().Niveau_UpGrade.ToString();
-                
+
+                cliqueur.New_Target[cliqueur.UI_mechas_scene[i].GetComponent<Info_Mecha>().id].GetComponentInChildren<TextMeshProUGUI>().text = Name_Mechas[i].text;
+
+
             }
         }
     }
