@@ -39,7 +39,7 @@ public class A_Jump : MonoBehaviour
         if (teleportRangePreview != null)
         {
             teleportRangePreview.SetActive(false);
-            teleportRangePreview.transform.localScale = Vector3.one * maxTeleportRange * 2f;
+            teleportRangePreview.transform.localScale = Vector3.one * maxTeleportRange * 1f;
         }
     }
 
