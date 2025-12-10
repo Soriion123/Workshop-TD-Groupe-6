@@ -4102,7 +4102,7 @@ MonoBehaviour:
     - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
     - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
     timeToNextEnnemy: 0.35
-    timeToNextWave: 42
+    timeToNextWave: 44
     enemiesLeft: 0
   - enemies:
     - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
@@ -35069,7 +35069,7 @@ MonoBehaviour:
     - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
     - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
     timeToNextEnnemy: 0.45
-    timeToNextWave: 43
+    timeToNextWave: 41
     enemiesLeft: 0
   - enemies:
     - {fileID: 2731973633872649743, guid: fc93fbd0d38738a419acaccb6e627735, type: 3}
