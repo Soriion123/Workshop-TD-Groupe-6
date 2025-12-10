@@ -29,14 +29,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5431806786630690919}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.020605, y: -0.01277, z: 0.010309}
+  m_LocalRotation: {x: -0, y: 0.55398804, z: -0, w: 0.8325246}
+  m_LocalPosition: {x: 0.17416772, y: 1, z: -0.8756089}
   m_LocalScale: {x: 1.9264553, y: 2.1955822, z: 2.002256}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9182296869431391923}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 67.282, z: 0}
 --- !u!33 &5632304828458696788
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -180,31 +180,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad6240e11c1708640ada04d1a1b90efb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.8211
+      value: -3.1269183
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad6240e11c1708640ada04d1a1b90efb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.79753
+      value: -0.50000006
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad6240e11c1708640ada04d1a1b90efb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.62054
+      value: -0.6004382
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad6240e11c1708640ada04d1a1b90efb, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.0059197554
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad6240e11c1708640ada04d1a1b90efb, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad6240e11c1708640ada04d1a1b90efb, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.9999825
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad6240e11c1708640ada04d1a1b90efb, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad6240e11c1708640ada04d1a1b90efb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -212,7 +212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad6240e11c1708640ada04d1a1b90efb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -179.322
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad6240e11c1708640ada04d1a1b90efb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -222,6 +222,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_ZakuAerialTank_LP01
       objectReference: {fileID: 0}
+    - target: {fileID: 3847510194180495394, guid: ad6240e11c1708640ada04d1a1b90efb, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 033cb98f6cb1f3e44960067d639f421e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

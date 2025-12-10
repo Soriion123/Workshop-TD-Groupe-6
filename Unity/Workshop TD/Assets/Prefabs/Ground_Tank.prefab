@@ -241,6 +241,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 267604109784447562, guid: 050216e557c871647a5ad4642ab466d3, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 033cb98f6cb1f3e44960067d639f421e, type: 2}
     - target: {fileID: 919132149155446097, guid: 050216e557c871647a5ad4642ab466d3, type: 3}
       propertyPath: m_Name
       value: SM_ZakuTank_01
