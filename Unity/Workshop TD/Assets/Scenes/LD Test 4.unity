@@ -63811,6 +63811,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1623900782}
   - component: {fileID: 1623900781}
+  - component: {fileID: 1623900783}
   m_Layer: 0
   m_Name: Pivot Camerra
   m_TagString: Untagged
@@ -63825,7 +63826,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623900780}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 390095d119d588442b319642d9f1181e, type: 3}
   m_Name: 
@@ -63851,6 +63852,23 @@ Transform:
   - {fileID: 1593607526}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
+--- !u!114 &1623900783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623900780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6385d3d4e65593643835f4fae2c1bac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tr_camera_Pivot: {fileID: 1623900782}
+  tr_camera_Position: {fileID: 1593607526}
+  speed_cam_Mousse: 200
+  speed_cam_ZQSD: 75
+  speed_cam_MOLETTE: 150
 --- !u!43 &1646499932
 Mesh:
   m_ObjectHideFlags: 0
