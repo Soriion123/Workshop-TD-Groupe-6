@@ -12,8 +12,15 @@ public class Cam_test_2 : MonoBehaviour
     float rotX = 0f; // haut / bas
     float rotY = 0f; // gauche / droite
 
+
+    public Quaternion Memori_cam_1;
+    public Vector3 Memori_cam_2;
+
     void Start()
     {
+        Memori_cam_1 = tr_camera_Pivot.rotation;
+        Memori_cam_2 = tr_camera_Position.position;
+
         Vector3 e = tr_camera_Pivot.eulerAngles;
         rotX = e.x;  // vertical
         rotY = e.y;  // horizontal
@@ -55,5 +62,19 @@ public class Cam_test_2 : MonoBehaviour
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         if (scroll != 0)
             tr_camera_Position.position += tr_camera_Position.forward * scroll * speed_cam_MOLETTE * 10 * Time.deltaTime;
+
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            // Reset transforms
+            tr_camera_Pivot.rotation = Memori_cam_1;
+            tr_camera_Position.position = Memori_cam_2;
+
+            // Reset des variables internes sinon la rotation est écrasée ensuite
+            Vector3 e = Memori_cam_1.eulerAngles;
+            rotX = e.x;
+            rotY = e.y;
+        }
+
     }
 }
