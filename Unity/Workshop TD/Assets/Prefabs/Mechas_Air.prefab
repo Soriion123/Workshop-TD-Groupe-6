@@ -505,7 +505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a201d48b02bb74cb94d49bf352be9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AOE_ZonePrefab: {fileID: 6319017455566640386, guid: 00b2bfc924fb25f49bde70a7a4cd557e, type: 3}
+  AOE_ZonePrefab: {fileID: 4275588634738277766, guid: 2362e863a4fa89c49aa8968e9e6d6069, type: 3}
   cooldown: 0.5
 --- !u!114 &6261718922021176343
 MonoBehaviour:

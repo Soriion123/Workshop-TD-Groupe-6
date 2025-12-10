@@ -50348,6 +50348,8 @@ MonoBehaviour:
   - {r: 0.12474215, g: 1, b: 0, a: 0}
   Ground_Spawner: {fileID: 0}
   NB_Wave: {fileID: 0}
+  Cancas_Win: {fileID: 0}
+  Cliquer: {fileID: 0}
 --- !u!43 &1439158687
 Mesh:
   m_ObjectHideFlags: 0
