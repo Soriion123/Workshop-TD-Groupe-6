@@ -50287,7 +50287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 923eaf289bbd11b4babfb71a4a28bac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 1000
+  gold: 10000
   Gold_Ui: {fileID: 676410083}
   TimeScale: 15
   Canvas_Pause: {fileID: 875464864}
@@ -50350,6 +50350,7 @@ MonoBehaviour:
   NB_Wave: {fileID: 0}
   Cancas_Win: {fileID: 0}
   Cliquer: {fileID: 0}
+  Name_Mechas: []
 --- !u!43 &1439158687
 Mesh:
   m_ObjectHideFlags: 0
