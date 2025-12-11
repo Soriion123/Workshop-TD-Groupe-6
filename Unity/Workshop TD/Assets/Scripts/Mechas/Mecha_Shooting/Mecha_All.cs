@@ -12,9 +12,9 @@ public class Mechas_All : MonoBehaviour
     public float turnSpeed = 6f;
 
     [SerializeField] private string ennemyTag = "Enemy";
-    [SerializeField] private string wallTag = "Wall";   // ← Tag des murs
-    [SerializeField] private string SolTag = "Sol";   // ← Tag des murs
-    [SerializeField] private LayerMask Layer;  // <-- CHOIX DU LAYER
+    [SerializeField] private string wallTag = "Wall";
+    [SerializeField] private string solTag = "Sol";
+    [SerializeField] private LayerMask Layer;  // Layer des ennemis autorisés
 
     public float fireRate = 1f;
     private float fireCountDown;
@@ -34,11 +34,16 @@ public class Mechas_All : MonoBehaviour
         {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
 
-            // En dehors de la portée → skip
             if (distanceToEnemy > range)
                 continue;
 
-            // --- Check ligne de vue avec Raycast + tag ---
+            // --- Vérification du layer AVANT le Raycast (✔ FIX) ---
+            if ((Layer.value & (1 << enemy.layer)) == 0)
+            {
+                continue; // pas le bon layer → skip
+            }
+
+            // --- Vérification ligne de vue ---
             Vector3 dir = (enemy.transform.position - Shoot_Point.position).normalized;
 
             if (Physics.Raycast(Shoot_Point.position, dir, out RaycastHit hit, distanceToEnemy))
@@ -46,19 +51,13 @@ public class Mechas_All : MonoBehaviour
                 // Si le raycast touche un mur → ennemi non visible
                 if (hit.collider.CompareTag(wallTag))
                     continue;
-            }
-            if (hit.collider.CompareTag(SolTag))
-            {
-                // Il y a un mur → ennemi invisible
-                continue;
-            }
-            // Vérifie si l'ennemi est sur le layer voulu
-            if ((Layer.value & (1 << enemy.layer)) == 0)
-            {
-                continue; // pas le bon layer → on saute cet ennemi
+
+                // Si le raycast touche un sol → ennemi non visible
+                if (hit.collider.CompareTag(solTag))
+                    continue;
             }
 
-            // Ennemi visible
+            // Ennemi visible et bon layer
             if (distanceToEnemy < shortestDistance)
             {
                 shortestDistance = distanceToEnemy;
@@ -66,10 +65,7 @@ public class Mechas_All : MonoBehaviour
             }
         }
 
-        if (nearestEnnemy != null)
-            target = nearestEnnemy.transform;
-        else
-            target = null;
+        target = (nearestEnnemy != null) ? nearestEnnemy.transform : null;
     }
 
     void Update()
@@ -79,6 +75,7 @@ public class Mechas_All : MonoBehaviour
 
         Vector3 dir = target.position - PartToRotate.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
+
         PartToRotate.rotation = Quaternion.Lerp(
             PartToRotate.rotation,
             lookRotation,
