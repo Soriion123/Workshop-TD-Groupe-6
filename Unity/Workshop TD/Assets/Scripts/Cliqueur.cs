@@ -74,14 +74,33 @@ public class Cliqueur : MonoBehaviour
         if (Physics.Raycast(ray.origin, ray.direction * profondeur_detection, out hit, profondeur_detection, Mask))
         {
             cursor.position = hit.point;
+            
+            
+            if (hit.collider.gameObject.tag == "Untagged")
+            {
+                if (Mechas_drag || Trash_drag || Upgrade_drag)
+                {
+
+                }
+                else
+                {
+                    Cursor.SetCursor(Image_souris[2], new Vector2(0, 166), CursorMode.Auto);
+                }
+            }
 
             if (hit.collider.gameObject.tag == "Mechas")
             {
-                if (!Trash_drag)
+
+                if (Mechas_drag || Trash_drag || Upgrade_drag)
+                {
+
+                }
+                else
                 {
                     Cursor.SetCursor(Image_souris[0], new Vector2(0, 166), CursorMode.Auto);
                 }
 
+                
                 // Selection de ID du mechas
                 if (Input.GetMouseButtonDown(0))
                 {
@@ -117,9 +136,11 @@ public class Cliqueur : MonoBehaviour
                 {
 
                     // UpGrade
-                    if (hit.collider.gameObject.name == "Mechas_Air(Clone)" & game_manager.gold >= 1934 & hit.collider.gameObject.GetComponent<Info_Mecha>().Niveau_UpGrade == 0)
+                    if (hit.collider.gameObject.name == "Mechas_Air(Clone)" & game_manager.gold >= 1790 & hit.collider.gameObject.GetComponent<Info_Mecha>().Niveau_UpGrade == 0)
                     {
-                        game_manager.gold = game_manager.gold - 1934;
+                        Cursor.SetCursor(Image_souris[1], new Vector2(0, 166), CursorMode.Auto);
+
+                        game_manager.gold = game_manager.gold - 1790;
 
                         hit.collider.gameObject.GetComponent<Mechas_Air>().range = hit.collider.gameObject.GetComponent<Mechas_Air>().range * 1.5f;
                         hit.collider.gameObject.GetComponent<Mechas_Air>().turnSpeed = hit.collider.gameObject.GetComponent<Mechas_Air>().turnSpeed * 1.5f;
@@ -129,9 +150,11 @@ public class Cliqueur : MonoBehaviour
 
                     }
 
-                    if (hit.collider.gameObject.name == "Mechas_All(Clone)" & game_manager.gold >= 2021 & hit.collider.gameObject.GetComponent<Info_Mecha>().Niveau_UpGrade == 0)
+                    if (hit.collider.gameObject.name == "Mechas_All(Clone)" & game_manager.gold >= 2137 & hit.collider.gameObject.GetComponent<Info_Mecha>().Niveau_UpGrade == 0)
                     {
-                        game_manager.gold = game_manager.gold - 2021;
+                        Cursor.SetCursor(Image_souris[1], new Vector2(0, 166), CursorMode.Auto);
+
+                        game_manager.gold = game_manager.gold - 2137;
 
                         hit.collider.gameObject.GetComponent<Mechas_All>().range = hit.collider.gameObject.GetComponent<Mechas_All>().range * 1.5f;
                         hit.collider.gameObject.GetComponent<Mechas_All>().turnSpeed = hit.collider.gameObject.GetComponent<Mechas_All>().turnSpeed * 1.5f;
@@ -140,9 +163,11 @@ public class Cliqueur : MonoBehaviour
                         hit.collider.gameObject.GetComponent<Info_Mecha>().Niveau_UpGrade++;
                     }
 
-                    if (hit.collider.gameObject.name == "Mechas_Ground(Clone)" & game_manager.gold >= 1122 & hit.collider.gameObject.GetComponent<Info_Mecha>().Niveau_UpGrade == 0)
+                    if (hit.collider.gameObject.name == "Mechas_Ground(Clone)" & game_manager.gold >= 1108 & hit.collider.gameObject.GetComponent<Info_Mecha>().Niveau_UpGrade == 0)
                     {
-                        game_manager.gold = game_manager.gold - 1122;
+                        Cursor.SetCursor(Image_souris[1], new Vector2(0, 166), CursorMode.Auto);
+
+                        game_manager.gold = game_manager.gold - 1108;
 
                         hit.collider.gameObject.GetComponent<Mechas_Ground>().range = hit.collider.gameObject.GetComponent<Mechas_Ground>().range * 1.5f;
                         hit.collider.gameObject.GetComponent<Mechas_Ground>().turnSpeed = hit.collider.gameObject.GetComponent<Mechas_Ground>().turnSpeed * 1.5f;
@@ -165,6 +190,12 @@ public class Cliqueur : MonoBehaviour
 
             if (hit.collider.gameObject.tag == "Sol")
             {
+
+                if (Mechas_drag || Trash_drag || Upgrade_drag) { }
+                else
+                {
+                    Cursor.SetCursor(Image_souris[2], new Vector2(0, 166), CursorMode.Auto);
+                }
 
                 // Selection New Target Mechas 
                 if (Input.GetMouseButtonDown(0) & test_memori.GetComponent<Info_Mecha>().mechas_selec)
@@ -256,6 +287,7 @@ public class Cliqueur : MonoBehaviour
                 Upgrade_drag = false;
                 Trash_drag = false; cursor.GetComponent<MeshRenderer>().material = Material_cursor[3];
                 StartCoroutine(Return_cursor());
+                Cursor.SetCursor(Image_souris[2], new Vector2(0, 166), CursorMode.Auto);
 
             }
 
@@ -263,18 +295,30 @@ public class Cliqueur : MonoBehaviour
             if (hit.collider.tag == "Boite 1")
             {
 
+                if (Mechas_drag || Trash_drag || Upgrade_drag) { }
+                else { Cursor.SetCursor(Image_souris[0], new Vector2(0, 166), CursorMode.Auto); }
+
                 if (Input.GetMouseButtonDown(0)) { Cursor.SetCursor(Image_souris[1], new Vector2(0, 166), CursorMode.Auto); ID_mechas_Spawn = 0; Mechas_drag = true; cursor.GetComponent<MeshRenderer>().material = Material_cursor[0]; }
             }
             if (hit.collider.tag == "Boite 2")
             {
+
+                if (Mechas_drag || Trash_drag || Upgrade_drag) { }
+                else { Cursor.SetCursor(Image_souris[0], new Vector2(0, 166), CursorMode.Auto); }
                 if (Input.GetMouseButtonDown(0)) { Cursor.SetCursor(Image_souris[1], new Vector2(0, 166), CursorMode.Auto); ID_mechas_Spawn = 1; Mechas_drag = true; cursor.GetComponent<MeshRenderer>().material = Material_cursor[1]; }
             }
             if (hit.collider.tag == "Boite 3")
             {
+
+                if (Mechas_drag || Trash_drag || Upgrade_drag) { }
+                else { Cursor.SetCursor(Image_souris[0], new Vector2(0, 166), CursorMode.Auto); }
                 if (Input.GetMouseButtonDown(0)) { Cursor.SetCursor(Image_souris[1], new Vector2(0, 166), CursorMode.Auto); ID_mechas_Spawn = 2; Mechas_drag = true; cursor.GetComponent<MeshRenderer>().material = Material_cursor[2]; }
             }
             if (hit.collider.tag == "Boite UpGrade")
             {
+
+                if (Mechas_drag || Trash_drag || Upgrade_drag) { }
+                else { Cursor.SetCursor(Image_souris[0], new Vector2(0, 166), CursorMode.Auto); }
                 if (Input.GetMouseButtonDown(0)) { Cursor.SetCursor(Image_souris[1], new Vector2(0, 166), CursorMode.Auto); Upgrade_drag = true; }
             }
 

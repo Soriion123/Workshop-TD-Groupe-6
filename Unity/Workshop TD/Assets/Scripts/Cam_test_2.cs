@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Cam_test_2 : MonoBehaviour
 {
+
+    public Cliqueur cliqueur;
+
     public Transform tr_camera_Pivot;
     public Transform tr_camera_Position;
 
@@ -37,6 +40,9 @@ public class Cam_test_2 : MonoBehaviour
         // --- Rotation au clic droit ---
         if (Input.GetMouseButton(1))
         {
+
+            Cursor.SetCursor(cliqueur.Image_souris[1], new Vector2(0, 166), CursorMode.Auto);
+
             // Gauche / droite -> Y
             rotY += Input.GetAxis("Mouse X") * Time.deltaTime * speed_cam_Mousse;
 
@@ -54,6 +60,7 @@ public class Cam_test_2 : MonoBehaviour
         // --- Middle click (pan) ---
         if (Input.GetMouseButton(2))
         {
+            Cursor.SetCursor(cliqueur.Image_souris[1], new Vector2(0, 166), CursorMode.Auto);
             tr_camera_Pivot.Translate(0, -Input.GetAxis("Mouse Y") * Time.deltaTime * speed_cam_Mousse, 0, Space.Self);
             //tr_camera_Pivot.Translate(-Input.GetAxis("Mouse X") * Time.deltaTime * speed_cam_Mousse, 0, 0, Space.Self);
         }

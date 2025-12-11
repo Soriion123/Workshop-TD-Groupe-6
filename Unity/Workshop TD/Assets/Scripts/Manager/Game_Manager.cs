@@ -65,11 +65,11 @@ public class GameManager : MonoBehaviour
 
         if (anime_bool)
         {
-            Canvas_Pause.GetComponent<RectTransform>().anchoredPosition = Vector2.Lerp(Canvas_Pause.GetComponent<RectTransform>().anchoredPosition, new Vector2(0, 240), Time.deltaTime * 5f);
+            Canvas_Pause.GetComponent<RectTransform>().anchoredPosition = Vector2.Lerp(Canvas_Pause.GetComponent<RectTransform>().anchoredPosition, new Vector2(0, 250), Time.deltaTime * 5f);
         }
         if (Canvas_Pause.GetComponent<RectTransform>().anchoredPosition.y > 240 - 1f & anime_bool)
         {
-            Canvas_Pause.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 240);
+            Canvas_Pause.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 250);
             anime_bool = false;
             menu_active = true;
 
