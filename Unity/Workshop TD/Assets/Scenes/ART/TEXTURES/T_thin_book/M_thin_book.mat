@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9093335808760060189
+--- !u!114 &-5682191712053296931
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_adhesive_bridge
+  m_Name: M_thin_book
   m_Shader: {fileID: -6465566751694194690, guid: 988e7359329453f43ab3f95e0e63a969, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -38,11 +38,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _AO:
-        m_Texture: {fileID: 2800000, guid: aecebc40a9415ab4fa61647eb27e1663, type: 3}
+        m_Texture: {fileID: 2800000, guid: 19798d255293f8446988ab1c16c599fb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseColor:
-        m_Texture: {fileID: 2800000, guid: 82b211ff9b1cb3a48886fbe1d26b2c78, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7825d1a5311ed5f41879624ff4da54d0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -74,7 +74,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Metallic:
-        m_Texture: {fileID: 2800000, guid: 36464bfe90b691e4bba46ecd3d8632f5, type: 3}
+        m_Texture: {fileID: 2800000, guid: ab38fae57498bdf4dbe7065a8d95df0a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -82,7 +82,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: 7ed3d782ca1fc554992663b61809fa01, type: 3}
+        m_Texture: {fileID: 2800000, guid: e0d0b4a90d0ef604280b2bb878f74aac, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -94,7 +94,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Smoothness:
-        m_Texture: {fileID: 2800000, guid: 48d797da522e91d428b031d84601ac5c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 301d660b1799fbe45b572513e7d21b7d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
