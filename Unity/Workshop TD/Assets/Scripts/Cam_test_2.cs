@@ -19,6 +19,8 @@ public class Cam_test_2 : MonoBehaviour
     public Quaternion Memori_cam_1;
     public Vector3 Memori_cam_2;
 
+    public bool clic_cam = false;
+
     void Start()
     {
         Memori_cam_1 = tr_camera_Pivot.rotation;
@@ -37,11 +39,17 @@ public class Cam_test_2 : MonoBehaviour
         if (Input.GetKey(KeyCode.W)) rotX += speed_cam_ZQSD * Time.deltaTime;
         if (Input.GetKey(KeyCode.S)) rotX -= speed_cam_ZQSD * Time.deltaTime;
 
+        if (Input.GetMouseButtonUp(2) || Input.GetMouseButtonUp(1))
+        {
+            clic_cam = false ;
+            Cursor.SetCursor(cliqueur.Image_souris[2], new Vector2(0, 166), CursorMode.Auto);
+        }
+
         // --- Rotation au clic droit ---
         if (Input.GetMouseButton(1))
         {
-
             Cursor.SetCursor(cliqueur.Image_souris[1], new Vector2(0, 166), CursorMode.Auto);
+            clic_cam = true;
 
             // Gauche / droite -> Y
             rotY += Input.GetAxis("Mouse X") * Time.deltaTime * speed_cam_Mousse;
@@ -61,6 +69,8 @@ public class Cam_test_2 : MonoBehaviour
         if (Input.GetMouseButton(2))
         {
             Cursor.SetCursor(cliqueur.Image_souris[1], new Vector2(0, 166), CursorMode.Auto);
+            clic_cam = true;
+
             tr_camera_Pivot.Translate(0, -Input.GetAxis("Mouse Y") * Time.deltaTime * speed_cam_Mousse, 0, Space.Self);
             //tr_camera_Pivot.Translate(-Input.GetAxis("Mouse X") * Time.deltaTime * speed_cam_Mousse, 0, 0, Space.Self);
         }

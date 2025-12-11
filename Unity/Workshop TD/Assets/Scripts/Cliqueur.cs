@@ -53,8 +53,12 @@ public class Cliqueur : MonoBehaviour
     public bool Upgrade_drag = false;
     public bool Trash_drag = false;
 
+    public bool Clic_cool = false;
+
 
     public GameObject Prefab_Target;
+
+    public Cam_test_2 cam_script;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -66,6 +70,19 @@ public class Cliqueur : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        if (Input.GetMouseButtonDown(0))
+        {
+            Clic_cool = true;
+            Cursor.SetCursor(Image_souris[0], new Vector2(0, 166), CursorMode.Auto);
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            Clic_cool = false;
+            Cursor.SetCursor(Image_souris[2], new Vector2(0, 166), CursorMode.Auto);
+        }
+        
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(ray.origin, ray.direction * profondeur_detection, Color.red);
 
@@ -75,13 +92,10 @@ public class Cliqueur : MonoBehaviour
         {
             cursor.position = hit.point;
             
-            
             if (hit.collider.gameObject.tag == "Untagged")
             {
-                if (Mechas_drag || Trash_drag || Upgrade_drag)
-                {
-
-                }
+                
+                if (Mechas_drag || Trash_drag || Upgrade_drag || cam_script.clic_cam || Clic_cool) { }
                 else
                 {
                     Cursor.SetCursor(Image_souris[2], new Vector2(0, 166), CursorMode.Auto);
@@ -91,10 +105,7 @@ public class Cliqueur : MonoBehaviour
             if (hit.collider.gameObject.tag == "Mechas")
             {
 
-                if (Mechas_drag || Trash_drag || Upgrade_drag)
-                {
-
-                }
+                if (Mechas_drag || Trash_drag || Upgrade_drag || cam_script.clic_cam) { }
                 else
                 {
                     Cursor.SetCursor(Image_souris[0], new Vector2(0, 166), CursorMode.Auto);
@@ -191,7 +202,7 @@ public class Cliqueur : MonoBehaviour
             if (hit.collider.gameObject.tag == "Sol")
             {
 
-                if (Mechas_drag || Trash_drag || Upgrade_drag) { }
+                if (Mechas_drag || Trash_drag || Upgrade_drag || cam_script.clic_cam || Clic_cool) { }
                 else
                 {
                     Cursor.SetCursor(Image_souris[2], new Vector2(0, 166), CursorMode.Auto);
@@ -295,7 +306,7 @@ public class Cliqueur : MonoBehaviour
             if (hit.collider.tag == "Boite 1")
             {
 
-                if (Mechas_drag || Trash_drag || Upgrade_drag) { }
+                if (Mechas_drag || Trash_drag || Upgrade_drag || cam_script.clic_cam || Clic_cool) { }
                 else { Cursor.SetCursor(Image_souris[0], new Vector2(0, 166), CursorMode.Auto); }
 
                 if (Input.GetMouseButtonDown(0)) { Cursor.SetCursor(Image_souris[1], new Vector2(0, 166), CursorMode.Auto); ID_mechas_Spawn = 0; Mechas_drag = true; cursor.GetComponent<MeshRenderer>().material = Material_cursor[0]; }
@@ -303,21 +314,21 @@ public class Cliqueur : MonoBehaviour
             if (hit.collider.tag == "Boite 2")
             {
 
-                if (Mechas_drag || Trash_drag || Upgrade_drag) { }
+                if (Mechas_drag || Trash_drag || Upgrade_drag || cam_script.clic_cam || Clic_cool) { }
                 else { Cursor.SetCursor(Image_souris[0], new Vector2(0, 166), CursorMode.Auto); }
                 if (Input.GetMouseButtonDown(0)) { Cursor.SetCursor(Image_souris[1], new Vector2(0, 166), CursorMode.Auto); ID_mechas_Spawn = 1; Mechas_drag = true; cursor.GetComponent<MeshRenderer>().material = Material_cursor[1]; }
             }
             if (hit.collider.tag == "Boite 3")
             {
 
-                if (Mechas_drag || Trash_drag || Upgrade_drag) { }
+                if (Mechas_drag || Trash_drag || Upgrade_drag || cam_script.clic_cam || Clic_cool) { }
                 else { Cursor.SetCursor(Image_souris[0], new Vector2(0, 166), CursorMode.Auto); }
                 if (Input.GetMouseButtonDown(0)) { Cursor.SetCursor(Image_souris[1], new Vector2(0, 166), CursorMode.Auto); ID_mechas_Spawn = 2; Mechas_drag = true; cursor.GetComponent<MeshRenderer>().material = Material_cursor[2]; }
             }
             if (hit.collider.tag == "Boite UpGrade")
             {
 
-                if (Mechas_drag || Trash_drag || Upgrade_drag) { }
+                if (Mechas_drag || Trash_drag || Upgrade_drag || cam_script.clic_cam || Clic_cool) { }
                 else { Cursor.SetCursor(Image_souris[0], new Vector2(0, 166), CursorMode.Auto); }
                 if (Input.GetMouseButtonDown(0)) { Cursor.SetCursor(Image_souris[1], new Vector2(0, 166), CursorMode.Auto); Upgrade_drag = true; }
             }

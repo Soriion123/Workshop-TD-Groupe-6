@@ -56,11 +56,6 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 1;
                 anime_bool_revers = true;
             }
-            /*
-            Canvas_Pause.SetActive(true);
-            Time.timeScale = 0;
-            Cliquer.SetActive(false);
-            */
         }
 
         if (anime_bool)

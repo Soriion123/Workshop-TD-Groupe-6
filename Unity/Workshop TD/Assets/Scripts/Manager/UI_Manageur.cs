@@ -35,6 +35,10 @@ public class UI_Manageur : MonoBehaviour
 
     public TMP_InputField[] Name_Mechas;
 
+    public GameObject Waring_UI;
+
+    public Menu_Manageur Menu_Manageur;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -49,7 +53,12 @@ public class UI_Manageur : MonoBehaviour
         
         if (Ground_Spawner.countdown > 0)
         {
+            Waring_UI.SetActive(false);
             bar_wave.fillAmount = Ground_Spawner.countdown / Ground_Spawner.waves[Ground_Spawner.currentWaveIndex].timeToNextWave;
+        }
+        else if (Ground_Spawner.countdown < 0)
+        {
+            Waring_UI.SetActive(true);
         }
 
         if (Ground_Spawner.cmp_Wave == 10)
@@ -135,11 +144,16 @@ public class UI_Manageur : MonoBehaviour
 
         // Fair la bar de progersse pour la dernier vagues
 
-        yield return new WaitForSeconds(65f);
+        yield return new WaitForSeconds(60f);
 
+
+        Menu_Manageur.Last_screen(Cancas_Win);
+        /*
         Cancas_Win.SetActive(true);
-        Cliquer.SetActive(false);
         Time.timeScale = 0;
+        */
+        Cliquer.SetActive(false);
     }
+
 
 }
