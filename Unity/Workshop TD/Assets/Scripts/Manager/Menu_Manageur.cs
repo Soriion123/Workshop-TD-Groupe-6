@@ -102,7 +102,6 @@ public class Menu_Manageur : MonoBehaviour
 
         if (!back)
         {
-            print("1");
             Panel_GO.GetComponent<RectTransform>().anchoredPosition = Vector2.Lerp(Panel_GO.GetComponent<RectTransform>().anchoredPosition, Vector2.zero, Time.deltaTime * 5f);
         }
         else

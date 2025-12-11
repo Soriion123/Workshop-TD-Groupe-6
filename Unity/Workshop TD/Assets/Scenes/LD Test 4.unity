@@ -13697,7 +13697,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &360155528
 RectTransform:
@@ -53378,7 +53378,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1366946615
 RectTransform:
@@ -67869,9 +67869,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 875464870}
-        m_TargetAssemblyTypeName: Menu_Manageur, Assembly-CSharp
-        m_MethodName: Continue_Game
+      - m_Target: {fileID: 1437382625}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: resume_Game
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -67901,7 +67901,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 18eaec780928609408ba08c848376b05, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5525f39c358bb2644b36b9bf7fc72d93, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
