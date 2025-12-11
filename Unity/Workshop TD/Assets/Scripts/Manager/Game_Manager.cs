@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-        Gold_Ui.text = gold.ToString();
+        Gold_Ui.text = "GOLD : " + gold.ToString();
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
