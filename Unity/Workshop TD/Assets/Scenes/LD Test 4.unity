@@ -63470,6 +63470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6385d3d4e65593643835f4fae2c1bac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cliqueur: {fileID: 488323233}
   tr_camera_Pivot: {fileID: 1623900782}
   tr_camera_Position: {fileID: 1593607526}
   speed_cam_Mousse: 200
