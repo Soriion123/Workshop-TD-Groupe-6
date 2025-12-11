@@ -129,7 +129,7 @@ MonoBehaviour:
   speed: 4
   originalSpeed: 0
   maxHealth: 15
-  goldReward: 59
+  goldReward: 55
   NexusDamage: 12
 --- !u!54 &-6168073237448909036
 Rigidbody:

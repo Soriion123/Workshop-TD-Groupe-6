@@ -234,7 +234,7 @@ MonoBehaviour:
   id: 0
   id_ui: 0
   icone_selec: {fileID: 8409748622374137518}
-  prix: 1600
+  prix: 1525
   Niveau_UpGrade: 0
   lastUpgradeCollected: Aucun
 --- !u!114 &8169103767885280167

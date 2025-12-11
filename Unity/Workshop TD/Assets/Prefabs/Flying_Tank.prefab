@@ -157,7 +157,7 @@ MonoBehaviour:
   originalSpeed: 0
   maxHealth: 28
   goldReward: 150
-  NexusDamage: 29
+  NexusDamage: 32
 --- !u!1001 &8711275763940118872
 PrefabInstance:
   m_ObjectHideFlags: 0
