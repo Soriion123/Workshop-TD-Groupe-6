@@ -242,7 +242,7 @@ public class Cliqueur : MonoBehaviour
 
                     New_Target[New_Target.Count - 1].transform.position = cursor.transform.position;
 
-                    AudioManager.Instance.Play("SpawnMecha");
+
 
                     Mechas_Instantiate.gameObject.GetComponent<Info_Mecha>().id = cmp_mechas_spawn;
 

@@ -45686,8 +45686,8 @@ MonoBehaviour:
     volume: 10
     pitch: 1
   - name: Upgrade
-    clip: {fileID: 8300000, guid: dfa1910ae745eec48b69cf04b76c8a6f, type: 3}
-    volume: 5
+    clip: {fileID: 8300000, guid: 395f752e20d1a8840a53191c2eed64bb, type: 3}
+    volume: 10
     pitch: 1
   - name: Refund
     clip: {fileID: 8300000, guid: e6b58c7d343c9924c970cea273434d4d, type: 3}
@@ -45695,10 +45695,6 @@ MonoBehaviour:
     pitch: 1
   - name: Gold
     clip: {fileID: 8300000, guid: 95b4fbdf776e88d46903d1e02d3e74c8, type: 3}
-    volume: 10
-    pitch: 1
-  - name: SpawnMecha
-    clip: {fileID: 8300000, guid: 94749b8d009149441a9ac87f9f7002aa, type: 3}
     volume: 10
     pitch: 1
 --- !u!4 &1132232359
@@ -57177,8 +57173,12 @@ MonoBehaviour:
   - {fileID: 1152069331}
   - {fileID: 1828261541}
   - {fileID: 1650149131}
-  ability_ui_mechas: []
-  sprites_ui_abiliti: []
+  text_ui_habiliti:
+  - {fileID: 1147704462}
+  - {fileID: 1432408526}
+  - {fileID: 1534922536}
+  - {fileID: 825464621}
+  - {fileID: 1195951262}
   Color_Mechas:
   - {r: 0, g: 0.9407029, b: 1, a: 0}
   - {r: 1, g: 0, b: 0.87176275, a: 0}
