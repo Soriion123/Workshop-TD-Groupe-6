@@ -7,6 +7,8 @@ using static UnityEngine.Rendering.DebugUI;
 public class Menu_Manageur : MonoBehaviour
 {
 
+    public GameObject Panel_Intro;
+
     public GameObject Canvas_Pause;
     public GameObject Canvas_Commands;
     public GameObject Canvas_Credis;
@@ -85,6 +87,14 @@ public class Menu_Manageur : MonoBehaviour
         back_menu = true;
         anime_menu = true;
     }
+
+    public void Last_screen(GameObject last_dead)
+    {
+        anime_selec = last_dead;
+        back_menu = false;
+        anime_menu = true;
+    }
+
 
     public void anime_menu_fonction(GameObject Panel_GO , bool back)
     {
