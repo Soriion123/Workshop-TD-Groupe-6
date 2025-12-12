@@ -20,7 +20,8 @@ public class UI_Manageur : MonoBehaviour
     public GameObject[] Icone_Mechas_Centre;
     public GameObject[] Icone_Mechas_Outline;
 
-    public TextMeshProUGUI[] Niveau_Mechas_UI;
+    
+    public GameObject[] StarUp;
 
     //public TextMeshProUGUI[] text_ui_habiliti;
     public GameObject[] ability_ui_mechas;
@@ -109,7 +110,14 @@ public class UI_Manageur : MonoBehaviour
                     Icone_Mechas_Outline[i].GetComponent<Image>().color = Color.black;
                 }
 
-                Niveau_Mechas_UI[i].text = cliqueur.UI_mechas_scene[i].GetComponent<Info_Mecha>().Niveau_UpGrade.ToString();
+                if (cliqueur.UI_mechas_scene[i].GetComponent<Info_Mecha>().Niveau_UpGrade == 0)
+                {
+                    StarUp[i].SetActive(false);
+                }
+                else
+                {
+                    StarUp[i].SetActive(true);
+                }
 
                 cliqueur.New_Target[cliqueur.UI_mechas_scene[i].GetComponent<Info_Mecha>().id].GetComponentInChildren<TextMeshProUGUI>().text = Name_Mechas[i].text;
 
