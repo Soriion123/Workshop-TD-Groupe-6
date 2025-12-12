@@ -22,7 +22,10 @@ public class UI_Manageur : MonoBehaviour
 
     public TextMeshProUGUI[] Niveau_Mechas_UI;
 
-    public TextMeshProUGUI[] text_ui_habiliti;
+    //public TextMeshProUGUI[] text_ui_habiliti;
+    public GameObject[] ability_ui_mechas;
+    // public Texture[] Textures_ui_abiliti;
+    public Sprite[] sprites_ui_abiliti;
 
     public Color[] Color_Mechas;
 
@@ -119,23 +122,32 @@ public class UI_Manageur : MonoBehaviour
     {
         if (cliqueur.UI_mechas_scene[i].GetComponent<Mecha_AbilityManager>().slowAbility.enabled)
         {
-            text_ui_habiliti[i].text = "Slow";
+            //text_ui_habiliti[i].text = "Slow";
+            ability_ui_mechas[i].GetComponent<Image>().sprite = sprites_ui_abiliti[2];
         }
         else if (cliqueur.UI_mechas_scene[i].GetComponent<Mecha_AbilityManager>().aoeAbility.enabled)
         {
-            text_ui_habiliti[i].text = "AOE";
+            //text_ui_habiliti[i].text = "AOE";
+            ability_ui_mechas[i].GetComponent<Image>().sprite = sprites_ui_abiliti[4];
+            //4
         }
         else if (cliqueur.UI_mechas_scene[i].GetComponent<Mecha_AbilityManager>().autoDeathAbility.enabled)
         {
-            text_ui_habiliti[i].text = "AUTO DEAD";
+            //text_ui_habiliti[i].text = "AUTO DEAD";
+            ability_ui_mechas[i].GetComponent<Image>().sprite = sprites_ui_abiliti[1];
+            //1
         }
         else if (cliqueur.UI_mechas_scene[i].GetComponent<Mecha_AbilityManager>().teleportAbility.enabled)
         {
-            text_ui_habiliti[i].text = "Teleport";
+            //text_ui_habiliti[i].text = "Teleport";
+            ability_ui_mechas[i].GetComponent<Image>().sprite = sprites_ui_abiliti[3];
+            //3
         }
         else
         {
-            text_ui_habiliti[i].text = " ";
+            //text_ui_habiliti[i].text = " ";
+            ability_ui_mechas[i].GetComponent<Image>().sprite = sprites_ui_abiliti[0];
+            //0
         }
     }
 
