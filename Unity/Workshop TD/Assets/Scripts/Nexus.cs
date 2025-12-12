@@ -22,6 +22,7 @@ public class Nexus : MonoBehaviour
     public void TakeDamage(float amount)
     {
         currenthealth -= amount;
+        AudioManager.Instance.Play("NexusHit");
 
         // 🔥 Affichage dans la console
         // Debug.Log("Vie Nexus : " + currenthealth);

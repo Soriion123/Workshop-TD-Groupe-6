@@ -90,6 +90,7 @@ public class Ground_Fast : Ground_Enemy
     private void Die()
     {
         Destroy(gameObject);
+        AudioManager.Instance.Play("MortOpps");
         GameManager.instance.AddGold(goldReward);
     }
 }
