@@ -34,33 +34,25 @@ public class Mechas_Air : MonoBehaviour
         {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
 
-            // Hors range → skip
             if (distanceToEnemy > range)
                 continue;
 
-            // ----- Vérification ligne de vue -----
+            // --- Vérification du layer AVANT tout (✔ FIX IMPORTANT) ---
+            if ((Layer.value & (1 << enemy.layer)) == 0)
+            {
+                continue; // ennemi pas sur le bon layer
+            }
+
+            // ---- Vérification ligne de vue ----
             Vector3 dir = (enemy.transform.position - Shoot_Point.position).normalized;
 
             if (Physics.Raycast(Shoot_Point.position, dir, out RaycastHit hit, distanceToEnemy))
             {
-                if (hit.collider.CompareTag(wallTag))
-                {
-                    // Mur détecté → pas de visibilité
-                    continue;
-                }
-                if (hit.collider.CompareTag(solTag))
-                {
-                    // Il y a un mur → ennemi invisible
-                    continue;
-                }
-                // Vérifie si l'ennemi est sur le layer voulu
-                if ((Layer.value & (1 << enemy.layer)) == 0)
-                {
-                    continue; // pas le bon layer → on saute cet ennemi
-                }
+                if (hit.collider.CompareTag(wallTag)) continue;
+                if (hit.collider.CompareTag(solTag)) continue;
             }
 
-            // Ennemi visible
+            // Ennemi visible et bon layer
             if (distanceToEnemy < shortestDistance)
             {
                 shortestDistance = distanceToEnemy;
@@ -68,11 +60,9 @@ public class Mechas_Air : MonoBehaviour
             }
         }
 
-        if (nearestEnnemy != null)
-            target = nearestEnnemy.transform;
-        else
-            target = null;
+        target = (nearestEnnemy != null) ? nearestEnnemy.transform : null;
     }
+
 
     void Update()
     {
