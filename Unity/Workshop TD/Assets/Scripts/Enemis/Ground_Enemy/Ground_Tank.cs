@@ -86,6 +86,7 @@ public class Ground_Tank : Ground_Enemy
     private void Die()
     {
         Destroy(gameObject);
+        AudioManager.Instance.Play("MortOpps");
         GameManager.instance.AddGold(goldReward);
     }
 }

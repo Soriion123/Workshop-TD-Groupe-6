@@ -235,6 +235,7 @@ public class Cliqueur : MonoBehaviour
                     Mechas_drag = false;
                     game_manager.gold = game_manager.gold - prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix;
 
+                    AudioManager.Instance.Play("SpawnMecha");
 
                     GameObject Mechas_Instantiate = Instantiate(prefab_mechas[ID_mechas_Spawn], new Vector3(cursor.transform.position.x, cursor.transform.position.y + 1, cursor.transform.position.z), Quaternion.identity);
 

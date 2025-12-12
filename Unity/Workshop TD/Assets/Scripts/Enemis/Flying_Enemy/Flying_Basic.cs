@@ -101,7 +101,7 @@ public class Flying_Basic: Flying_Enemy
                 building.TakeDamage(NexusDamage);
             }
 
-            Destroy(gameObject); // L'ennemi disparaît après impact
+            Destroy(gameObject); // L'ennemi disparaît après impact          
         }
     }
 
@@ -114,6 +114,7 @@ public class Flying_Basic: Flying_Enemy
     private void Die()
     {
         Destroy(gameObject);
+        AudioManager.Instance.Play("MortOpps");
         GameManager.instance.AddGold(goldReward);
     }
 }

@@ -88,6 +88,7 @@ public class Ground_Basic : Ground_Enemy
     private void Die()
     {
         Destroy(gameObject);
+        AudioManager.Instance.Play("MortOpps");
         GameManager.instance.AddGold(goldReward);
     }
 }
