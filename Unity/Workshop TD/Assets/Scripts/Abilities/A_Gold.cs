@@ -16,6 +16,8 @@ public class A_Gold : MonoBehaviour
         {
             Debug.Log("Upgrade Gold récupéré ! +" + goldAmount);
 
+            AudioManager.Instance.Play("Gold");
+
             // Ajouter l'or au joueur
             GameManager.instance.AddGold(goldAmount);
 

@@ -19,6 +19,7 @@ public class Mechas_Ground : MonoBehaviour
     public float fireRate = 1f;
     private float fireCountDown;
 
+    
 
     void Start()
     {
@@ -99,12 +100,16 @@ public class Mechas_Ground : MonoBehaviour
 
     void Shoot()
     {
+        AudioManager.Instance.Play("mecha_shoot");
+
+        // Tir
         GameObject bulletGO = Instantiate(Bullet, Shoot_Point.position, Shoot_Point.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
 
         if (bullet != null)
             bullet.Seek(target);
     }
+
 
     private void OnDrawGizmosSelected()
     {

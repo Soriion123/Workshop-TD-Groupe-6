@@ -93,6 +93,9 @@ public class Mechas_All : MonoBehaviour
 
     void Shoot()
     {
+        AudioManager.Instance.Play("mecha_shoot");
+
+        // Tir
         GameObject bulletGO = Instantiate(Bullet, Shoot_Point.position, Shoot_Point.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
 

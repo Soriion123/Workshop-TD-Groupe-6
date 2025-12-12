@@ -149,7 +149,11 @@ public class Cliqueur : MonoBehaviour
                     // UpGrade
                     if (hit.collider.gameObject.name == "Mechas_Air(Clone)" & game_manager.gold >= 1790 & hit.collider.gameObject.GetComponent<Info_Mecha>().Niveau_UpGrade == 0)
                     {
+                        print("aaaa");
+
                         Cursor.SetCursor(Image_souris[1], new Vector2(0, 166), CursorMode.Auto);
+
+                        AudioManager.Instance.Play("Upgrade");
 
                         game_manager.gold = game_manager.gold - 1790;
 
@@ -163,7 +167,11 @@ public class Cliqueur : MonoBehaviour
 
                     if (hit.collider.gameObject.name == "Mechas_All(Clone)" & game_manager.gold >= 2137 & hit.collider.gameObject.GetComponent<Info_Mecha>().Niveau_UpGrade == 0)
                     {
+
+                        print("b");
                         Cursor.SetCursor(Image_souris[1], new Vector2(0, 166), CursorMode.Auto);
+
+                        AudioManager.Instance.Play("Upgrade");
 
                         game_manager.gold = game_manager.gold - 2137;
 
@@ -176,7 +184,11 @@ public class Cliqueur : MonoBehaviour
 
                     if (hit.collider.gameObject.name == "Mechas_Ground(Clone)" & game_manager.gold >= 1108 & hit.collider.gameObject.GetComponent<Info_Mecha>().Niveau_UpGrade == 0)
                     {
+
+                        print("c");
                         Cursor.SetCursor(Image_souris[1], new Vector2(0, 166), CursorMode.Auto);
+
+                        AudioManager.Instance.Play("Upgrade");
 
                         game_manager.gold = game_manager.gold - 1108;
 
@@ -272,7 +284,7 @@ public class Cliqueur : MonoBehaviour
                 {
                     game_manager.gold = game_manager.gold + prefab_mechas[ID_mechas_Spawn].GetComponent<Info_Mecha>().prix / 2;
 
-
+                    AudioManager.Instance.Play("Refund");
 
                     for (int i = 0; i < UI_mechas_scene.Count; i++)
                     {
