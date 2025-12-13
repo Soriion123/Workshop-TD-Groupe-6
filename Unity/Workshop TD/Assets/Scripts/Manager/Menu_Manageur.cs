@@ -25,7 +25,7 @@ public class Menu_Manageur : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1;
-        test_memori = Canvas_Commands.GetComponent<RectTransform>().anchoredPosition ;
+        test_memori = Canvas_Commands.GetComponent<RectTransform>().anchoredPosition;
     }
 
     // Update is called once per frame
@@ -93,21 +93,23 @@ public class Menu_Manageur : MonoBehaviour
         anime_selec = last_dead;
         back_menu = false;
         anime_menu = true;
+        Time.timeScale = 1f;
     }
 
 
-    public void anime_menu_fonction(GameObject Panel_GO , bool back)
+    public void anime_menu_fonction(GameObject Panel_GO, bool back)
     {
 
 
         if (!back)
         {
-            Panel_GO.GetComponent<RectTransform>().anchoredPosition = Vector2.Lerp(Panel_GO.GetComponent<RectTransform>().anchoredPosition, Vector2.zero, Time.deltaTime * 5f);
+            print("1");
+            Panel_GO.GetComponent<RectTransform>().anchoredPosition = Vector2.LerpUnclamped(Panel_GO.GetComponent<RectTransform>().anchoredPosition, Vector2.zero, Time.deltaTime * 5f);
         }
         else
         {
             Panel_GO.GetComponent<RectTransform>().anchoredPosition = Vector2.Lerp(Panel_GO.GetComponent<RectTransform>().anchoredPosition, test_memori, Time.deltaTime * 5f);
-            if (Panel_GO.GetComponent<RectTransform>().anchoredPosition.y < test_memori.y + 0.1) 
+            if (Panel_GO.GetComponent<RectTransform>().anchoredPosition.y < test_memori.y + 0.1)
             {
                 Panel_GO.GetComponent<RectTransform>().anchoredPosition = test_memori;
             }
