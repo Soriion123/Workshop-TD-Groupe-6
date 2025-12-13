@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Cam_test_2 : MonoBehaviour
 {
-
+    // Code avec de aide de l'IA
+    
     public Cliqueur cliqueur;
 
     public Transform tr_camera_Pivot;
@@ -71,15 +72,39 @@ public class Cam_test_2 : MonoBehaviour
             Cursor.SetCursor(cliqueur.Image_souris[1], new Vector2(0, 166), CursorMode.Auto);
             clic_cam = true;
 
-            tr_camera_Pivot.Translate(0, -Input.GetAxis("Mouse Y") * Time.deltaTime * speed_cam_Mousse, 0, Space.Self);
-            //tr_camera_Pivot.Translate(-Input.GetAxis("Mouse X") * Time.deltaTime * speed_cam_Mousse, 0, 0, Space.Self);
+            tr_camera_Pivot.Translate(
+                0,
+                -Input.GetAxis("Mouse Y") * Time.deltaTime * speed_cam_Mousse,
+                0,
+                Space.Self
+            );
+
+            // ?? CLAMP PAN (LOCAL POSITION)
+            Vector3 pos = tr_camera_Pivot.localPosition;
+
+            pos.x = Mathf.Clamp(pos.x, -15f, -10f); // X
+            pos.y = Mathf.Clamp(pos.y, 0f, 60f);    // Y
+            pos.z = Mathf.Clamp(pos.z, 80f, 85f);   // Z
+
+            tr_camera_Pivot.localPosition = pos;
         }
 
         // --- Zoom molette ---
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         if (scroll != 0)
-            tr_camera_Position.position += tr_camera_Position.forward * scroll * speed_cam_MOLETTE * 10 * Time.deltaTime;
+        {
+            tr_camera_Position.position +=
+                tr_camera_Position.forward * scroll * speed_cam_MOLETTE * 10f * Time.deltaTime;
 
+            // ?? CLAMP ZOOM (LOCAL POSITION)
+            Vector3 zoomPos = tr_camera_Position.localPosition;
+
+            zoomPos.x = Mathf.Clamp(zoomPos.x, 2f, 10f);       // X
+            zoomPos.y = Mathf.Clamp(zoomPos.y, -10f, 30f);     // Y
+            zoomPos.z = Mathf.Clamp(zoomPos.z, -125f, -15f);   // Z
+
+            tr_camera_Position.localPosition = zoomPos;
+        }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
