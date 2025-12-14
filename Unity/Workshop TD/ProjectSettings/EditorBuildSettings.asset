@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu Start.unity
     guid: db1125549b60de842bd701b7ac7a7c3f
   - enabled: 1
+    path: Assets/Scenes/LD Test 5.unity
+    guid: d755206ca081ba64a97bf0154aae79d9
+  - enabled: 0
     path: Assets/Scenes/LD Test 4.unity
     guid: d316730a545140141b38ee215c10427a
   m_configObjects:
