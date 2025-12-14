@@ -20,7 +20,6 @@ public class UI_Manageur : MonoBehaviour
     public GameObject[] Icone_Mechas_Centre;
     public GameObject[] Icone_Mechas_Outline;
 
-    
     public GameObject[] StarUp;
 
     //public TextMeshProUGUI[] text_ui_habiliti;
@@ -42,6 +41,9 @@ public class UI_Manageur : MonoBehaviour
     public GameObject Waring_UI;
 
     public Menu_Manageur Menu_Manageur;
+
+    public GameObject info_ability;
+    public TextMeshProUGUI Text_info_ability;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -128,6 +130,7 @@ public class UI_Manageur : MonoBehaviour
 
     public void check_abiliti(int i)
     {
+        
         if (cliqueur.UI_mechas_scene[i].GetComponent<Mecha_AbilityManager>().slowAbility.enabled)
         {
             //text_ui_habiliti[i].text = "Slow";
@@ -175,5 +178,39 @@ public class UI_Manageur : MonoBehaviour
         Cliquer.SetActive(false);
     }
 
+    public void Info_panel_enter(int id)
+    {
+        
+        
+        if (ability_ui_mechas[id].GetComponent<Image>().sprite == sprites_ui_abiliti[1])
+        {
+            // Auto Dead
+            info_ability.SetActive(true);
+            Text_info_ability.text = "Auto Dead";
+        }
+        else if(ability_ui_mechas[id].GetComponent<Image>().sprite == sprites_ui_abiliti[2])
+        {
+            // Slow
+            info_ability.SetActive(true);
+            Text_info_ability.text = "Slow";
+        }
+        else if(ability_ui_mechas[id].GetComponent<Image>().sprite == sprites_ui_abiliti[3])
+        {
+            // Teleport
+            info_ability.SetActive(true);
+            Text_info_ability.text = "Teleport";
+        }
+        else if (ability_ui_mechas[id].GetComponent<Image>().sprite == sprites_ui_abiliti[4])
+        {
+            // AOE
+            info_ability.SetActive(true);
+            Text_info_ability.text = "AOE";
+        }
+    }
+
+    public void Info_panel_exit()
+    {
+        info_ability.SetActive(false);
+    }
 
 }

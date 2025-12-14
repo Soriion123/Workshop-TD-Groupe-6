@@ -23,6 +23,9 @@ public class Menu_Pause_Option : MonoBehaviour
 
     public Vector2 Panel_memori;
 
+    public GameManager GameManager;
+    public Intro_Screen Intro_Screen;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -127,8 +130,13 @@ public class Menu_Pause_Option : MonoBehaviour
             {
                 print("a");
                 Panel_GO.GetComponent<RectTransform>().anchoredPosition = Panel_memori;
-                Time.timeScale = 0;
                 anime_go = false;
+
+                if (!GameManager.anime_bool_revers)
+                {
+                    Time.timeScale = 0;
+                }
+
             }
             
         }
