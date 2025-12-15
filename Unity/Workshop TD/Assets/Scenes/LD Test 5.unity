@@ -27035,6 +27035,7 @@ MonoBehaviour:
   Clic_cool: 0
   Prefab_Target: {fileID: 1171584741090064116, guid: 8e31b77ebf7c55144871755f1e12f89d, type: 3}
   cam_script: {fileID: 1623900783}
+  VFX_Up: {fileID: 3825620197777948506, guid: 8b4bae3e5f45da64bb757be820bc7b54, type: 3}
 --- !u!4 &488323234
 Transform:
   m_ObjectHideFlags: 0
