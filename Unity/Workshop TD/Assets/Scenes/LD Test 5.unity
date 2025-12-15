@@ -8839,6 +8839,95 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2096968794593819982, guid: 5cd45d8aa8137d844b831d13d479ef3d, type: 3}
   m_PrefabInstance: {fileID: 1359443041}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &235744505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 235744507}
+  - component: {fileID: 235744506}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &235744506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235744505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86d2d588742924a43a2bc4990d5f43c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: mecha_shoot
+    clip: {fileID: 8300000, guid: 83bec1b8547bb2b4bbe297cac9fa0a32, type: 3}
+    volume: 10
+    pitch: 1
+  - name: Upgrade
+    clip: {fileID: 8300000, guid: dfa1910ae745eec48b69cf04b76c8a6f, type: 3}
+    volume: 5
+    pitch: 1
+  - name: Refund
+    clip: {fileID: 8300000, guid: e6b58c7d343c9924c970cea273434d4d, type: 3}
+    volume: 10
+    pitch: 1
+  - name: Gold
+    clip: {fileID: 8300000, guid: 95b4fbdf776e88d46903d1e02d3e74c8, type: 3}
+    volume: 10
+    pitch: 1
+  - name: SpawnMecha
+    clip: {fileID: 8300000, guid: d729d8d504d737e4f830f518be665801, type: 3}
+    volume: 10
+    pitch: 1
+  - name: MortOpps
+    clip: {fileID: 8300000, guid: eb76af705135c9147941a5b1559348de, type: 3}
+    volume: 10
+    pitch: 1
+  - name: HitNexus
+    clip: {fileID: 8300000, guid: 14e40851551547143911df2349a37e39, type: 3}
+    volume: 10
+    pitch: 1
+  - name: TP
+    clip: {fileID: 8300000, guid: b03803a7c9b5fd541a79ccaa64634b4c, type: 3}
+    volume: 10
+    pitch: 1
+  - name: AOE
+    clip: {fileID: 8300000, guid: 4293d8bd590756641befa4e393b8df73, type: 3}
+    volume: 10
+    pitch: 1
+  - name: Slow
+    clip: {fileID: 8300000, guid: 7b77f17b6d4b84943bfcd6140f750ce4, type: 3}
+    volume: 10
+    pitch: 1
+  - name: MusiqueFond
+    clip: {fileID: 8300000, guid: 80924d6d567d4234e9929ae2fd4c84f1, type: 3}
+    volume: 1
+    pitch: 1
+--- !u!4 &235744507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235744505}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -48.313362, y: 16.972359, z: 37.54}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &242699614
 GameObject:
   m_ObjectHideFlags: 0
@@ -76480,71 +76569,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!1 &1838573211
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1838573213}
-  - component: {fileID: 1838573212}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1838573212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838573211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86d2d588742924a43a2bc4990d5f43c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: mecha_shoot
-    clip: {fileID: 8300000, guid: 83bec1b8547bb2b4bbe297cac9fa0a32, type: 3}
-    volume: 10
-    pitch: 1
-  - name: Upgrade
-    clip: {fileID: 8300000, guid: dfa1910ae745eec48b69cf04b76c8a6f, type: 3}
-    volume: 5
-    pitch: 1
-  - name: Refund
-    clip: {fileID: 8300000, guid: e6b58c7d343c9924c970cea273434d4d, type: 3}
-    volume: 10
-    pitch: 1
-  - name: Gold
-    clip: {fileID: 8300000, guid: 95b4fbdf776e88d46903d1e02d3e74c8, type: 3}
-    volume: 10
-    pitch: 1
-  - name: SpawnMecha
-    clip: {fileID: 8300000, guid: 94749b8d009149441a9ac87f9f7002aa, type: 3}
-    volume: 10
-    pitch: 1
---- !u!4 &1838573213
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838573211}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -48.313362, y: 16.972359, z: 37.54}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1842508063
 GameObject:
   m_ObjectHideFlags: 0
@@ -85792,6 +85816,6 @@ SceneRoots:
   - {fileID: 353415226}
   - {fileID: 1366946615}
   - {fileID: 360155528}
-  - {fileID: 1838573213}
   - {fileID: 1239362819}
   - {fileID: 1382694544}
+  - {fileID: 235744507}
