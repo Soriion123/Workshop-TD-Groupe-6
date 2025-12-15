@@ -2650,7 +2650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2797876391572053369, guid: 9377d9788e6afe041b81bcf7ff700171, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4653976537321038594, guid: 9377d9788e6afe041b81bcf7ff700171, type: 3}
       propertyPath: InitialModule.startSize.scalar
@@ -10405,7 +10405,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1935125146714171903, guid: a1ef5d623b3c300479993afcaf72a3c1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2665637374203551948, guid: a1ef5d623b3c300479993afcaf72a3c1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10448,6 +10448,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3476250984742718828, guid: a1ef5d623b3c300479993afcaf72a3c1, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476250984742718828, guid: a1ef5d623b3c300479993afcaf72a3c1, type: 3}
       propertyPath: ShapeModule.length
       value: 2
       objectReference: {fileID: 0}
@@ -10473,6 +10477,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3825620197777948506, guid: a1ef5d623b3c300479993afcaf72a3c1, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268869920860768538, guid: a1ef5d623b3c300479993afcaf72a3c1, type: 3}
+      propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4268869920860768538, guid: a1ef5d623b3c300479993afcaf72a3c1, type: 3}
@@ -10481,7 +10489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6513717203330536653, guid: a1ef5d623b3c300479993afcaf72a3c1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7847881017506957640, guid: a1ef5d623b3c300479993afcaf72a3c1, type: 3}
       propertyPath: m_SortingFudge
