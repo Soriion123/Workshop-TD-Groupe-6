@@ -59,7 +59,7 @@ public class Cliqueur : MonoBehaviour
     public GameObject Prefab_Target;
 
     public Cam_test_2 cam_script;
-
+    [SerializeField] GameObject VFX_Up;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -160,9 +160,9 @@ public class Cliqueur : MonoBehaviour
                         hit.collider.gameObject.GetComponent<Mechas_Air>().range = hit.collider.gameObject.GetComponent<Mechas_Air>().range * 1.5f;
                         hit.collider.gameObject.GetComponent<Mechas_Air>().turnSpeed = hit.collider.gameObject.GetComponent<Mechas_Air>().turnSpeed * 1.5f;
                         hit.collider.gameObject.GetComponent<Mechas_Air>().fireRate = hit.collider.gameObject.GetComponent<Mechas_Air>().fireRate * 1.5f;
-
+                        
                         hit.collider.gameObject.GetComponent<Info_Mecha>().Niveau_UpGrade++;
-
+                        
                     }
 
                     if (hit.collider.gameObject.name == "Mechas_All(Clone)" & game_manager.gold >= 2137 & hit.collider.gameObject.GetComponent<Info_Mecha>().Niveau_UpGrade == 0)
@@ -178,7 +178,7 @@ public class Cliqueur : MonoBehaviour
                         hit.collider.gameObject.GetComponent<Mechas_All>().range = hit.collider.gameObject.GetComponent<Mechas_All>().range * 1.5f;
                         hit.collider.gameObject.GetComponent<Mechas_All>().turnSpeed = hit.collider.gameObject.GetComponent<Mechas_All>().turnSpeed * 1.5f;
                         hit.collider.gameObject.GetComponent<Mechas_All>().fireRate = hit.collider.gameObject.GetComponent<Mechas_All>().fireRate * 1.5f;
-
+                        
                         hit.collider.gameObject.GetComponent<Info_Mecha>().Niveau_UpGrade++;
                     }
 
