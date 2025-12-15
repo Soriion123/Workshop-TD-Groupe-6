@@ -262,7 +262,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 640
   fireRate: 2.5
-  shootSound: {fileID: -3224134269115470653}
 --- !u!114 &5367241347451395348
 MonoBehaviour:
   m_ObjectHideFlags: 0
