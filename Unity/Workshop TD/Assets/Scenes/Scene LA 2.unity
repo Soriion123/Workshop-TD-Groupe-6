@@ -760,7 +760,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: c39cef1105399ab44a7eef0a6455a3b6, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 9d5880379a61fd548ae88d68a2feef1b, type: 2}
+      objectReference: {fileID: 2100000, guid: 48431795c28bdf145951689d7300a41a, type: 2}
     - target: {fileID: 919132149155446097, guid: c39cef1105399ab44a7eef0a6455a3b6, type: 3}
       propertyPath: m_Name
       value: SM_VideoTape_01 (1)
@@ -1886,7 +1886,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: c39cef1105399ab44a7eef0a6455a3b6, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 9d5880379a61fd548ae88d68a2feef1b, type: 2}
+      objectReference: {fileID: 2100000, guid: 48431795c28bdf145951689d7300a41a, type: 2}
     - target: {fileID: 919132149155446097, guid: c39cef1105399ab44a7eef0a6455a3b6, type: 3}
       propertyPath: m_Name
       value: SM_VideoTape_01 (2)
@@ -5957,7 +5957,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: c39cef1105399ab44a7eef0a6455a3b6, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 9d5880379a61fd548ae88d68a2feef1b, type: 2}
+      objectReference: {fileID: 2100000, guid: 48431795c28bdf145951689d7300a41a, type: 2}
     - target: {fileID: 919132149155446097, guid: c39cef1105399ab44a7eef0a6455a3b6, type: 3}
       propertyPath: m_Name
       value: SM_VideoTape_01
@@ -8237,12 +8237,7 @@ MonoBehaviour:
   - {fileID: 1363016220}
   - {fileID: 45155522}
   - {fileID: 742320585}
-  Niveau_Mechas_UI:
-  - {fileID: 991437477}
-  - {fileID: 813081793}
-  - {fileID: 1704531688}
-  - {fileID: 451856138}
-  - {fileID: 1470264401}
+  StarUp: []
   ability_ui_mechas: []
   sprites_ui_abiliti: []
   Color_Mechas:
@@ -8257,6 +8252,11 @@ MonoBehaviour:
   Name_Mechas: []
   Waring_UI: {fileID: 0}
   Menu_Manageur: {fileID: 0}
+  info_ability: {fileID: 0}
+  Text_info_ability: {fileID: 0}
+  image_abilty: {fileID: 0}
+  Image_Types_Mechas: []
+  UI_Types_Mechas: []
 --- !u!1001 &1446457026
 PrefabInstance:
   m_ObjectHideFlags: 0
