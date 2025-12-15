@@ -16,6 +16,7 @@ public class UI_Manageur : MonoBehaviour
     
 
     public TextMeshProUGUI Nexus_Life_UI;
+    public Image Nexus_Bar;
 
     public GameObject[] Icone_Mechas_Centre;
     public GameObject[] Icone_Mechas_Outline;
@@ -59,6 +60,7 @@ public class UI_Manageur : MonoBehaviour
     void Update()
     {
         Nexus_Life_UI.text = "Piggy Bank : " + Nexus.currenthealth.ToString();
+        Nexus_Bar.fillAmount = Nexus.currenthealth/ Nexus.maxHealth;
         NB_Wave.text = Ground_Spawner.cmp_Wave.ToString();
         
         if (Ground_Spawner.countdown > 0)
