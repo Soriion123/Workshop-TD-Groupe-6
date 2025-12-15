@@ -98,7 +98,7 @@ public class Cliqueur : MonoBehaviour
                 if (Mechas_drag || Trash_drag || Upgrade_drag || cam_script.clic_cam || Clic_cool) { }
                 else
                 {
-                    Cursor.SetCursor(Image_souris[2], new Vector2(0, 166), CursorMode.Auto);
+                    Cursor.SetCursor(Image_souris[2], new Vector2(0,166), CursorMode.Auto);
                 }
             }
 
@@ -136,7 +136,7 @@ public class Cliqueur : MonoBehaviour
                 {
 
                     Trash_drag = true;
-                    Cursor.SetCursor(Image_souris[1], new Vector2(0, 166), CursorMode.Auto);
+                    Cursor.SetCursor(Image_souris[1], new Vector2(300, 300), CursorMode.Auto);
 
                     if (hit.collider.gameObject.name == "Mechas_Air(Clone)") { cursor.GetComponent<MeshRenderer>().material = Material_cursor[0]; }
                     if (hit.collider.gameObject.name == "Mechas_All(Clone)") { cursor.GetComponent<MeshRenderer>().material = Material_cursor[1]; }
@@ -151,7 +151,7 @@ public class Cliqueur : MonoBehaviour
                     {
                         print("aaaa");
 
-                        Cursor.SetCursor(Image_souris[1], new Vector2(0, 166), CursorMode.Auto);
+                        Cursor.SetCursor(Image_souris[1], new Vector2(300, 300), CursorMode.Auto);
 
                         AudioManager.Instance.Play("Upgrade");
 
@@ -169,7 +169,7 @@ public class Cliqueur : MonoBehaviour
                     {
 
                         print("b");
-                        Cursor.SetCursor(Image_souris[1], new Vector2(0, 166), CursorMode.Auto);
+                        Cursor.SetCursor(Image_souris[1], new Vector2(300, 300), CursorMode.Auto);
 
                         AudioManager.Instance.Play("Upgrade");
 
@@ -186,7 +186,7 @@ public class Cliqueur : MonoBehaviour
                     {
 
                         print("c");
-                        Cursor.SetCursor(Image_souris[1], new Vector2(0, 166), CursorMode.Auto);
+                        Cursor.SetCursor(Image_souris[1], new Vector2(300, 300), CursorMode.Auto);
 
                         AudioManager.Instance.Play("Upgrade");
 
@@ -322,28 +322,28 @@ public class Cliqueur : MonoBehaviour
                 if (Mechas_drag || Trash_drag || Upgrade_drag || cam_script.clic_cam || Clic_cool) { }
                 else { Cursor.SetCursor(Image_souris[0], new Vector2(0, 166), CursorMode.Auto); }
 
-                if (Input.GetMouseButtonDown(0)) { Cursor.SetCursor(Image_souris[1], new Vector2(0, 166), CursorMode.Auto); ID_mechas_Spawn = 0; Mechas_drag = true; cursor.GetComponent<MeshRenderer>().material = Material_cursor[0]; }
+                if (Input.GetMouseButtonDown(0)) { Cursor.SetCursor(Image_souris[1], new Vector2(300, 300), CursorMode.Auto); ID_mechas_Spawn = 0; Mechas_drag = true; cursor.GetComponent<MeshRenderer>().material = Material_cursor[0]; }
             }
             if (hit.collider.tag == "Boite 2")
             {
 
                 if (Mechas_drag || Trash_drag || Upgrade_drag || cam_script.clic_cam || Clic_cool) { }
                 else { Cursor.SetCursor(Image_souris[0], new Vector2(0, 166), CursorMode.Auto); }
-                if (Input.GetMouseButtonDown(0)) { Cursor.SetCursor(Image_souris[1], new Vector2(0, 166), CursorMode.Auto); ID_mechas_Spawn = 1; Mechas_drag = true; cursor.GetComponent<MeshRenderer>().material = Material_cursor[1]; }
+                if (Input.GetMouseButtonDown(0)) { Cursor.SetCursor(Image_souris[1], new Vector2(300, 300), CursorMode.Auto); ID_mechas_Spawn = 1; Mechas_drag = true; cursor.GetComponent<MeshRenderer>().material = Material_cursor[1]; }
             }
             if (hit.collider.tag == "Boite 3")
             {
 
                 if (Mechas_drag || Trash_drag || Upgrade_drag || cam_script.clic_cam || Clic_cool) { }
                 else { Cursor.SetCursor(Image_souris[0], new Vector2(0, 166), CursorMode.Auto); }
-                if (Input.GetMouseButtonDown(0)) { Cursor.SetCursor(Image_souris[1], new Vector2(0, 166), CursorMode.Auto); ID_mechas_Spawn = 2; Mechas_drag = true; cursor.GetComponent<MeshRenderer>().material = Material_cursor[2]; }
+                if (Input.GetMouseButtonDown(0)) { Cursor.SetCursor(Image_souris[1], new Vector2(300, 300), CursorMode.Auto); ID_mechas_Spawn = 2; Mechas_drag = true; cursor.GetComponent<MeshRenderer>().material = Material_cursor[2]; }
             }
             if (hit.collider.tag == "Boite UpGrade")
             {
 
                 if (Mechas_drag || Trash_drag || Upgrade_drag || cam_script.clic_cam || Clic_cool) { }
                 else { Cursor.SetCursor(Image_souris[0], new Vector2(0, 166), CursorMode.Auto); }
-                if (Input.GetMouseButtonDown(0)) { Cursor.SetCursor(Image_souris[1], new Vector2(0, 166), CursorMode.Auto); Upgrade_drag = true; }
+                if (Input.GetMouseButtonDown(0)) { Cursor.SetCursor(Image_souris[1], new Vector2(166, 166), CursorMode.Auto); Upgrade_drag = true; }
             }
 
 
