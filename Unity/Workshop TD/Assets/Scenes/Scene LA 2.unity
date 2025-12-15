@@ -6100,6 +6100,75 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa0a0cceb42ab4448a544873d18ed51c, type: 3}
+--- !u!1001 &363920444
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 80.79249
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 80.79249
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 80.79249
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -27.993698
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.7297163
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 24.44
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.66987014
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.16795544
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70266914
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.17123415
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.895
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 92.517
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 27.743
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_Name
+      value: SM_CartoucheAtari_LP_02 (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
 --- !u!1 &365616017
 GameObject:
   m_ObjectHideFlags: 0
@@ -6580,7 +6649,8 @@ PrefabInstance:
       value: SM_CartoucheATARI_01_LP_NoUV
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3917477221037637723, guid: 027bbf740b2753045b82a083c7dceff2, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 027bbf740b2753045b82a083c7dceff2, type: 3}
@@ -12543,7 +12613,8 @@ PrefabInstance:
       value: SM_CartoucheATARI_01_LP_NoUV (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3917477221037637723, guid: 027bbf740b2753045b82a083c7dceff2, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 027bbf740b2753045b82a083c7dceff2, type: 3}
@@ -33331,6 +33402,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007632964}
   m_Mesh: {fileID: -4670371673946364318, guid: e28c6dd37a6d8f54f99d1b838762610d, type: 3}
+--- !u!1001 &2011833571
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 107.51156
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 107.51156
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 107.51156
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -78.37
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 51.92
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 96.506676
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9900534
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.1406919
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -16.176
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
+      propertyPath: m_Name
+      value: SM_CartoucheAtari_LP_02
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6c0b88b685dfafd4bada152dc8227842, type: 3}
 --- !u!1 &2017847794
 GameObject:
   m_ObjectHideFlags: 0
@@ -34726,3 +34866,5 @@ SceneRoots:
   - {fileID: 767457147}
   - {fileID: 979901166}
   - {fileID: 575819092}
+  - {fileID: 2011833571}
+  - {fileID: 363920444}
