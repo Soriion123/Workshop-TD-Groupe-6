@@ -31,8 +31,7 @@ Transform:
   m_LocalPosition: {x: -0.0008334112, y: 0.11937916, z: 0.50500005}
   m_LocalScale: {x: 0.22469167, y: 0.028765835, z: 0.5658788}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 9141403236154188855}
+  m_Children: []
   m_Father: {fileID: 1460314313370277593}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2377124872520811567
@@ -244,12 +243,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938869876826095296}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.019072764, z: -0, w: 0.99981815}
-  m_LocalPosition: {x: -0.19, y: -21.000002, z: 1.05}
-  m_LocalScale: {x: 1.854393, y: 14.484776, z: 0.7363178}
+  m_LocalRotation: {x: -0, y: 0.12649955, z: -0, w: 0.99196666}
+  m_LocalPosition: {x: 0.169, y: 0.513, z: 1.355}
+  m_LocalScale: {x: 0.5011044, y: 0.5, z: 0.49956158}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8108636136326537258}
+  m_Father: {fileID: 435087685298583482}
   m_LocalEulerAnglesHint: {x: 0, y: 2.186, z: 0}
 --- !u!1 &5062116806956296331
 GameObject:
@@ -294,6 +293,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5022221284026090505}
+  - {fileID: 9141403236154188855}
   - {fileID: 6890834132445307180}
   - {fileID: 1460314313370277593}
   - {fileID: 3365721636847229422}
@@ -472,7 +472,7 @@ MonoBehaviour:
   Bullet: {fileID: 931018905385309481, guid: a3ce9ef2a4590b747be9968e5b08ea6f, type: 3}
   Shoot_Point: {fileID: 9141403236154188855}
   range: 15
-  PartToRotate: {fileID: 1460314313370277593}
+  PartToRotate: {fileID: 435087685298583482}
   turnSpeed: 6
   ennemyTag: Enemy
   wallTag: Wall
