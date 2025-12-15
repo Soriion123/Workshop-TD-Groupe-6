@@ -46,6 +46,9 @@ public class UI_Manageur : MonoBehaviour
     public TextMeshProUGUI Text_info_ability;
     public GameObject image_abilty;
 
+    public Sprite[] Image_Types_Mechas;
+    public GameObject[] UI_Types_Mechas;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -88,18 +91,21 @@ public class UI_Manageur : MonoBehaviour
                 if (cliqueur.UI_mechas_scene[i].name == "Mechas_Air(Clone)")
                 {
                     Icone_Mechas_Centre[i].GetComponent<Image>().color = Color.cyan ;
+                    UI_Types_Mechas[i].GetComponent<Image>().sprite = Image_Types_Mechas[1];
                 }
                 
                 
                 if (cliqueur.UI_mechas_scene[i].name == "Mechas_All(Clone)")
                 {
                     Icone_Mechas_Centre[i].GetComponent<Image>().color = Color.magenta ;
+                    UI_Types_Mechas[i].GetComponent<Image>().sprite = Image_Types_Mechas[2];
                 }
                 
                 
                 if (cliqueur.UI_mechas_scene[i].name == "Mechas_Ground(Clone)")
                 {
                     Icone_Mechas_Centre[i].GetComponent<Image>().color = Color.green ;
+                    UI_Types_Mechas[i].GetComponent<Image>().sprite = Image_Types_Mechas[0];
                 }
 
                 if (cliqueur.UI_mechas_scene[i].GetComponent<Info_Mecha>().mechas_selec == true)
@@ -123,9 +129,8 @@ public class UI_Manageur : MonoBehaviour
                 }
 
                 cliqueur.New_Target[cliqueur.UI_mechas_scene[i].GetComponent<Info_Mecha>().id].GetComponentInChildren<TextMeshProUGUI>().text = Name_Mechas[i].text;
-
-
             }
+
         }
     }
 
