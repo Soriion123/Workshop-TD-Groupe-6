@@ -8232,7 +8232,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: c4231e6e8f999b14c87e801386033b6c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 9d5880379a61fd548ae88d68a2feef1b, type: 2}
+      objectReference: {fileID: 2100000, guid: e27ad689cdf24254abd3086f91c09ef0, type: 2}
     - target: {fileID: 919132149155446097, guid: c4231e6e8f999b14c87e801386033b6c, type: 3}
       propertyPath: m_Name
       value: SM_Diskplayer_01
@@ -20178,7 +20178,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 14663e10865dd0549915b8f6781f9f49, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 9d5880379a61fd548ae88d68a2feef1b, type: 2}
+      objectReference: {fileID: 2100000, guid: 010bd013164152e41bd025a6d211167d, type: 2}
     - target: {fileID: 919132149155446097, guid: 14663e10865dd0549915b8f6781f9f49, type: 3}
       propertyPath: m_Name
       value: SM_Shield_Bridge_01
