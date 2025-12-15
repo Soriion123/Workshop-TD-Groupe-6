@@ -5696,7 +5696,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: d012fb4f141e31f4da897e5c81712fc1, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 9d5880379a61fd548ae88d68a2feef1b, type: 2}
+      objectReference: {fileID: 2100000, guid: 0aebf458b9c8f154ca432a6c7c899353, type: 2}
     - target: {fileID: 919132149155446097, guid: d012fb4f141e31f4da897e5c81712fc1, type: 3}
       propertyPath: m_Name
       value: SM_poubelle_lp
@@ -16755,7 +16755,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: d012fb4f141e31f4da897e5c81712fc1, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 9d5880379a61fd548ae88d68a2feef1b, type: 2}
+      objectReference: {fileID: 2100000, guid: 0aebf458b9c8f154ca432a6c7c899353, type: 2}
     - target: {fileID: 919132149155446097, guid: d012fb4f141e31f4da897e5c81712fc1, type: 3}
       propertyPath: m_Name
       value: SM_poubelle_lp (1)
