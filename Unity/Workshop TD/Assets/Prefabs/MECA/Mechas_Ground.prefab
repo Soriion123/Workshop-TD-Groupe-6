@@ -538,6 +538,7 @@ MonoBehaviour:
   maxTeleportRange: 20.5
   slowTimeScale: 0.2
   teleportRangePreview: {fileID: 4822687914617045287}
+  VFX_TP: {fileID: 3825620197777948506, guid: a1ef5d623b3c300479993afcaf72a3c1, type: 3}
 --- !u!114 &-2782114789563296650
 MonoBehaviour:
   m_ObjectHideFlags: 0

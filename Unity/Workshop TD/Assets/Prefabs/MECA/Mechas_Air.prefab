@@ -482,7 +482,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   fireRate: 1
-  shootSound: {fileID: 2190159069705312454}
 --- !u!114 &8425392773556888335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,6 +524,7 @@ MonoBehaviour:
   maxTeleportRange: 20.5
   slowTimeScale: 0.2
   teleportRangePreview: {fileID: 3765154925497160092}
+  VFX_TP: {fileID: 3825620197777948506, guid: a1ef5d623b3c300479993afcaf72a3c1, type: 3}
 --- !u!114 &3461072409914564717
 MonoBehaviour:
   m_ObjectHideFlags: 0

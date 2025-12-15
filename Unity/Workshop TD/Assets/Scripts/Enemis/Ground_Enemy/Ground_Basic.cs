@@ -14,7 +14,7 @@ public class Ground_Basic : Ground_Enemy
     [SerializeField] private float maxHealth = 10f;
     [SerializeField] private int goldReward = 1;   // 💰 or gagné à la mort
     public float NexusDamage = 5f; // dégâts infligés à l'objectif
-
+    
     private float currentHealth;
 
     private void Awake()
@@ -82,11 +82,13 @@ public class Ground_Basic : Ground_Enemy
     {
         currentHealth -= amount;
         if (currentHealth <= 0) Die();
+       
     }
 
 
     private void Die()
     {
+        
         Destroy(gameObject);
         AudioManager.Instance.Play("MortOpps");
         GameManager.instance.AddGold(goldReward);

@@ -25,6 +25,7 @@ public class A_Jump : MonoBehaviour
     private GameObject cliqueur;
     private Transform mecha;
 
+    [SerializeField] GameObject VFX_TP;
     private void Start()
     {
         abilityManager = GetComponent<Mecha_AbilityManager>();
@@ -96,6 +97,7 @@ public class A_Jump : MonoBehaviour
         if (agent != null)
         {
             agent.ResetPath();     // 🔥 empêche le retour arrière
+            Instantiate (VFX_TP, finalPos, Quaternion.identity );
             agent.Warp(finalPos); // ✅ vrai teleport propre
         }
         else
