@@ -192,28 +192,28 @@ public class UI_Manageur : MonoBehaviour
         {
             // Auto Dead
             info_ability.SetActive(true);
-            Text_info_ability.text = "Auto Dead";
+            Text_info_ability.text = "AutoDeath : This mecha self-destructs and eliminates all enemies in a large area around it.";
             image_abilty.GetComponent<Image>().sprite = sprites_ui_abiliti[1];
         }
         else if(ability_ui_mechas[id].GetComponent<Image>().sprite == sprites_ui_abiliti[2])
         {
             // Slow
             info_ability.SetActive(true);
-            Text_info_ability.text = "Slow";
+            Text_info_ability.text = "Slow : Creates a zone that slows enemies around the mecha; duration 3 seconds.";
             image_abilty.GetComponent<Image>().sprite = sprites_ui_abiliti[2];
         }
         else if(ability_ui_mechas[id].GetComponent<Image>().sprite == sprites_ui_abiliti[3])
         {
             // Teleport
             info_ability.SetActive(true);
-            Text_info_ability.text = "Teleport";
+            Text_info_ability.text = "Teleport : Creates a sphere after activation; click inside it again to teleport this mecha.";
             image_abilty.GetComponent<Image>().sprite = sprites_ui_abiliti[3];
         }
         else if (ability_ui_mechas[id].GetComponent<Image>().sprite == sprites_ui_abiliti[4])
         {
             // AOE
             info_ability.SetActive(true);
-            Text_info_ability.text = "AOE";
+            Text_info_ability.text = "AOE : Inflicts damage in a circle around this mecha to all enemies within range.";
             image_abilty.GetComponent<Image>().sprite = sprites_ui_abiliti[4];
         }
     }
