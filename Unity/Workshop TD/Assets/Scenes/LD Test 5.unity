@@ -4087,8 +4087,8 @@ RectTransform:
   m_LocalScale: {x: 0.80000013, y: 0.80000013, z: 0.7999998}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1073268042}
   - {fileID: 1812935627}
+  - {fileID: 1073268042}
   m_Father: {fileID: 687576150}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
   m_AnchorMin: {x: 0, y: 0.5}
@@ -4709,8 +4709,8 @@ RectTransform:
   m_LocalScale: {x: 0.80000013, y: 0.80000013, z: 0.7999998}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 806635391}
   - {fileID: 888957801}
+  - {fileID: 806635391}
   m_Father: {fileID: 880103947}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
   m_AnchorMin: {x: 0, y: 0.5}
@@ -25584,8 +25584,8 @@ RectTransform:
   m_LocalScale: {x: 0.80000013, y: 0.80000013, z: 0.7999998}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 423954546}
   - {fileID: 1008385982}
+  - {fileID: 423954546}
   m_Father: {fileID: 648244940}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
   m_AnchorMin: {x: 0, y: 0.5}
@@ -27515,8 +27515,8 @@ RectTransform:
   m_LocalScale: {x: 0.80000013, y: 0.80000013, z: 0.7999998}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 835843006}
   - {fileID: 480623164}
+  - {fileID: 835843006}
   m_Father: {fileID: 1292735329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
   m_AnchorMin: {x: 0, y: 0.5}
@@ -72004,8 +72004,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 9
-  m_fontSizeBase: 9
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -72042,7 +72042,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 1.7515526, y: 17.407612, z: 15.055973, w: 18.376112}
+  m_margin: {x: 1.7515526, y: 17.407612, z: 21.040195, w: 18.376112}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -83919,8 +83919,8 @@ RectTransform:
   m_LocalScale: {x: 0.80000013, y: 0.80000013, z: 0.7999998}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 661780920}
   - {fileID: 173828084}
+  - {fileID: 661780920}
   m_Father: {fileID: 2100257351}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
   m_AnchorMin: {x: 0, y: 0.5}
