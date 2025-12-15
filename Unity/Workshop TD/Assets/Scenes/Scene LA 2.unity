@@ -1483,7 +1483,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 5936bfef3386c3741baea3d0f7d04259, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 6d55c1403a3c7bf45a3afa2d86949a16, type: 2}
+      objectReference: {fileID: 2100000, guid: 33dc6aa042de8d545a9f1256898d9872, type: 2}
     - target: {fileID: 919132149155446097, guid: 5936bfef3386c3741baea3d0f7d04259, type: 3}
       propertyPath: m_Name
       value: SM_Shelf_Lowpoly_01 (1)
