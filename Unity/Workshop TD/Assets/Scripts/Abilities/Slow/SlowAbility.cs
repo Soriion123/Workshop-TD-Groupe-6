@@ -66,6 +66,7 @@ public class SlowAbility : MonoBehaviour
         isActive = true;
 
         slowZoneInstance.SetActive(true);
+        AudioManager.Instance.Play("Slow");
 
         yield return new WaitForSeconds(activeTime);
 

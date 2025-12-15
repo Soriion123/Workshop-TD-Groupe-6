@@ -42,6 +42,7 @@ public class AOE_Ability : MonoBehaviour
             transform.position,
             Quaternion.identity
         );
+        AudioManager.Instance.Play("AOE");
 
         // ✅ Nettoyage automatique
         Destroy(aoe, 1f);

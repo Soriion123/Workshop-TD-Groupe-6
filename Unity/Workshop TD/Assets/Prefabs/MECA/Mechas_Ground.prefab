@@ -493,7 +493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowZonePrefab: {fileID: 607898890148834197, guid: 6991bfeb47a9a2a4f8e630571f094ad8, type: 3}
-  activeTime: 5
+  activeTime: 3
   info: {fileID: 3159601720176944011}
 --- !u!114 &2731605133039419719
 MonoBehaviour:

@@ -113,6 +113,7 @@ public class A_Jump : MonoBehaviour
 
         teleportRangePreview.SetActive(false);
         Time.timeScale = 1f;
+        AudioManager.Instance.Play("TP");
         // consommation de l'ability
         abilityManager.ConsumeAbility();
     }
