@@ -44,6 +44,7 @@ public class UI_Manageur : MonoBehaviour
 
     public GameObject info_ability;
     public TextMeshProUGUI Text_info_ability;
+    public GameObject image_abilty;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -187,24 +188,28 @@ public class UI_Manageur : MonoBehaviour
             // Auto Dead
             info_ability.SetActive(true);
             Text_info_ability.text = "Auto Dead";
+            image_abilty.GetComponent<Image>().sprite = sprites_ui_abiliti[1];
         }
         else if(ability_ui_mechas[id].GetComponent<Image>().sprite == sprites_ui_abiliti[2])
         {
             // Slow
             info_ability.SetActive(true);
             Text_info_ability.text = "Slow";
+            image_abilty.GetComponent<Image>().sprite = sprites_ui_abiliti[2];
         }
         else if(ability_ui_mechas[id].GetComponent<Image>().sprite == sprites_ui_abiliti[3])
         {
             // Teleport
             info_ability.SetActive(true);
             Text_info_ability.text = "Teleport";
+            image_abilty.GetComponent<Image>().sprite = sprites_ui_abiliti[3];
         }
         else if (ability_ui_mechas[id].GetComponent<Image>().sprite == sprites_ui_abiliti[4])
         {
             // AOE
             info_ability.SetActive(true);
             Text_info_ability.text = "AOE";
+            image_abilty.GetComponent<Image>().sprite = sprites_ui_abiliti[4];
         }
     }
 
