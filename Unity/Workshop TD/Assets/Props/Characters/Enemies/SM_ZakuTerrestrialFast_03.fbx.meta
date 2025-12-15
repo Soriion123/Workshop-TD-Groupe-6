@@ -3,7 +3,12 @@ guid: c874cf98b69d2f0428cff05548f3f96c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ZenUV_Generic_Material
+    second: {fileID: 2100000, guid: 61868e6866a8c474fb865fa8bc272ba1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
