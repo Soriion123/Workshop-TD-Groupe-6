@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
 
     public List<Sound> sounds = new List<Sound>();
     private AudioSource source;
+    private AudioSource loopSource;
 
     void Awake()
     {
@@ -25,6 +26,7 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         source = gameObject.AddComponent<AudioSource>();
+        loopSource = gameObject.AddComponent<AudioSource>();
     }
 
     public void Play(string soundName)
@@ -39,4 +41,23 @@ public class AudioManager : MonoBehaviour
         source.pitch = s.pitch;
         source.PlayOneShot(s.clip, s.volume);
     }
+
+    public void PlayLoop(string soundName)
+    {
+        Sound s = sounds.Find(s => s.name == soundName);
+        if (s == null) return;
+
+        loopSource.clip = s.clip;
+        loopSource.volume = s.volume;
+        loopSource.pitch = s.pitch;
+        loopSource.loop = true;
+
+        if (!loopSource.isPlaying)
+            loopSource.Play();
+    }
+    public void StopLoop()
+    {
+        loopSource.Stop();
+    }
+
 }

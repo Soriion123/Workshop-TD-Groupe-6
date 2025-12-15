@@ -45755,7 +45755,7 @@ MonoBehaviour:
     volume: 10
     pitch: 1
   - name: SpawnMecha
-    clip: {fileID: 8300000, guid: 94749b8d009149441a9ac87f9f7002aa, type: 3}
+    clip: {fileID: 8300000, guid: d729d8d504d737e4f830f518be665801, type: 3}
     volume: 10
     pitch: 1
   - name: MortOpps
@@ -45777,6 +45777,10 @@ MonoBehaviour:
   - name: Slow
     clip: {fileID: 8300000, guid: 7b77f17b6d4b84943bfcd6140f750ce4, type: 3}
     volume: 10
+    pitch: 1
+  - name: MusiqueFond
+    clip: {fileID: 8300000, guid: 80924d6d567d4234e9929ae2fd4c84f1, type: 3}
+    volume: 1
     pitch: 1
 --- !u!4 &1132232359
 Transform:

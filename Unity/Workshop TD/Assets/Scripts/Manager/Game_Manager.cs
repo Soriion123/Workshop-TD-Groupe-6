@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
         // Singleton basique
         if (instance == null) instance = this;
         else Destroy(gameObject);
+        AudioManager.Instance.PlayLoop("MusiqueFond");
     }
 
     public void AddGold(int amount)
