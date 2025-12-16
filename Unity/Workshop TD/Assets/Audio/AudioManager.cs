@@ -1,9 +1,13 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Audio;
+
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
+    public AudioMixer audioMixer;
+
 
     [System.Serializable]
     public class Sound
@@ -27,6 +31,15 @@ public class AudioManager : MonoBehaviour
 
         source = gameObject.AddComponent<AudioSource>();
         loopSource = gameObject.AddComponent<AudioSource>();
+        source.outputAudioMixerGroup = audioMixer.FindMatchingGroups("Master")[0];
+        loopSource.outputAudioMixerGroup = audioMixer.FindMatchingGroups("Master")[0];
+
+        // 🔊 CONNECTER LES AUDIOSOURCES AU MIXER
+        AudioMixerGroup[] groups = audioMixer.FindMatchingGroups("Master");
+
+        source.outputAudioMixerGroup = groups[0];
+        loopSource.outputAudioMixerGroup = groups[0];
+
     }
 
     public void Play(string soundName)
@@ -61,3 +74,5 @@ public class AudioManager : MonoBehaviour
     }
 
 }
+
+

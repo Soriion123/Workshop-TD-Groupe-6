@@ -1,11 +1,20 @@
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Options_Script : MonoBehaviour
 {
-    
-    public void SetVolume(float volume)
+    public AudioMixer audioMixer;
+
+    private void Start()
     {
-        print(volume);
+        audioMixer.SetFloat("MasterVolume", -80f);
+    }
+    public void SetVolume(float value)
+    {
+        // value doit être entre 0 et 1
+        audioMixer.SetFloat("MasterVolume", Mathf.Log10(value) * 20);
     }
 
 
