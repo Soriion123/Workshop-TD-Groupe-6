@@ -5343,7 +5343,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 141862052}
-  - component: {fileID: 141862053}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -5372,20 +5371,6 @@ Transform:
   - {fileID: 1691119458}
   m_Father: {fileID: 1667999311}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &141862053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 141862051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0abfb9ba05bc656458b47adebe64dd89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Cliquer: {fileID: 488323232}
-  Cancas_Win: {fileID: 1976854020}
 --- !u!43 &147002877
 Mesh:
   m_ObjectHideFlags: 0
@@ -15815,7 +15800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Panel_Intro: {fileID: 0}
-  Canvas_Pause: {fileID: 1976854020}
+  Canvas_Pause: {fileID: 360155523}
   Canvas_Commands: {fileID: 1299660393}
   Canvas_Credis: {fileID: 0}
   Canvas_Options: {fileID: 0}

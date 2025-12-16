@@ -116,7 +116,7 @@ public class Menu_Manageur : MonoBehaviour
 
         if (!back)
         {
-            print(Time.timeScale);
+            print("1");
             Panel_GO.GetComponent<RectTransform>().anchoredPosition = Vector2.LerpUnclamped(Panel_GO.GetComponent<RectTransform>().anchoredPosition, Vector2.zero, Time.deltaTime * 5f);
         }
         else
