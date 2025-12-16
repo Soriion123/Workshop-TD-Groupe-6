@@ -4,7 +4,7 @@ using UnityEngine.AI;
 public class A_Jump : MonoBehaviour
 {
     [Header("Activation")]
-    private KeyCode activationKey = KeyCode.F;
+    private KeyCode activationKey = KeyCode.Space;
 
     [Header("Teleport Settings")]
     public float maxTeleportRange = 10f;

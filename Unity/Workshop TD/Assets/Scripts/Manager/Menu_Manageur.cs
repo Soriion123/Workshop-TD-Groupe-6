@@ -26,6 +26,7 @@ public class Menu_Manageur : MonoBehaviour
     {
         Time.timeScale = 1;
         test_memori = Canvas_Commands.GetComponent<RectTransform>().anchoredPosition;
+
     }
 
     // Update is called once per frame
@@ -39,12 +40,16 @@ public class Menu_Manageur : MonoBehaviour
 
     public void Start_Game()
     {
+        AudioManager.Instance.StopLoop();
+
         SceneManager.LoadScene("LD Test 5");
+        AudioManager.Instance.Play("SwapUI");
     }
 
     public void Quit_Game()
     {
         Application.Quit();
+        AudioManager.Instance.Play("SwapUI");
     }
 
     public void Continue_Game()
@@ -52,11 +57,15 @@ public class Menu_Manageur : MonoBehaviour
         Time.timeScale = 1f;
         Canvas_Pause.SetActive(false);
         Cliquer.SetActive(true);
+        AudioManager.Instance.Play("SwapUI");
     }
 
     public void Back_To_Intro()
     {
+        AudioManager.Instance.StopLoop();
+
         SceneManager.LoadScene("Menu Start");
+        AudioManager.Instance.Play("SwapUI");
     }
 
     public void Clic_Commands()
@@ -65,6 +74,7 @@ public class Menu_Manageur : MonoBehaviour
 
         back_menu = false;
         anime_menu = true;
+        AudioManager.Instance.Play("SwapUI");
     }
 
     public void Clic_Credit()
@@ -73,6 +83,7 @@ public class Menu_Manageur : MonoBehaviour
 
         back_menu = false;
         anime_menu = true;
+        AudioManager.Instance.Play("SwapUI");
     }
 
     public void Clic_Open_Option()
@@ -80,12 +91,14 @@ public class Menu_Manageur : MonoBehaviour
         anime_selec = Canvas_Options;
         back_menu = false;
         anime_menu = true;
+        AudioManager.Instance.Play("SwapUI");
     }
 
     public void clic_retour()
     {
         back_menu = true;
         anime_menu = true;
+        AudioManager.Instance.Play("SwapUI");
     }
 
     public void Last_screen(GameObject last_dead)

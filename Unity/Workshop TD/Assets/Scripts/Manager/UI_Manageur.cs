@@ -71,6 +71,7 @@ public class UI_Manageur : MonoBehaviour
         else if (Ground_Spawner.countdown < 0)
         {
             Waring_UI.SetActive(true);
+            //AudioManager.Instance.Play("NextWave");
         }
 
         if (Ground_Spawner.cmp_Wave == 10)
@@ -179,6 +180,8 @@ public class UI_Manageur : MonoBehaviour
 
 
         Menu_Manageur.Last_screen(Cancas_Win);
+        AudioManager.Instance.StopLoop();
+        AudioManager.Instance.Play("Victoire");
         /*
         Cancas_Win.SetActive(true);
         Time.timeScale = 0;

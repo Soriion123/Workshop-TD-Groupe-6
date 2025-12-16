@@ -6,7 +6,7 @@ public class SlowAbility : MonoBehaviour
     [Header("Ability Settings")]
     public GameObject slowZonePrefab;   // ✅ DOIT être un prefab
     public float activeTime = 3f;
-    private KeyCode activationKey = KeyCode.F;
+    private KeyCode activationKey = KeyCode.Space;
 
     private bool isActive = false;
 

@@ -37,13 +37,13 @@ public class Mechas_All : MonoBehaviour
             if (distanceToEnemy > range)
                 continue;
 
-            // --- Vérification du layer AVANT le Raycast (✔ FIX) ---
+            // Vérification du layer AVANT le Raycast 
             if ((Layer.value & (1 << enemy.layer)) == 0)
             {
                 continue; // pas le bon layer → skip
             }
 
-            // --- Vérification ligne de vue ---
+            // Vérification ligne de vue
             Vector3 dir = (enemy.transform.position - Shoot_Point.position).normalized;
 
             if (Physics.Raycast(Shoot_Point.position, dir, out RaycastHit hit, distanceToEnemy))

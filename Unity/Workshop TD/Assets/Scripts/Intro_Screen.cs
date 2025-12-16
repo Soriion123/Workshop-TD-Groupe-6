@@ -54,6 +54,7 @@ public class Intro_Screen : MonoBehaviour
     {
         Return_Start_Menu = true;
         Time.timeScale = 1.0f;
+        AudioManager.Instance.Play("SwapUI");
     }
 
 }

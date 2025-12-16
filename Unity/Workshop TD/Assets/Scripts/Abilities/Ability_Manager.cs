@@ -20,7 +20,7 @@ public class Mecha_AbilityManager : MonoBehaviour
         RefreshAbilities();
     }
 
-    // ✅ À appeler quand une ability est utilisée
+    // A appeler quand une ability est utilisée
     public void ConsumeAbility()
     {
         currentAbility = AbilityType.None;

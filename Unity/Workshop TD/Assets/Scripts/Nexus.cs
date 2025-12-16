@@ -31,6 +31,8 @@ public class Nexus : MonoBehaviour
         {
             //Canvas_Dead.SetActive(true);
             Menu_Manageur.Last_screen(Canvas_Dead);
+            AudioManager.Instance.StopLoop();
+            AudioManager.Instance.Play("Defaite");
             //Time.timeScale = 0;
             Cliquer.SetActive(false);
 

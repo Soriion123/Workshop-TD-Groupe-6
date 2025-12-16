@@ -4,7 +4,7 @@ using System.Collections;
 public class AutoDeath_Ability : MonoBehaviour
 {
     public GameObject AutoDeath_ZonePrefab;   // ✅ PREFAB ici
-    private KeyCode activationKey = KeyCode.F;
+    private KeyCode activationKey = KeyCode.Space;
 
     private bool isActive = false;
 
@@ -43,7 +43,7 @@ public class AutoDeath_Ability : MonoBehaviour
             transform.position,
             Quaternion.identity
         );
-
+        AudioManager.Instance.Play("AutoDeath");
         // (optionnel) destruction auto de la zone après 2s
         Destroy(explosion, 2f);
 

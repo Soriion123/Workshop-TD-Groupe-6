@@ -78,6 +78,7 @@ public class Menu_Pause_Option : MonoBehaviour
         //retour_pause = true;
         anime_back = false;
         Time.timeScale = 1 ;
+        AudioManager.Instance.Play("SwapUI");
     }
 
     public void Credits_Menu()
@@ -88,6 +89,7 @@ public class Menu_Pause_Option : MonoBehaviour
         anime_go = true;
         //retour_pause = true;
         Time.timeScale = 1;
+        AudioManager.Instance.Play("SwapUI");
     }
 
     public void Comande_Menu()
@@ -98,6 +100,7 @@ public class Menu_Pause_Option : MonoBehaviour
         anime_go = true;
         //retour_pause = true;
         Time.timeScale = 1;
+        AudioManager.Instance.Play("SwapUI");
     }
 
     public void retour()
@@ -106,6 +109,7 @@ public class Menu_Pause_Option : MonoBehaviour
         retour_pause = true;
         anime_back = true;
         Time.timeScale = 1;
+        AudioManager.Instance.Play("SwapUI");
     }
 
     public void anime_menu_fonction_2(GameObject Panel_GO, bool back)
