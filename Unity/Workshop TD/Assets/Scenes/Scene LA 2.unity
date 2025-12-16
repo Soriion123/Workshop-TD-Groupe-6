@@ -16754,7 +16754,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 66e8597ed0363d24d9a09792caebb59d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 9d5880379a61fd548ae88d68a2feef1b, type: 2}
+      objectReference: {fileID: 2100000, guid: fb71aaef1cbf4d342a65e705d18995e6, type: 2}
     - target: {fileID: 919132149155446097, guid: 66e8597ed0363d24d9a09792caebb59d, type: 3}
       propertyPath: m_Name
       value: SM_Letter_01
@@ -29964,7 +29964,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 66e8597ed0363d24d9a09792caebb59d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 9d5880379a61fd548ae88d68a2feef1b, type: 2}
+      objectReference: {fileID: 2100000, guid: fb71aaef1cbf4d342a65e705d18995e6, type: 2}
     - target: {fileID: 919132149155446097, guid: 66e8597ed0363d24d9a09792caebb59d, type: 3}
       propertyPath: m_Name
       value: SM_Letter_01 (1)
