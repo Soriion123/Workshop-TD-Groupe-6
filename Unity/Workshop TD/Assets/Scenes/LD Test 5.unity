@@ -68865,7 +68865,7 @@ MonoBehaviour:
     - {fileID: 6350685989830833738, guid: 3b1ece98939619344ae8a5c5c1eeace4, type: 3}
     - {fileID: 6350685989830833738, guid: 3b1ece98939619344ae8a5c5c1eeace4, type: 3}
     timeToNextEnnemy: 0.5
-    timeToNextWave: 95
+    timeToNextWave: 98
     enemiesLeft: 0
   - enemies:
     - {fileID: 3194565259581899682, guid: 446b3bc94bf226245a696a6c9494a0c6, type: 3}
