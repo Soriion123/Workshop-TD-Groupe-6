@@ -61,6 +61,8 @@ public class Cliqueur : MonoBehaviour
     public Cam_test_2 cam_script;
     [SerializeField] GameObject VFX_Up;
 
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -151,6 +153,8 @@ public class Cliqueur : MonoBehaviour
                     {
                         print("aaaa");
 
+                        Instantiate(VFX_Up, hit.collider.transform.position , Quaternion.identity);
+
                         Cursor.SetCursor(Image_souris[1], new Vector2(300, 300), CursorMode.Auto);
 
                         AudioManager.Instance.Play("Upgrade");
@@ -173,6 +177,8 @@ public class Cliqueur : MonoBehaviour
 
                         AudioManager.Instance.Play("Upgrade");
 
+                        Instantiate(VFX_Up, hit.collider.transform.position, Quaternion.identity);
+
                         game_manager.gold = game_manager.gold - 2137;
 
                         hit.collider.gameObject.GetComponent<Mechas_All>().range = hit.collider.gameObject.GetComponent<Mechas_All>().range * 1.5f;
@@ -189,6 +195,8 @@ public class Cliqueur : MonoBehaviour
                         Cursor.SetCursor(Image_souris[1], new Vector2(300, 300), CursorMode.Auto);
 
                         AudioManager.Instance.Play("Upgrade");
+
+                        Instantiate(VFX_Up, hit.collider.transform.position, Quaternion.identity);
 
                         game_manager.gold = game_manager.gold - 1108;
 
