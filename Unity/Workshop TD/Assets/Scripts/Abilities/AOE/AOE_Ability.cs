@@ -5,12 +5,14 @@ public class AOE_Ability : MonoBehaviour
 {
     [Header("AOE Settings")]
     public GameObject AOE_ZonePrefab;   // ✅ PREFAB ici
-    private KeyCode activationKey = KeyCode.Space;
+    private KeyCode activationKey = KeyCode.F;
     public float cooldown = 0.5f;
 
     private bool isReady = true;
     private Mecha_AbilityManager abilityManager;
     private Info_Mecha info;
+
+    [SerializeField] GameObject VFX_AoE;
 
     private void Start()
     {
@@ -35,13 +37,10 @@ public class AOE_Ability : MonoBehaviour
     private IEnumerator ActivateAOE()
     {
         isReady = false;
-
+                        // Instantiate(VFX_AoE, transform.position, Quaternion.identity);
         // ✅ Instancie la zone à la position du mecha
-        GameObject aoe = Instantiate(
-            AOE_ZonePrefab,
-            transform.position,
-            Quaternion.identity
-        );
+        GameObject aoe = Instantiate(AOE_ZonePrefab, transform.position, Quaternion.identity);
+                        
         AudioManager.Instance.Play("AOE");
 
         // ✅ Nettoyage automatique
