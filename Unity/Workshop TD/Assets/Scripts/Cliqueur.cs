@@ -121,16 +121,28 @@ public class Cliqueur : MonoBehaviour
 
                     //print(List_de_mechaas);
 
-                
-                    New_selection(hit.collider.gameObject);
+
+                    if (hit.collider.gameObject.GetComponent<Info_Mecha>().mechas_selec)
+                    {
+                        for (int i = 0; i < UI_mechas_scene.Count; i++)
+                        {
+                            if (UI_mechas_scene[i] != null)
+                            {
+                                UI_mechas_scene[i].GetComponent<Info_Mecha>().mechas_selec = false;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        New_selection(hit.collider.gameObject);
 
 
-                    ref_id_selec = hit.collider.gameObject.GetComponent<Info_Mecha>().id;
+                        ref_id_selec = hit.collider.gameObject.GetComponent<Info_Mecha>().id;
 
-                    test_memori = hit.collider.gameObject;
+                        test_memori = hit.collider.gameObject;
 
-                    New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
-
+                        New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
+                    }
                 }
 
                 // Vente du mechas
@@ -359,28 +371,35 @@ public class Cliqueur : MonoBehaviour
             // Selction via Key 12345
             if (Input.GetKeyDown(KeyCode.Alpha1) && UI_mechas_scene.Count != 0)
             {
+
+
                 recherche_ID_en_vie(0);
                 New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
+
             }
             if (Input.GetKeyDown(KeyCode.Alpha2) && UI_mechas_scene.Count != 0)
             {
                 recherche_ID_en_vie(1);
                 New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
+
             }
             if (Input.GetKeyDown(KeyCode.Alpha3) && UI_mechas_scene.Count != 0)
             {
                 recherche_ID_en_vie(2);
                 New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
+
             }
             if (Input.GetKeyDown(KeyCode.Alpha4) && UI_mechas_scene.Count != 0)
             {
                 recherche_ID_en_vie(3);
                 New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
+
             }
             if (Input.GetKeyDown(KeyCode.Alpha5) && UI_mechas_scene.Count != 0)
             {
                 recherche_ID_en_vie(4);
                 New_Target[ref_id_selec].GetComponentInChildren<MeshRenderer>().material = Material_cursor[3];
+
             }
 
 
