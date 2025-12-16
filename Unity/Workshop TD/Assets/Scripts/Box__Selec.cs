@@ -48,7 +48,7 @@ public class Box__Selec : MonoBehaviour
                 }
                 else
                 {
-                    This_BOX.GetComponent<MeshRenderer>().material = Material_Box[3];
+                    This_BOX.GetComponent<MeshRenderer>().material = Material_Box[4];
                 }
             }
             if (Type_box == 2) 
@@ -59,7 +59,7 @@ public class Box__Selec : MonoBehaviour
                 }
                 else
                 {
-                    This_BOX.GetComponent<MeshRenderer>().material = Material_Box[3];
+                    This_BOX.GetComponent<MeshRenderer>().material = Material_Box[5];
                 }
             }
         
@@ -74,9 +74,17 @@ public class Box__Selec : MonoBehaviour
         {
             This_BOX.GetComponent<MeshRenderer>().material = Material_Box[type];
         }
-        else
+        else if (Type_box == 0)
         {
             This_BOX.GetComponent<MeshRenderer>().material = Material_Box[3];
+        }
+        else if (Type_box == 1)
+        {
+            This_BOX.GetComponent<MeshRenderer>().material = Material_Box[4];
+        }
+        else if (Type_box == 2)
+        {
+            This_BOX.GetComponent<MeshRenderer>().material = Material_Box[5];
         }
     }
 
