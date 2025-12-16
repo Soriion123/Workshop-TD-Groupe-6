@@ -14,7 +14,7 @@ public class Ground_Fast : Ground_Enemy
     [SerializeField] private float maxHealth = 10f;
     [SerializeField] private int goldReward = 1;   // 💰 or gagné à la mort
     public float NexusDamage = 5f; // dégâts infligés à l'objectif
-
+    [SerializeField] private GameObject VFX_Death;
     private float currentHealth;
 
     private void Awake()
@@ -89,7 +89,9 @@ public class Ground_Fast : Ground_Enemy
 
     private void Die()
     {
-        Destroy(gameObject);
+        Instantiate(VFX_Death, transform.position, Quaternion.identity);
+        Destroy(gameObject, 0.02f);
+
         AudioManager.Instance.Play("MortOpps");
         GameManager.instance.AddGold(goldReward);
     }

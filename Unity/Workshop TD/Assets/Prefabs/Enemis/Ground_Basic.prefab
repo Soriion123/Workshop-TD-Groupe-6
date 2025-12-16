@@ -181,7 +181,7 @@ MonoBehaviour:
   maxHealth: 15
   goldReward: 50
   NexusDamage: 10
-  Explosion: {fileID: 7707338336318930715, guid: e21d7fb81f8b2ed45afb88a45e49a531, type: 3}
+  VFX_Death: {fileID: 7707338336318930715, guid: e21d7fb81f8b2ed45afb88a45e49a531, type: 3}
 --- !u!1001 &5438904644109113915
 PrefabInstance:
   m_ObjectHideFlags: 0

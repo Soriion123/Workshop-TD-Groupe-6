@@ -130,6 +130,7 @@ MonoBehaviour:
   originalSpeed: 0
   maxHealth: 15
   goldReward: 55
+  VFX_Death: {fileID: 7707338336318930715, guid: e21d7fb81f8b2ed45afb88a45e49a531, type: 3}
   NexusDamage: 12
 --- !u!54 &-6168073237448909036
 Rigidbody:
