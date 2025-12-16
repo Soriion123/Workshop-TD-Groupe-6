@@ -31163,7 +31163,7 @@ MonoBehaviour:
   - {fileID: 980957826}
   - {fileID: 1291958336}
   - {fileID: 1286198582}
-  spawnInterval: 30
+  spawnInterval: 40
 --- !u!4 &639380757
 Transform:
   m_ObjectHideFlags: 0
