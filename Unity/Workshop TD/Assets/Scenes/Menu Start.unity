@@ -119,6 +119,112 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &22847562
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 22847564}
+  - component: {fileID: 22847563}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &22847563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22847562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86d2d588742924a43a2bc4990d5f43c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: dfcff59ad71126b41828cb92a32d1337, type: 2}
+  sounds:
+  - name: mecha_shoot
+    clip: {fileID: 8300000, guid: 83bec1b8547bb2b4bbe297cac9fa0a32, type: 3}
+    volume: 4
+    pitch: 1
+  - name: Upgrade
+    clip: {fileID: 8300000, guid: dfa1910ae745eec48b69cf04b76c8a6f, type: 3}
+    volume: 5
+    pitch: 1
+  - name: Refund
+    clip: {fileID: 8300000, guid: e6b58c7d343c9924c970cea273434d4d, type: 3}
+    volume: 10
+    pitch: 1
+  - name: Gold
+    clip: {fileID: 8300000, guid: 95b4fbdf776e88d46903d1e02d3e74c8, type: 3}
+    volume: 10
+    pitch: 1
+  - name: SpawnMecha
+    clip: {fileID: 8300000, guid: d729d8d504d737e4f830f518be665801, type: 3}
+    volume: 6
+    pitch: 1
+  - name: MortOpps
+    clip: {fileID: 8300000, guid: eb76af705135c9147941a5b1559348de, type: 3}
+    volume: 4
+    pitch: 1
+  - name: HitNexus
+    clip: {fileID: 8300000, guid: 14e40851551547143911df2349a37e39, type: 3}
+    volume: 10
+    pitch: 1
+  - name: TP
+    clip: {fileID: 8300000, guid: b03803a7c9b5fd541a79ccaa64634b4c, type: 3}
+    volume: 10
+    pitch: 1
+  - name: AOE
+    clip: {fileID: 8300000, guid: 4293d8bd590756641befa4e393b8df73, type: 3}
+    volume: 8
+    pitch: 1
+  - name: Slow
+    clip: {fileID: 8300000, guid: 7b77f17b6d4b84943bfcd6140f750ce4, type: 3}
+    volume: 3
+    pitch: 1
+  - name: MusiqueFond
+    clip: {fileID: 8300000, guid: 80924d6d567d4234e9929ae2fd4c84f1, type: 3}
+    volume: 0.5
+    pitch: 1
+  - name: AutoDeath
+    clip: {fileID: 8300000, guid: 513cf55a17466484bbb2d77f80f72e01, type: 3}
+    volume: 5
+    pitch: 1
+  - name: Victoire
+    clip: {fileID: 8300000, guid: 8c3d97334da35e24081414944b3c8d1f, type: 3}
+    volume: 0.5
+    pitch: 1
+  - name: Defaite
+    clip: {fileID: 8300000, guid: 638ffd11428d7b94bb7c546477d3429b, type: 3}
+    volume: 5
+    pitch: 1
+  - name: SwapUI
+    clip: {fileID: 8300000, guid: 9253739336d647c4b867a79791f251ed, type: 3}
+    volume: 5
+    pitch: 1
+--- !u!4 &22847564
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22847562}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -48.313362, y: 16.972359, z: 37.54}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &62922091
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,6 +1156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0a6623ed66d5b4792162d85f7dcf7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: dfcff59ad71126b41828cb92a32d1337, type: 2}
 --- !u!1 &381400303
 GameObject:
   m_ObjectHideFlags: 0
@@ -2597,10 +2704,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1016431567}
   m_HandleRect: {fileID: 1833490596}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 0.0001
+  m_MaxValue: 2
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -4201,3 +4308,4 @@ SceneRoots:
   - {fileID: 1841526168}
   - {fileID: 111662050}
   - {fileID: 792157614}
+  - {fileID: 22847564}

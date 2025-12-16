@@ -7,14 +7,16 @@ public class Options_Script : MonoBehaviour
 {
     public AudioMixer audioMixer;
 
-    private void Start()
+    /*private void Start()
     {
         audioMixer.SetFloat("MasterVolume", -80f);
-    }
+    }*/
     public void SetVolume(float value)
     {
         // value doit être entre 0 et 1
-        audioMixer.SetFloat("MasterVolume", Mathf.Log10(value) * 20);
+        audioMixer.SetFloat("Master", Mathf.Log10(value) * 20);
+        Debug.Log("aaaaaaaaaaaaaaaaaaaaaaa");
+        return;
     }
 
 
