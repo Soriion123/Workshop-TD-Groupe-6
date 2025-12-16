@@ -6090,7 +6090,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: fa0a0cceb42ab4448a544873d18ed51c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 9d5880379a61fd548ae88d68a2feef1b, type: 2}
+      objectReference: {fileID: 2100000, guid: 5bd359c18a89c52489a66b533c88c789, type: 2}
     - target: {fileID: 919132149155446097, guid: fa0a0cceb42ab4448a544873d18ed51c, type: 3}
       propertyPath: m_Name
       value: SM_MuralShelf_Lowpoly
@@ -8796,6 +8796,7 @@ MonoBehaviour:
   Clic_cool: 0
   Prefab_Target: {fileID: 0}
   cam_script: {fileID: 0}
+  VFX_Up: {fileID: 0}
 --- !u!4 &488323234
 Transform:
   m_ObjectHideFlags: 0
@@ -24747,6 +24748,7 @@ MonoBehaviour:
   Nexus: {fileID: 0}
   cliqueur: {fileID: 488323233}
   Nexus_Life_UI: {fileID: 1685963521}
+  Nexus_Bar: {fileID: 0}
   Icone_Mechas_Centre:
   - {fileID: 463820082}
   - {fileID: 1492126702}
