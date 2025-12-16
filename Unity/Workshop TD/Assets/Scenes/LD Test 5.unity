@@ -13690,6 +13690,7 @@ MonoBehaviour:
   anime_go: 0
   anime_back: 0
   retour_pause: 0
+  autre_option: 0
   Panel_memori: {x: 0, y: 0}
   GameManager: {fileID: 1437382625}
   Intro_Screen: {fileID: 1879896379}
@@ -60947,6 +60948,7 @@ MonoBehaviour:
   anime_bool_revers: 0
   menu_active: 0
   Cliquer: {fileID: 488323232}
+  Menu_Pause_Option: {fileID: 353415227}
 --- !u!4 &1437382626
 Transform:
   m_ObjectHideFlags: 0

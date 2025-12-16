@@ -17,8 +17,9 @@ public class GameManager : MonoBehaviour
     public bool anime_bool_revers = false;
     public bool menu_active = false;
 
-
     public GameObject Cliquer;
+
+    public Menu_Pause_Option Menu_Pause_Option;
 
     private void Awake()
     {
@@ -46,7 +47,7 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 1;
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) & !Menu_Pause_Option.autre_option)
         {
             if (!menu_active)
             {

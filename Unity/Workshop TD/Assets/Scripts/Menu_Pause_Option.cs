@@ -21,6 +21,8 @@ public class Menu_Pause_Option : MonoBehaviour
 
     public bool retour_pause;
 
+    public bool autre_option = false;
+
     public Vector2 Panel_memori;
 
     public GameManager GameManager;
@@ -73,6 +75,7 @@ public class Menu_Pause_Option : MonoBehaviour
 
     public void Option_Menu()
     {
+        autre_option = true;
         Panel_ref = Panel_Option;
         anime_go = true;
         //retour_pause = true;
@@ -86,6 +89,7 @@ public class Menu_Pause_Option : MonoBehaviour
         Panel_ref = Panel_Credits;
         anime_back = false;
 
+        autre_option = true;
         anime_go = true;
         //retour_pause = true;
         Time.timeScale = 1;
@@ -97,6 +101,7 @@ public class Menu_Pause_Option : MonoBehaviour
         Panel_ref = Panel_Comande;
         anime_back = false;
 
+        autre_option = true;
         anime_go = true;
         //retour_pause = true;
         Time.timeScale = 1;
@@ -133,6 +138,7 @@ public class Menu_Pause_Option : MonoBehaviour
                 print("a");
                 Panel_GO.GetComponent<RectTransform>().anchoredPosition = Panel_memori;
                 anime_go = false;
+                autre_option = false;
 
                 if (!GameManager.anime_bool_revers & !Intro_Screen.Return_Start_Menu)
                 {
