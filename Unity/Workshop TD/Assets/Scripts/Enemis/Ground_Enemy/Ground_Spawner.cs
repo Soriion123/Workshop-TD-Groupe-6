@@ -24,6 +24,9 @@ public class Ground_Spawner : MonoBehaviour
 
     public int cmp_Wave = 0;
 
+    private bool hasNotifiedVictoryManager = false;
+
+
     private void Start()
     {
         if (waves == null || waves.Length == 0)
@@ -59,12 +62,13 @@ public class Ground_Spawner : MonoBehaviour
 
     private IEnumerator SpawnWaveGround()
     {
-        if (currentWaveIndex >= waves.Length) yield break;
+        if (currentWaveIndex >= waves.Length)
+            yield break;
 
         WaveGround wave = waves[currentWaveIndex];
+
         if (wave.enemies == null || wave.enemies.Length == 0)
         {
-            Debug.LogWarning("Wave " + currentWaveIndex + " vide.");
             currentWaveIndex++;
             waveIsRunning = false;
             yield break;
@@ -85,16 +89,30 @@ public class Ground_Spawner : MonoBehaviour
                 spawnPos = hit.position;
 
             Ground_Enemy enemy = Instantiate(wave.enemies[i], spawnPos, Quaternion.identity);
-            enemy.target = target; // assignation de la cible peu importe le type
-
-
+            enemy.target = target;
 
             yield return new WaitForSeconds(wave.timeToNextEnnemy);
         }
 
+        // ==========================
+        // FIN DE WAVE
+        // ==========================
+
         currentWaveIndex++;
+
         if (currentWaveIndex < waves.Length)
+        {
             countdown = waves[currentWaveIndex].timeToNextWave;
+        }
+        else
+        {
+            // 🚨 DERNIÈRE WAVE TERMINÉE
+            if (!hasNotifiedVictoryManager)
+            {
+                hasNotifiedVictoryManager = true;
+                VictoryManager.Instance.NotifySpawnerFinished();
+            }
+        }
 
         waveIsRunning = false;
     }
