@@ -74,11 +74,7 @@ public class UI_Manageur : MonoBehaviour
             //AudioManager.Instance.Play("NextWave");
         }
 
-        if (Ground_Spawner.cmp_Wave == 10)
-        {
-            StartCoroutine(Last_Wave());
-        }
-
+       
         for (int i = 0; i < cliqueur.UI_mechas_scene.Count; i++)
         {
             if (cliqueur.UI_mechas_scene[i] == null)
@@ -171,23 +167,7 @@ public class UI_Manageur : MonoBehaviour
         }
     }
 
-    IEnumerator Last_Wave()
-    {
-
-        // Fair la bar de progersse pour la dernier vagues
-
-        yield return new WaitForSeconds(60f);
-
-
-        Menu_Manageur.Last_screen(Cancas_Win);
-        AudioManager.Instance.StopLoop();
-        AudioManager.Instance.Play("Victoire");
-        /*
-        Cancas_Win.SetActive(true);
-        Time.timeScale = 0;
-        */
-        Cliquer.SetActive(false);
-    }
+    
 
     public void Info_panel_enter(int id)
     {
