@@ -27673,10 +27673,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d2d588742924a43a2bc4990d5f43c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: dfcff59ad71126b41828cb92a32d1337, type: 2}
   sounds:
   - name: mecha_shoot
     clip: {fileID: 8300000, guid: 83bec1b8547bb2b4bbe297cac9fa0a32, type: 3}
-    volume: 10
+    volume: 4
     pitch: 1
   - name: Upgrade
     clip: {fileID: 8300000, guid: dfa1910ae745eec48b69cf04b76c8a6f, type: 3}
@@ -27692,11 +27693,11 @@ MonoBehaviour:
     pitch: 1
   - name: SpawnMecha
     clip: {fileID: 8300000, guid: d729d8d504d737e4f830f518be665801, type: 3}
-    volume: 10
+    volume: 6
     pitch: 1
   - name: MortOpps
     clip: {fileID: 8300000, guid: eb76af705135c9147941a5b1559348de, type: 3}
-    volume: 10
+    volume: 4
     pitch: 1
   - name: HitNexus
     clip: {fileID: 8300000, guid: 14e40851551547143911df2349a37e39, type: 3}
@@ -27708,15 +27709,15 @@ MonoBehaviour:
     pitch: 1
   - name: AOE
     clip: {fileID: 8300000, guid: 4293d8bd590756641befa4e393b8df73, type: 3}
-    volume: 10
+    volume: 8
     pitch: 1
   - name: Slow
     clip: {fileID: 8300000, guid: 7b77f17b6d4b84943bfcd6140f750ce4, type: 3}
-    volume: 10
+    volume: 3
     pitch: 1
   - name: MusiqueFond
     clip: {fileID: 8300000, guid: 80924d6d567d4234e9929ae2fd4c84f1, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
   - name: AutoDeath
     clip: {fileID: 8300000, guid: 513cf55a17466484bbb2d77f80f72e01, type: 3}
@@ -52196,6 +52197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0a6623ed66d5b4792162d85f7dcf7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 0}
 --- !u!1 &1160682568 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1026774297491976959, guid: 5cd45d8aa8137d844b831d13d479ef3d, type: 3}
@@ -86279,9 +86281,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2119644401}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 2
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
