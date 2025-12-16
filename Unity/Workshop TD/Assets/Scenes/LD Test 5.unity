@@ -1031,9 +1031,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1366946611}
-        m_TargetAssemblyTypeName: Menu_Manageur, Assembly-CSharp
-        m_MethodName: Start_Game
+      - m_Target: {fileID: 1879896379}
+        m_TargetAssemblyTypeName: Intro_Screen, Assembly-CSharp
+        m_MethodName: Reload_Game_anime
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -69206,9 +69206,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 360155524}
-        m_TargetAssemblyTypeName: Menu_Manageur, Assembly-CSharp
-        m_MethodName: Start_Game
+      - m_Target: {fileID: 1879896379}
+        m_TargetAssemblyTypeName: Intro_Screen, Assembly-CSharp
+        m_MethodName: Reload_Game_anime
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -76517,6 +76517,7 @@ MonoBehaviour:
   memori_test: {x: 0, y: 0}
   Panel_Intro: {fileID: 1879896377}
   Return_Start_Menu: 0
+  Reload_Game: 0
   intro_fini: 0
 --- !u!114 &1879896380
 MonoBehaviour:

@@ -114,8 +114,6 @@ public class Menu_Pause_Option : MonoBehaviour
 
     public void anime_menu_fonction_2(GameObject Panel_GO, bool back)
     {
-
-
         if (!back)
         {
             Panel_GO.GetComponent<RectTransform>().anchoredPosition = Vector2.LerpUnclamped(Panel_GO.GetComponent<RectTransform>().anchoredPosition, Vector2.zero, Time.deltaTime * 5f);

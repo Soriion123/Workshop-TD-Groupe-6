@@ -7,6 +7,7 @@ public class Intro_Screen : MonoBehaviour
     public Vector2 memori_test;
     public GameObject Panel_Intro;
     public bool Return_Start_Menu = false;
+    public bool Reload_Game = false;
 
     public bool intro_fini = false;
 
@@ -27,6 +28,8 @@ public class Intro_Screen : MonoBehaviour
 
         if (Return_Start_Menu)
         {
+            intro_fini = true;
+            Time.timeScale = 1.0f;
             Panel_Intro.GetComponent<RectTransform>().anchoredPosition = Vector2.Lerp(Panel_Intro.GetComponent<RectTransform>().anchoredPosition, Vector2.zero, Time.deltaTime * 5f);
 
             if (Panel_Intro.GetComponent<RectTransform>().anchoredPosition == Vector2.zero)
@@ -35,6 +38,19 @@ public class Intro_Screen : MonoBehaviour
             }
 
         }
+
+        if (Reload_Game)
+        {
+            intro_fini = true;
+            Time.timeScale = 1.0f;
+            Panel_Intro.GetComponent<RectTransform>().anchoredPosition = Vector2.Lerp(Panel_Intro.GetComponent<RectTransform>().anchoredPosition, Vector2.zero, Time.deltaTime * 5f);
+
+            if (Panel_Intro.GetComponent<RectTransform>().anchoredPosition == Vector2.zero)
+            {
+                SceneManager.LoadScene("LD Test 5");
+            }
+        }
+
 
     }
 
@@ -53,6 +69,13 @@ public class Intro_Screen : MonoBehaviour
     public void return_to_home()
     {
         Return_Start_Menu = true;
+        Time.timeScale = 1.0f;
+        AudioManager.Instance.Play("SwapUI");
+    }
+
+    public void Reload_Game_anime()
+    {
+        Reload_Game = true;
         Time.timeScale = 1.0f;
         AudioManager.Instance.Play("SwapUI");
     }
