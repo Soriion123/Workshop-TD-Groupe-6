@@ -3005,26 +3005,43 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Game Artiste
+  m_text: 'Game Artist :
 
 
     FLORANT Claire
 
+    -> Concept 2D Character, 3D Artist,
+    Texture Artist & Tech Artist
+
 
     BLANC Ambre
+
+    -> Concept 2D Environment,
+    3D Artist & Texture Artist
 
 
     SMOLINSKI Alexis
 
+    -> Concept 2D Character,
+    Props, 3D Artist & Doc
 
-    CORTINA
-    Ella
+
+    CORTINA Ella
+
+    -> Concept 2D Character/Environment,
+    3D Artist & Level Artist
 
 
     CARRON Manon
 
+    -> 3D Artist, Concept 2D Character
+    Texture Artist & UI Artist
+
 
     COIN Sasha
+
+    -> Concept 2D Character, 3D
+    Artist & UI Artist
 
 
 '
@@ -3054,8 +3071,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23
-  m_fontSizeBase: 23
+  m_fontSize: 17
+  m_fontSizeBase: 17
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3092,7 +3109,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: -255.47688}
+  m_margin: {x: 0, y: 0, z: -34.21579, w: -255.47688}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3446,10 +3463,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Game Designeur\n\nARNAUD-DELAUNAY Samuel\n-> Systeme & UX/UI \n \nARNAUD-BADOY
-    Gabin\n-> Programeur & Sound Design\n\nCARACO Julien\n-> Programeur & Level Design\n\nPEAUCELLE
-    Hadrien\n-> Documentation & Naration & Production\n\nFELDEN Robin\n-> Naration
-    & Production"
+  m_text: "Game Designeur :\n\n\n\n\nARNAUD-DELAUNAY Samuel\n-> System Design, UX/UI
+    Design & VFX\n \nARNAUD-BADOY Gabin\n-> Programmation & Sound Design\n\nCARACO
+    Julien\n-> Programmation & Level Design\n\nPEAUCELLE Hadrien\n-> Game Design
+    Document, Production & Narration\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4a63f4d93652e344a9ec4aafda566c98, type: 2}
   m_sharedMaterial: {fileID: -4523787345648555881, guid: 4a63f4d93652e344a9ec4aafda566c98, type: 2}
@@ -3476,8 +3493,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23
-  m_fontSizeBase: 23
+  m_fontSize: 17
+  m_fontSizeBase: 17
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

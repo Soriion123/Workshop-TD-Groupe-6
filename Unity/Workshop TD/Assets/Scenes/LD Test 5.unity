@@ -13394,7 +13394,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 245, y: 163.99997}
+  m_AnchoredPosition: {x: 245, y: 151.66664}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &352958138
@@ -13417,26 +13417,43 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Game Artiste
+  m_text: 'Game Artist :
 
 
     FLORANT Claire
 
+    -> Concept 2D Character, 3D Artist,
+    Texture Artist & Tech Artist
+
 
     BLANC Ambre
+
+    -> Concept 2D Environment,
+    3D Artist & Texture Artist
 
 
     SMOLINSKI Alexis
 
+    -> Concept 2D Character,
+    Props, 3D Artist & Doc
 
-    CORTINA
-    Ella
+
+    CORTINA Ella
+
+    -> Concept 2D Character/Environment,
+    3D Artist & Level Artist
 
 
     CARRON Manon
 
+    -> 3D Artist, Concept 2D Character
+    Texture Artist & UI Artist
+
 
     COIN Sasha
+
+    -> Concept 2D Character, 3D
+    Artist & UI Artist
 
 
 '
@@ -13466,8 +13483,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23
-  m_fontSizeBase: 23
+  m_fontSize: 17
+  m_fontSizeBase: 17
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -13504,7 +13521,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: -255.47688}
+  m_margin: {x: 0, y: 0, z: -24.696854, w: -312.18015}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -73179,7 +73196,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -240, y: 164}
+  m_AnchoredPosition: {x: -240, y: 151.66666}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1796649424
@@ -73202,10 +73219,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Game Designeur\n\nARNAUD-DELAUNAY Samuel\n-> Systeme & UX/UI \n \nARNAUD-BADOY
-    Gabin\n-> Programeur & Sound Design\n\nCARACO Julien\n-> Programeur & Level Design\n\nPEAUCELLE
-    Hadrien\n-> Documentation & Naration & Production\n\nFELDEN Robin\n-> Naration
-    & Production"
+  m_text: "Game Designeur :\n\n\n\n\nARNAUD-DELAUNAY Samuel\n-> System Design, UX/UI
+    Design & VFX\n \nARNAUD-BADOY Gabin\n-> Programmation & Sound Design\n\nCARACO
+    Julien\n-> Programmation & Level Design\n\nPEAUCELLE Hadrien\n-> Game Design
+    Document, Production & Narration\n\nFELDEN Robin\n-> Production & Narration"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4a63f4d93652e344a9ec4aafda566c98, type: 2}
   m_sharedMaterial: {fileID: -4523787345648555881, guid: 4a63f4d93652e344a9ec4aafda566c98, type: 2}
@@ -73232,8 +73249,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23
-  m_fontSizeBase: 23
+  m_fontSize: 17
+  m_fontSizeBase: 17
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -81456,7 +81473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4848526944923919824, guid: 512873ae263e69249ba73c5e9f23fdc4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 37.581005
+      value: 38.581005
       objectReference: {fileID: 0}
     - target: {fileID: 4956594433366154370, guid: 512873ae263e69249ba73c5e9f23fdc4, type: 3}
       propertyPath: m_LocalScale.x
@@ -81504,7 +81521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5150920539545639452, guid: 512873ae263e69249ba73c5e9f23fdc4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 46.941006
+      value: 47.941006
       objectReference: {fileID: 0}
     - target: {fileID: 5412514597271979155, guid: 512873ae263e69249ba73c5e9f23fdc4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -81588,11 +81605,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7549819490372559231, guid: 512873ae263e69249ba73c5e9f23fdc4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 57.441006
+      value: 58.441006
       objectReference: {fileID: 0}
     - target: {fileID: 7749821407919681744, guid: 512873ae263e69249ba73c5e9f23fdc4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 41.72101
+      value: 42.72101
       objectReference: {fileID: 0}
     - target: {fileID: 8108848773725526500, guid: 512873ae263e69249ba73c5e9f23fdc4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -81628,7 +81645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8845412999939367018, guid: 512873ae263e69249ba73c5e9f23fdc4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 43.761005
+      value: 44.761005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

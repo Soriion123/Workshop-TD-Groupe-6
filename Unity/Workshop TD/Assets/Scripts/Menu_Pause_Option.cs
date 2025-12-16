@@ -136,7 +136,7 @@ public class Menu_Pause_Option : MonoBehaviour
                 Panel_GO.GetComponent<RectTransform>().anchoredPosition = Panel_memori;
                 anime_go = false;
 
-                if (!GameManager.anime_bool_revers)
+                if (!GameManager.anime_bool_revers & !Intro_Screen.Return_Start_Menu)
                 {
                     Time.timeScale = 0;
                 }
