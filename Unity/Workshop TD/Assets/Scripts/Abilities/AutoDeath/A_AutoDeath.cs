@@ -31,16 +31,28 @@ public class A_AutoDeath : MonoBehaviour
             {
                 basic.TakeDamage(damage);
             }
+            if (hit.TryGetComponent(out Flying_Fast fasts))
+            {
+                fasts.TakeDamage(damage);
+            }
+            else if (hit.TryGetComponent(out Flying_Tank tanks))
+            {
+                tanks.TakeDamage(damage);
+            }
+            else if (hit.TryGetComponent(out Flying_Basic basics))
+            {
+                basics.TakeDamage(damage);
+            }
             /*else if (hit.TryGetComponent(out Ground_Boss boss))
             {
                 boss.TakeDamage(damage);
             }*/
         }
 
-        // ✅ Ici tu peux ajouter VFX / son / screen shake
+        
     }
 
-    // 🔍 Juste pour visualiser le rayon dans l’éditeur
+    // visualiser le rayon dans l’éditeur
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
