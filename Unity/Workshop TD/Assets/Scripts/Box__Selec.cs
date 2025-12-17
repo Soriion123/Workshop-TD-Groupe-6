@@ -76,7 +76,7 @@ public class Box__Selec : MonoBehaviour
             {
                 This_BOX.GetComponent<MeshRenderer>().material = Up_Grade_mat[1];
             }
-            if (Game_Manager.gold >= 1934 & Game_Manager.gold < 1122)
+            if (Game_Manager.gold >= 1934 & Game_Manager.gold < 2021)
             {
                 This_BOX.GetComponent<MeshRenderer>().material = Up_Grade_mat[2];
             }
