@@ -12,6 +12,8 @@ public class Box__Selec : MonoBehaviour
     
     public GameObject[] prefab_mechas;
 
+    public Material[] Up_Grade_mat;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,6 +31,8 @@ public class Box__Selec : MonoBehaviour
         }
         else
         {
+
+            /*
             if (Type_box == 0) 
             {
                 if (Game_Manager.gold > 1934)
@@ -62,9 +66,26 @@ public class Box__Selec : MonoBehaviour
                     This_BOX.GetComponent<MeshRenderer>().material = Material_Box[5];
                 }
             }
-        
-        }
+            */
 
+            if (Game_Manager.gold < 1122)
+            {
+                This_BOX.GetComponent<MeshRenderer>().material = Up_Grade_mat[0];
+            }
+            if (Game_Manager.gold >= 1122 & Game_Manager.gold < 1934)
+            {
+                This_BOX.GetComponent<MeshRenderer>().material = Up_Grade_mat[1];
+            }
+            if (Game_Manager.gold >= 1934 & Game_Manager.gold < 1122)
+            {
+                This_BOX.GetComponent<MeshRenderer>().material = Up_Grade_mat[2];
+            }
+            if (Game_Manager.gold >= 2021)
+            {
+                This_BOX.GetComponent<MeshRenderer>().material = Up_Grade_mat[3];
+            }
+
+        }
         
     }
 
