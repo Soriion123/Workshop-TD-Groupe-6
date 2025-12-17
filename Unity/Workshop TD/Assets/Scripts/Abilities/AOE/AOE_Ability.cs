@@ -5,7 +5,7 @@ public class AOE_Ability : MonoBehaviour
 {
     [Header("AOE Settings")]
     public GameObject AOE_ZonePrefab;   // ✅ PREFAB ici
-    private KeyCode activationKey = KeyCode.F;
+    private KeyCode activationKey = KeyCode.Space;
     public float cooldown = 0.5f;
 
     private bool isReady = true;
