@@ -3457,10 +3457,10 @@ MonoBehaviour:
   Type_box: 1
   Material_Box:
   - {fileID: 2100000, guid: c04b732ef45dc594c958935b80b1a0fb, type: 2}
-  - {fileID: 2100000, guid: 07b27c1cfddadf848b994dbf360d80d1, type: 2}
+  - {fileID: 2100000, guid: c5971a7005597e74c9c3093cc9c6f52b, type: 2}
   - {fileID: 2100000, guid: 989fb179fb1d6484e88afffcb7e3dfcf, type: 2}
   - {fileID: 2100000, guid: 2fbfce82849cda3488115e7f694461f0, type: 2}
-  - {fileID: 2100000, guid: f061d571b11c25e4488f7a3a1ad8fdcc, type: 2}
+  - {fileID: 2100000, guid: 5b7e3c03909a178409bea0199e3d7480, type: 2}
   - {fileID: 2100000, guid: 506515ed23c2e294787ce5f07eee75c7, type: 2}
   Game_Manager: {fileID: 1437382625}
   prefab_mechas:
@@ -12548,10 +12548,10 @@ MonoBehaviour:
   Type_box: 2
   Material_Box:
   - {fileID: 2100000, guid: c04b732ef45dc594c958935b80b1a0fb, type: 2}
-  - {fileID: 2100000, guid: 07b27c1cfddadf848b994dbf360d80d1, type: 2}
+  - {fileID: 2100000, guid: c5971a7005597e74c9c3093cc9c6f52b, type: 2}
   - {fileID: 2100000, guid: 989fb179fb1d6484e88afffcb7e3dfcf, type: 2}
   - {fileID: 2100000, guid: 2fbfce82849cda3488115e7f694461f0, type: 2}
-  - {fileID: 2100000, guid: f061d571b11c25e4488f7a3a1ad8fdcc, type: 2}
+  - {fileID: 2100000, guid: 5b7e3c03909a178409bea0199e3d7480, type: 2}
   - {fileID: 2100000, guid: 506515ed23c2e294787ce5f07eee75c7, type: 2}
   Game_Manager: {fileID: 1437382625}
   prefab_mechas:
@@ -56443,10 +56443,10 @@ MonoBehaviour:
   Type_box: 0
   Material_Box:
   - {fileID: 2100000, guid: c04b732ef45dc594c958935b80b1a0fb, type: 2}
-  - {fileID: 2100000, guid: 07b27c1cfddadf848b994dbf360d80d1, type: 2}
+  - {fileID: 2100000, guid: c5971a7005597e74c9c3093cc9c6f52b, type: 2}
   - {fileID: 2100000, guid: 989fb179fb1d6484e88afffcb7e3dfcf, type: 2}
   - {fileID: 2100000, guid: 2fbfce82849cda3488115e7f694461f0, type: 2}
-  - {fileID: 2100000, guid: f061d571b11c25e4488f7a3a1ad8fdcc, type: 2}
+  - {fileID: 2100000, guid: 5b7e3c03909a178409bea0199e3d7480, type: 2}
   - {fileID: 2100000, guid: 506515ed23c2e294787ce5f07eee75c7, type: 2}
   Game_Manager: {fileID: 1437382625}
   prefab_mechas:
@@ -57276,10 +57276,10 @@ MonoBehaviour:
   Type_box: 1
   Material_Box:
   - {fileID: 2100000, guid: c04b732ef45dc594c958935b80b1a0fb, type: 2}
-  - {fileID: 2100000, guid: 07b27c1cfddadf848b994dbf360d80d1, type: 2}
+  - {fileID: 2100000, guid: c5971a7005597e74c9c3093cc9c6f52b, type: 2}
   - {fileID: 2100000, guid: 989fb179fb1d6484e88afffcb7e3dfcf, type: 2}
   - {fileID: 2100000, guid: 2fbfce82849cda3488115e7f694461f0, type: 2}
-  - {fileID: 2100000, guid: f061d571b11c25e4488f7a3a1ad8fdcc, type: 2}
+  - {fileID: 2100000, guid: 5b7e3c03909a178409bea0199e3d7480, type: 2}
   - {fileID: 2100000, guid: 506515ed23c2e294787ce5f07eee75c7, type: 2}
   Game_Manager: {fileID: 1437382625}
   prefab_mechas:
@@ -61250,10 +61250,10 @@ MonoBehaviour:
   Type_box: 2
   Material_Box:
   - {fileID: 2100000, guid: c04b732ef45dc594c958935b80b1a0fb, type: 2}
-  - {fileID: 2100000, guid: 07b27c1cfddadf848b994dbf360d80d1, type: 2}
+  - {fileID: 2100000, guid: c5971a7005597e74c9c3093cc9c6f52b, type: 2}
   - {fileID: 2100000, guid: 989fb179fb1d6484e88afffcb7e3dfcf, type: 2}
   - {fileID: 2100000, guid: 2fbfce82849cda3488115e7f694461f0, type: 2}
-  - {fileID: 2100000, guid: f061d571b11c25e4488f7a3a1ad8fdcc, type: 2}
+  - {fileID: 2100000, guid: 5b7e3c03909a178409bea0199e3d7480, type: 2}
   - {fileID: 2100000, guid: 506515ed23c2e294787ce5f07eee75c7, type: 2}
   Game_Manager: {fileID: 1437382625}
   prefab_mechas:
@@ -69953,10 +69953,10 @@ MonoBehaviour:
   Type_box: 0
   Material_Box:
   - {fileID: 2100000, guid: c04b732ef45dc594c958935b80b1a0fb, type: 2}
-  - {fileID: 2100000, guid: 07b27c1cfddadf848b994dbf360d80d1, type: 2}
+  - {fileID: 2100000, guid: c5971a7005597e74c9c3093cc9c6f52b, type: 2}
   - {fileID: 2100000, guid: 989fb179fb1d6484e88afffcb7e3dfcf, type: 2}
   - {fileID: 2100000, guid: 2fbfce82849cda3488115e7f694461f0, type: 2}
-  - {fileID: 2100000, guid: f061d571b11c25e4488f7a3a1ad8fdcc, type: 2}
+  - {fileID: 2100000, guid: 5b7e3c03909a178409bea0199e3d7480, type: 2}
   - {fileID: 2100000, guid: 506515ed23c2e294787ce5f07eee75c7, type: 2}
   Game_Manager: {fileID: 1437382625}
   prefab_mechas:
