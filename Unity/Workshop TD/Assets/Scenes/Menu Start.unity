@@ -3466,7 +3466,7 @@ MonoBehaviour:
   m_text: "Game Designeur :\n\n\n\n\nARNAUD-DELAUNAY Samuel\n-> System Design, UX/UI
     Design & VFX\n \nARNAUD-BADOY Gabin\n-> Programmation & Sound Design\n\nCARACO
     Julien\n-> Programmation & Level Design\n\nPEAUCELLE Hadrien\n-> Game Design
-    Document, Production & Narration\n"
+    Document, Production & Narration\n\nFELDEN Robin\n-> Production & Narration\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4a63f4d93652e344a9ec4aafda566c98, type: 2}
   m_sharedMaterial: {fileID: -4523787345648555881, guid: 4a63f4d93652e344a9ec4aafda566c98, type: 2}
